@@ -662,19 +662,18 @@ main > section + section {
 
 .fd-photo {
   width: 100%;
-  aspect-ratio: 2 / 3;
-  margin-top: 0.6cqw;
+  aspect-ratio: 3 / 4;
+  margin-top: 0.8cqw;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  background: #F0E6D8;
+  background: transparent;
 }
 
 .fd-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  border-radius: 8px;
 }
 
 @media (max-width: 900px) {
@@ -947,7 +946,7 @@ main > section + section {
 /* Meet the team */
 .meet-the-team {
   background: var(--cream);
-  padding: 12px 0 100px;
+  padding: 40px 0 100px;
 }
 
 .team-container {
