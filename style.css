@@ -726,10 +726,12 @@ main > section + section {
   position: relative;
   width: 100%;
   background-image: url("special-guest-bg.png?v=1");
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  background-position: top center;
   background-repeat: no-repeat;
   background-color: #F5EEE6;
-  aspect-ratio: 1536 / 880;
+  aspect-ratio: 1536 / 760;
+  overflow: hidden;
   container-type: inline-size;
   color: #4A4039;
 }
