@@ -596,7 +596,8 @@ main > section + section {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #F6F0E8;
-  aspect-ratio: 3168 / 1500;
+  aspect-ratio: 3168 / 1240;
+  overflow: hidden;
   container-type: inline-size;
   color: #3F3A36;
 }
@@ -606,7 +607,7 @@ main > section + section {
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 18% 10% 2%;
+  padding: 18% 10% 0;
 }
 
 .fd-col {
