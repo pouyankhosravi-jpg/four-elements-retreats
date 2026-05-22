@@ -600,7 +600,7 @@ main > section + section {
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 21% 10% 2%;
+  padding: 18% 10% 2%;
 }
 
 .fd-col {
@@ -618,7 +618,7 @@ main > section + section {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 0.1cqw;
+  margin: 0 0 0.35cqw;
   white-space: nowrap;
 }
 
@@ -638,7 +638,7 @@ main > section + section {
   width: clamp(60px, 8cqw, 140px);
   height: 1px;
   background: #D8C8B8;
-  margin: 0.15cqw 0 0.5cqw;
+  margin: 0 0 0.35cqw;
 }
 
 .fd-rule::after {
@@ -654,19 +654,19 @@ main > section + section {
 
 .fd-body {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(10px, 0.95cqw, 14px);
-  line-height: 1.25;
+  font-size: clamp(10px, 0.9cqw, 13px);
+  line-height: 1.2;
   color: #3F3A36;
-  margin: 0 0 0.1cqw;
+  margin: 0 0 0.35cqw;
   max-width: 100%;
-  min-height: 7.3cqw;
+  min-height: 6.5cqw;
   text-wrap: pretty;
 }
 
 .fd-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
-  margin-top: 0.1cqw;
+  margin-top: 0;
   overflow: hidden;
   border-radius: 8px;
   background: #F0E6D8;
