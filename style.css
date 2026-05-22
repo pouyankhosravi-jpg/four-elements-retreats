@@ -600,7 +600,7 @@ main > section + section {
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 20% 10% 2%;
+  padding: 17.5% 10% 2%;
 }
 
 .fd-col {
@@ -655,11 +655,11 @@ main > section + section {
 .fd-body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(10px, 0.95cqw, 14px);
-  line-height: 1.5;
+  line-height: 1.4;
   color: #3F3A36;
   margin: 0 0 0.2cqw;
   max-width: 100%;
-  min-height: 8.7cqw;
+  min-height: 8.3cqw;
   text-wrap: pretty;
 }
 
