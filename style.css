@@ -733,7 +733,7 @@ main > section + section {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #F5EEE6;
-  aspect-ratio: 1536 / 640;
+  aspect-ratio: 1536 / 560;
   overflow: hidden;
   container-type: inline-size;
   color: #4A4039;
@@ -742,7 +742,7 @@ main > section + section {
 .sg-header {
   position: absolute;
   left: 50%;
-  top: 5.2%;
+  top: 9%;
   transform: translateX(-50%);
   text-align: center;
   width: 92%;
@@ -766,19 +766,21 @@ main > section + section {
   letter-spacing: 0.42em;
   text-transform: uppercase;
   color: #3F352F;
-  margin: 1.4cqw 0 0 0.42em;
+  margin: 0.85cqw 0 0 0.42em;
 }
 
 .sg-photo {
   position: absolute;
   left: 7%;
-  top: 22%;
-  width: 38%;
+  top: 28%;
+  width: 36%;
+  height: 64%;
 }
 
 .sg-photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -786,7 +788,7 @@ main > section + section {
 .sg-text {
   position: absolute;
   right: 11%;
-  top: 23%;
+  top: 28%;
   width: 34%;
 }
 
@@ -947,7 +949,7 @@ main > section + section {
 /* Meet the team */
 .meet-the-team {
   background: var(--cream);
-  padding: 24px 0 100px;
+  padding: 12px 0 100px;
 }
 
 .team-container {
