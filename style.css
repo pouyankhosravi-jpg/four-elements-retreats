@@ -589,7 +589,7 @@ main > section + section {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: #F6F0E8;
-  aspect-ratio: 2752 / 1536;
+  aspect-ratio: 2752 / 1700;
   container-type: inline-size;
   color: #3F3A36;
 }
@@ -599,11 +599,11 @@ main > section + section {
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 19% 10% 4%;
+  padding: 20% 10% 4%;
 }
 
 .fd-col {
-  padding: 0 2.4cqw;
+  padding: 0 4cqw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -662,7 +662,7 @@ main > section + section {
 
 .fd-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 9 / 16;
   margin-top: auto;
   overflow: hidden;
   border-radius: 8px;
