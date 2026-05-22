@@ -590,7 +590,7 @@ main > section + section {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #F6F0E8;
-  aspect-ratio: 3168 / 1380;
+  aspect-ratio: 3168 / 1408;
   container-type: inline-size;
   color: #3F3A36;
 }
@@ -604,7 +604,7 @@ main > section + section {
 }
 
 .fd-col {
-  padding: 0 3cqw;
+  padding: 0 1.8cqw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -659,13 +659,14 @@ main > section + section {
   color: #3F3A36;
   margin: 0 0 0.4cqw;
   max-width: 100%;
+  min-height: 9cqw;
   text-wrap: pretty;
 }
 
 .fd-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
-  margin-top: auto;
+  margin-top: 0.4cqw;
   overflow: hidden;
   border-radius: 8px;
   background: #F0E6D8;
