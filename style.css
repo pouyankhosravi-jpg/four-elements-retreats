@@ -105,16 +105,34 @@ body {
   display: block;
 }
 
+/* Warm dark gradient behind text area for legibility */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right,
+      rgba(20, 12, 6, 0.55) 0%,
+      rgba(20, 12, 6, 0.32) 38%,
+      rgba(20, 12, 6, 0) 68%),
+    linear-gradient(to bottom,
+      rgba(20, 12, 6, 0.18) 0%,
+      rgba(20, 12, 6, 0) 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .banner-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 5% 8%;
   color: #fff;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 .banner-title {
