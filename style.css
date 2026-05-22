@@ -397,6 +397,28 @@ main > section + section {
   transform: translateX(6px);
 }
 
+/* Mobile-only strip showing the 3 right-side photos from location-banner.png */
+.location-extras {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .location-extras {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 16px;
+    line-height: 0;
+  }
+
+  .location-extras img {
+    width: 263%;
+    margin-left: -163%;
+    height: auto;
+    display: block;
+  }
+}
+
 @media (max-width: 700px) {
   /* Show only the left part of the banner (crops out the 3 right-side photos) */
   .location-banner {
