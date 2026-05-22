@@ -659,6 +659,7 @@ main > section + section {
   color: #3F3A36;
   margin: 0 0 0.2cqw;
   max-width: 100%;
+  min-height: 9cqw;
   text-wrap: pretty;
 }
 
