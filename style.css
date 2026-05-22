@@ -1457,6 +1457,409 @@ main > section + section {
   text-decoration: underline;
 }
 
+/* ============================================
+   ABOUT page
+   ============================================ */
+.about-story {
+  background: var(--cream);
+  padding: 30px 0 90px;
+}
+
+.about-story h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--terracotta);
+  margin: 48px 0 14px;
+  letter-spacing: 0.01em;
+}
+
+.about-story h2:first-child {
+  margin-top: 0;
+}
+
+.about-story p {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin: 0 0 18px;
+}
+
+/* ============================================
+   RETREATS page — timetable, gallery, location
+   ============================================ */
+.timetable {
+  background: var(--cream);
+  padding: 60px 0 100px;
+}
+
+.timetable-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.timetable-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 500;
+  color: var(--text);
+  margin: 12px 0 18px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.timetable-intro {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.day-detail {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-top: 1px solid var(--divider);
+  align-items: start;
+}
+
+.day-detail:last-child {
+  border-bottom: 1px solid var(--divider);
+}
+
+.day-detail-marker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.day-detail-num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.day-detail-elem {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.day-detail-elem.fd-earth  { color: #8C5A32; }
+.day-detail-elem.fd-water  { color: #6B7B5D; }
+.day-detail-elem.fd-fire   { color: #B36238; }
+.day-detail-elem.fd-spirit { color: #B36238; }
+
+.day-detail-body h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 22px;
+  line-height: 1.2;
+}
+
+.schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule li {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.schedule li:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  padding-top: 3px;
+}
+
+.schedule-item {
+  color: var(--text);
+}
+
+/* Gallery */
+.gallery {
+  background: var(--cream-2);
+  padding: 80px 0 100px;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.gallery-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 500;
+  color: var(--text);
+  margin: 12px 0 0;
+  letter-spacing: -0.01em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 12px;
+}
+
+.gallery-item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--cream);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-tall {
+  grid-row: span 2;
+}
+
+.gallery-wide {
+  grid-column: span 2;
+}
+
+/* Location */
+.location {
+  background: var(--cream);
+  padding: 90px 0 100px;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.location-text .eyebrow {
+  margin-bottom: 16px;
+}
+
+.location-text h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 2.8vw, 38px);
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 24px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.location-text p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0 0 18px;
+}
+
+.location-facts {
+  margin: 28px 0 0;
+  display: grid;
+  gap: 14px;
+}
+
+.location-facts > div {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 18px;
+  padding: 10px 0;
+  border-top: 1px solid var(--divider);
+}
+
+.location-facts dt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.location-facts dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.location-facts a {
+  color: var(--terracotta);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.location-facts a:hover {
+  color: var(--terracotta-hover);
+}
+
+.location-image {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 4 / 5;
+}
+
+/* Page CTA (shared by about + retreats) */
+.page-cta {
+  background: var(--cream);
+  padding: 60px 0 100px;
+  text-align: center;
+}
+
+.page-cta .script {
+  font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--terracotta);
+  margin: 0 0 22px;
+  line-height: 1;
+}
+
+/* Mobile for about + retreats */
+@media (max-width: 900px) {
+  .day-detail {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 28px 0;
+  }
+
+  .day-detail-marker {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .day-detail-num {
+    font-size: 1rem;
+  }
+
+  .day-detail-elem {
+    font-size: 1.4rem;
+  }
+
+  .schedule li {
+    grid-template-columns: 110px 1fr;
+    gap: 14px;
+    font-size: 0.95rem;
+  }
+
+  .gallery {
+    padding: 56px 0 70px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+    gap: 8px;
+  }
+
+  .location {
+    padding: 56px 0 70px;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .location-image img {
+    aspect-ratio: 5 / 4;
+  }
+
+  .about-story {
+    padding: 16px 0 56px;
+  }
+
+  .about-story h2 {
+    font-size: 1.3rem;
+    margin: 32px 0 12px;
+  }
+
+  .about-story p {
+    font-size: 1rem;
+  }
+
+  .page-cta {
+    padding: 36px 0 56px;
+  }
+
+  .page-cta .script {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
+  }
+
+  .gallery-tall {
+    grid-row: span 2;
+  }
+
+  .gallery-wide {
+    grid-column: span 2;
+  }
+
+  .schedule li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .schedule-time {
+    font-size: 0.7rem;
+  }
+
+  .location-facts > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
 /* Footer */
 .site-footer {
   background: var(--green-dark);
