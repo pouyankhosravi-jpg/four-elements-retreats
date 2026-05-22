@@ -585,12 +585,12 @@ main > section + section {
 .four-days {
   position: relative;
   width: 100%;
-  background-image: url("four-days-bg.png?v=2");
+  background-image: url("four-days-bg.png?v=3");
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #F6F0E8;
-  aspect-ratio: 2752 / 1900;
+  aspect-ratio: 3168 / 2000;
   container-type: inline-size;
   color: #3F3A36;
 }
@@ -600,7 +600,7 @@ main > section + section {
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 18% 10% 4%;
+  padding: 17% 10% 4%;
 }
 
 .fd-col {
