@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pouyan — Home</title>
-<link rel="stylesheet" href="style.css?v=98">
+<link rel="stylesheet" href="style.css?v=99">
 </head>
 <body>
 <header class="site-header">
@@ -88,7 +88,7 @@
 
   <section class="heart-quote">
     <div class="heart-clip-wrap">
-      <video class="heart-clip" src="retreat-clip.mov" autoplay loop controls playsinline preload="metadata"></video>
+      <video class="heart-clip" src="retreat-clip.mov" muted playsinline preload="metadata"></video>
     </div>
     <div class="heart-quote-grid">
       <div class="heart-photo">
@@ -251,6 +251,24 @@
     <img src="location-banner.png?v=2" alt="Sound bath, geodesic dome, and waterfall at Costa del Soul">
   </section>
 </main>
+
+<script>
+(function () {
+  var v = document.querySelector('.heart-clip');
+  if (!v || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        v.currentTime = 0;
+        v.play().catch(function () {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+  io.observe(v);
+})();
+</script>
 
 <footer class="site-footer">
   <div class="container">
