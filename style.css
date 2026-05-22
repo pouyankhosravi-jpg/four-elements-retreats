@@ -733,7 +733,7 @@ main > section + section {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #F5EEE6;
-  aspect-ratio: 1536 / 560;
+  aspect-ratio: 1536 / 620;
   overflow: hidden;
   container-type: inline-size;
   color: #4A4039;
@@ -771,10 +771,10 @@ main > section + section {
 
 .sg-photo {
   position: absolute;
-  left: 7%;
-  top: 28%;
-  width: 36%;
-  height: 64%;
+  left: 12%;
+  top: 31%;
+  width: 35%;
+  height: 67%;
 }
 
 .sg-photo img {
@@ -787,9 +787,9 @@ main > section + section {
 
 .sg-text {
   position: absolute;
-  right: 11%;
-  top: 28%;
-  width: 34%;
+  right: 14%;
+  top: 31%;
+  width: 29%;
 }
 
 .sg-signature {
