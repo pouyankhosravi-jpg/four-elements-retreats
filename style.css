@@ -877,7 +877,7 @@ main > section + section {
     background-image: none;
     background: #F5EEE6;
     aspect-ratio: auto;
-    padding: 32px 24px 32px;
+    padding: 32px 24px 14px;
   }
 
   .sg-header,
@@ -1049,7 +1049,7 @@ main > section + section {
 
 @media (max-width: 600px) {
   .meet-the-team {
-    padding: 32px 0 56px;
+    padding: 14px 0 56px;
   }
 
   .team-container {
@@ -1062,7 +1062,7 @@ main > section + section {
   }
 
   .team-header {
-    margin-bottom: 44px;
+    margin-bottom: 28px;
   }
 }
 
