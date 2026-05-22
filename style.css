@@ -188,6 +188,8 @@ body {
 
   .banner img {
     object-position: center bottom;
+    transform: scale(1.18);
+    transform-origin: center bottom;
   }
 
   .banner-overlay {
@@ -199,8 +201,8 @@ body {
   }
 
   .banner-subtitle {
-    font-size: clamp(13px, 3.6vw, 16px);
-    max-width: 30ch;
+    font-size: clamp(15px, 4.4vw, 19px);
+    max-width: 32ch;
   }
 
   .banner-cta {
