@@ -398,13 +398,31 @@ main > section + section {
 }
 
 @media (max-width: 700px) {
+  /* Show only the left part of the banner (crops out the 3 right-side photos) */
+  .location-banner {
+    overflow: hidden;
+    margin-top: 12px;
+  }
+
+  .location-banner img {
+    width: 161%;
+    max-width: none;
+  }
+
+  /* Re-anchor the CTA to where the baked "EXPLORE THE LOCATION" text
+     now appears after the crop */
   .location-banner-cta {
-    font-size: 0.7rem;
-    gap: 16px;
+    left: 7%;
+    top: 64%;
+    width: 38%;
+    height: 14%;
+    font-size: 0.72rem;
+    gap: 12px;
   }
 
   .location-banner-cta .cta-arrow {
-    width: 36px;
+    width: 30px;
+    height: 10px;
   }
 }
 
