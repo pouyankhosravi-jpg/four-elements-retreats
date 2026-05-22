@@ -590,7 +590,7 @@ main > section + section {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #F6F0E8;
-  aspect-ratio: 3168 / 1700;
+  aspect-ratio: 3168 / 1380;
   container-type: inline-size;
   color: #3F3A36;
 }
@@ -618,7 +618,7 @@ main > section + section {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 0.25cqw;
+  margin: 0 0 0.1cqw;
   white-space: nowrap;
 }
 
@@ -638,7 +638,7 @@ main > section + section {
   width: clamp(60px, 8cqw, 140px);
   height: 1px;
   background: #D8C8B8;
-  margin: 0.2cqw 0 0.8cqw;
+  margin: 0.15cqw 0 0.5cqw;
 }
 
 .fd-rule::after {
@@ -654,10 +654,10 @@ main > section + section {
 
 .fd-body {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(10px, 1cqw, 16px);
-  line-height: 1.65;
+  font-size: clamp(10px, 0.95cqw, 14px);
+  line-height: 1.5;
   color: #3F3A36;
-  margin: 0 0 0.6cqw;
+  margin: 0 0 0.4cqw;
   max-width: 100%;
   text-wrap: pretty;
 }
