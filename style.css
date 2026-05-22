@@ -599,7 +599,7 @@ main > section + section {
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 34% 10% 4%;
+  padding: 19% 10% 4%;
 }
 
 .fd-col {
@@ -663,7 +663,7 @@ main > section + section {
 .fd-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
-  margin-top: 0.4cqw;
+  margin-top: auto;
   overflow: hidden;
   border-radius: 8px;
   background: #F0E6D8;
