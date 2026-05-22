@@ -730,7 +730,7 @@ main > section + section {
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #F5EEE6;
-  aspect-ratio: 1536 / 760;
+  aspect-ratio: 1536 / 640;
   overflow: hidden;
   container-type: inline-size;
   color: #4A4039;
@@ -944,7 +944,7 @@ main > section + section {
 /* Meet the team */
 .meet-the-team {
   background: var(--cream);
-  padding: 50px 0 100px;
+  padding: 24px 0 100px;
 }
 
 .team-container {
