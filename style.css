@@ -585,13 +585,11 @@ main > section + section {
 .four-days {
   position: relative;
   width: 100%;
-  background-image: url("four-days-bg.png?v=1");
-  background-size: 100% auto;
-  background-position: top center;
+  background-image: url("four-days-bg.png?v=2");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: #F6F0E8;
-  aspect-ratio: 1536 / 800;
-  overflow: hidden;
+  aspect-ratio: 2752 / 1536;
   container-type: inline-size;
   color: #3F3A36;
 }
@@ -601,11 +599,11 @@ main > section + section {
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 27% 10% 3%;
+  padding: 34% 10% 4%;
 }
 
 .fd-col {
-  padding: 0 2cqw;
+  padding: 0 2.4cqw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -615,7 +613,7 @@ main > section + section {
 .fd-title {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
-  font-size: clamp(13px, 1.75cqw, 28px);
+  font-size: clamp(13px, 1.6cqw, 26px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
@@ -664,11 +662,11 @@ main > section + section {
 
 .fd-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  margin-top: 0;
+  aspect-ratio: 2 / 3;
+  margin-top: 0.6cqw;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   background: #F0E6D8;
 }
 
