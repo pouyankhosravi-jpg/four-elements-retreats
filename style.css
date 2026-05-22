@@ -345,6 +345,12 @@ main > section + section {
   margin-top: 8px;
 }
 
+/* Specific transitions that should be flush (no cream gap) */
+.what-to-expect-section + .four-days,
+.four-days + .special-guest {
+  margin-top: 0;
+}
+
 @media (max-width: 800px) {
   main > section + section {
     margin-top: 0;
