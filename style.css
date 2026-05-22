@@ -657,16 +657,15 @@ main > section + section {
   font-size: clamp(10px, 0.95cqw, 14px);
   line-height: 1.5;
   color: #3F3A36;
-  margin: 0 0 0.4cqw;
+  margin: 0 0 0.2cqw;
   max-width: 100%;
-  min-height: 9cqw;
   text-wrap: pretty;
 }
 
 .fd-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
-  margin-top: 0.4cqw;
+  margin-top: 0.1cqw;
   overflow: hidden;
   border-radius: 8px;
   background: #F0E6D8;
