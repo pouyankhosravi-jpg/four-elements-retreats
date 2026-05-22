@@ -160,7 +160,7 @@ body {
   font-size: clamp(15px, 1.5vw, 22px);
   line-height: 1.55;
   margin: 0 auto;
-  max-width: 38ch;
+  max-width: 62ch;
   opacity: 0.95;
 }
 
