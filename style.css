@@ -662,18 +662,18 @@ main > section + section {
 
 .fd-photo {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   margin-top: 0.8cqw;
   overflow: hidden;
-  background: transparent;
+  border-radius: 8px;
+  background: #F0E6D8;
 }
 
 .fd-photo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  border-radius: 8px;
 }
 
 @media (max-width: 900px) {
