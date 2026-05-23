@@ -3983,121 +3983,134 @@ main > section + section {
    RETREATS page — practices grid + welcome pack
    ============================================ */
 
-/* Premium "Inside the four days" — warm bone bg, soft cards,
-   Cinzel labels, Cormorant Garamond titles, Inter body. */
+/* Compact "Inside the four days" — four cards in one line,
+   each tinted with an element color sampled from the logo:
+   Earth = olive #484830, Water = dusty blue #486078,
+   Fire = terracotta #A86030, Air = warm gold #C0A878. */
 .practices {
   position: relative;
   background-color: #F5F0E8;
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.11 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   background-size: 200px 200px;
-  padding: 120px 0 130px;
+  padding: 56px 0 64px;
 }
 
 .practices-header {
   text-align: center;
-  max-width: 680px;
-  margin: 0 auto 80px;
+  max-width: 880px;
+  margin: 0 auto 28px;
 }
 
 .practices-eyebrow {
   font-family: "Cinzel", Georgia, serif;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
   color: #B36238;
-  margin: 0 0 22px;
+  margin: 0 0 12px;
 }
 
 .practices-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -0.005em;
   color: #2E241D;
-  margin: 0 0 26px;
+  margin: 0 0 12px;
+  white-space: nowrap;
 }
 
 .practices-intro {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.04rem;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.55;
   color: #5E554D;
   margin: 0 auto;
-  max-width: 540px;
+  max-width: 580px;
 }
 
 .practices-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  max-width: 1100px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .practice-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(179, 98, 56, 0.12);
-  border-radius: 22px;
-  padding: 64px 56px 56px;
-  box-shadow: 0 2px 16px rgba(46, 36, 29, 0.035);
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease;
+  background: #FBF7EF;
+  border: 1px solid rgba(46, 36, 29, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 14px rgba(46, 36, 29, 0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .practice-card:hover {
-  border-color: rgba(179, 98, 56, 0.55);
-  box-shadow: 0 8px 32px rgba(46, 36, 29, 0.07);
+  box-shadow: 0 8px 28px rgba(46, 36, 29, 0.08);
   transform: translateY(-3px);
 }
 
-/* Slightly warmer beige for BODY + VOICE rhythm */
-.practice-card--accent {
-  background: rgba(231, 217, 196, 0.5);
-  border-color: rgba(179, 98, 56, 0.16);
+/* Small image at the top inside the card */
+.practice-img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--cream-2);
 }
 
-/* Featured wider Nourishment card on the bottom row */
-.practice-card--feature {
-  grid-column: span 2;
-  background: rgba(231, 217, 196, 0.32);
-}
-
-.practice-icon {
-  color: #B36238;
-  opacity: 0.85;
-  margin-bottom: 26px;
-  line-height: 0;
-}
-
-.practice-icon svg {
-  width: 30px;
-  height: 30px;
+.practice-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.practice-card:hover .practice-img img {
+  transform: scale(1.04);
+}
+
+/* A 3px element-coloured stripe between image and content */
+.practice-stripe {
+  height: 3px;
+  width: 100%;
+  background: var(--elem, #B36238);
+}
+
+.practice-body {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .practice-label {
   font-family: "Cinzel", Georgia, serif;
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 500;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.36em;
   text-transform: uppercase;
-  color: #B36238;
-  margin: 0 0 18px;
+  color: var(--elem, #B36238);
+  margin: 0 0 6px;
 }
 
 .practice-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.5rem, 2vw, 1.85rem);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.18;
   letter-spacing: -0.005em;
   color: #2E241D;
-  margin: 0 0 38px;
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(46, 36, 29, 0.08);
 }
 
 .practice-list {
@@ -4105,68 +4118,74 @@ main > section + section {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 22px;
+  gap: 8px;
 }
 
 .practice-list li {
+  position: relative;
+  padding-left: 14px;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-size: 0.82rem;
+  line-height: 1.5;
   color: #5E554D;
-  font-weight: 400;
   letter-spacing: 0.005em;
+}
+
+.practice-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 1px;
+  background: var(--elem, #B36238);
 }
 
 .practice-list em {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  color: #B36238;
+  color: var(--elem, #B36238);
   font-size: 1.05em;
-  letter-spacing: 0.01em;
 }
 
-.practice-list--cols {
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 36px;
-  row-gap: 22px;
-}
+/* Element colour variables (sampled from the logo) */
+.practice-card.elem-earth  { --elem: #484830; }
+.practice-card.elem-water  { --elem: #486078; }
+.practice-card.elem-fire   { --elem: #A86030; }
+.practice-card.elem-air    { --elem: #8A6A38; }
 
-@media (max-width: 900px) {
-  .practices {
-    padding: 80px 0 90px;
-  }
-  .practices-header {
-    margin-bottom: 56px;
+.practice-card.elem-earth:hover { border-color: rgba(72,72,48,0.4); }
+.practice-card.elem-water:hover { border-color: rgba(72,96,120,0.4); }
+.practice-card.elem-fire:hover  { border-color: rgba(168,96,48,0.45); }
+.practice-card.elem-air:hover   { border-color: rgba(138,106,56,0.45); }
+
+@media (max-width: 1000px) {
+  .practices-title {
+    white-space: normal;
   }
   .practices-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-  .practice-card {
-    padding: 48px 36px 40px;
-  }
-  .practice-card--feature {
-    grid-column: span 1;
-  }
-  .practice-list--cols {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 }
 
 @media (max-width: 560px) {
   .practices {
-    padding: 64px 0 80px;
+    padding: 44px 0 50px;
   }
-  .practice-card {
-    padding: 40px 28px 36px;
-    border-radius: 18px;
+  .practices-header {
+    margin-bottom: 22px;
   }
-  .practice-title {
-    margin-bottom: 28px;
+  .practices-title {
+    font-size: 1.35rem;
   }
-  .practice-list {
-    gap: 18px;
+  .practices-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .practice-body {
+    padding: 14px 16px 18px;
   }
 }
 
