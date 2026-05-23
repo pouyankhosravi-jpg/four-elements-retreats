@@ -2259,15 +2259,14 @@ main > section + section {
 }
 
 
-/* "An invitation" — sunset Andalusian backdrop with quiet
-   editorial type laid over a warm cream wash for legibility. */
+/* "An invitation" — compact sunset backdrop, no dead space. */
 .retreat-intro {
   position: relative;
   background-image: url("invitation-bg.jpg");
   background-size: cover;
   background-position: center 38%;
   background-color: #F3ECE3;
-  padding: 140px 0 150px;
+  padding: 56px 0 64px;
   text-align: center;
   overflow: hidden;
   isolation: isolate;
@@ -2298,23 +2297,23 @@ main > section + section {
 
 .retreat-intro-eyebrow {
   font-family: "Cinzel", Georgia, serif;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.45em;
   text-transform: uppercase;
   color: #9A4F26;
-  margin: 0 0 30px;
+  margin: 0 0 16px;
   text-shadow: 0 1px 14px rgba(247, 240, 230, 0.6);
 }
 
 .retreat-intro-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(2.1rem, 4.6vw, 3.3rem);
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
   font-weight: 500;
   line-height: 1.08;
   letter-spacing: -0.01em;
   color: #221A14;
-  margin: 0 auto 42px;
+  margin: 0 auto 18px;
   max-width: 640px;
   text-shadow: 0 1px 22px rgba(247, 240, 230, 0.55);
 }
@@ -2323,18 +2322,18 @@ main > section + section {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.22rem, 1.8vw, 1.45rem);
-  line-height: 1.55;
+  font-size: clamp(1.1rem, 1.55vw, 1.28rem);
+  line-height: 1.5;
   color: #2F241D;
-  margin: 0 auto 30px;
+  margin: 0 auto 14px;
   max-width: 580px;
   text-shadow: 0 1px 14px rgba(247, 240, 230, 0.55);
 }
 
 .retreat-intro-body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.04rem;
-  line-height: 1.85;
+  font-size: 0.96rem;
+  line-height: 1.7;
   color: #4C4138;
   margin: 0 auto;
   max-width: 540px;
@@ -2344,11 +2343,11 @@ main > section + section {
 
 .retreat-intro-ornament {
   display: block;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: rgba(154, 79, 38, 0.7);
-  margin: 56px auto 24px;
+  margin: 22px auto 12px;
   border: 0;
   box-shadow: 0 0 12px rgba(247, 240, 230, 0.6);
 }
@@ -2356,7 +2355,7 @@ main > section + section {
 .retreat-intro-signature {
   font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
   font-style: italic;
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
   color: #9A4F26;
   margin: 0;
   line-height: 1.1;
@@ -2366,7 +2365,7 @@ main > section + section {
 
 @media (max-width: 720px) {
   .retreat-intro {
-    padding: 90px 0 100px;
+    padding: 44px 0 50px;
     background-position: center 42%;
   }
   .retreat-intro::before {
@@ -2378,29 +2377,29 @@ main > section + section {
         rgba(239, 228, 214, 0.7) 100%);
   }
   .retreat-intro-eyebrow {
-    letter-spacing: 0.36em;
-    margin-bottom: 22px;
+    letter-spacing: 0.32em;
+    margin-bottom: 14px;
   }
   .retreat-intro-title {
-    font-size: 1.85rem;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
   }
   .retreat-intro-title br {
     display: none;
   }
   .retreat-intro-lead {
-    font-size: 1.12rem;
-    margin-bottom: 26px;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
   }
   .retreat-intro-body {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.94rem;
+    line-height: 1.65;
   }
   .retreat-intro-ornament {
-    margin: 44px auto 20px;
+    margin: 18px auto 10px;
   }
   .retreat-intro-signature {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
