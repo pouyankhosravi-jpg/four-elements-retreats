@@ -41,8 +41,8 @@ body {
 
 /* Header — refined gallery-label style above the cinematic hero */
 .site-header {
-  background: #faf9f6;
-  border-bottom: 1px solid #e8e4dc;
+  background: var(--cream);
+  border-bottom: 1px solid var(--divider);
   height: 76px;
   padding: 0;
   position: sticky;
