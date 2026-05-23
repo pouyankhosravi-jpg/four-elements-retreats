@@ -1493,38 +1493,75 @@ main > section + section {
 
 /* Retreat banner extras (uses base .banner styles) */
 .retreat-banner img {
-  object-position: center 55%;
+  object-position: center 82%;
+}
+
+/* Stronger top gradient + cream-warm bottom for the retreat banner only,
+   so the title pops and the page transitions cleanly into the cream
+   sections below. */
+.retreat-banner::before {
+  background:
+    linear-gradient(to bottom,
+      rgba(20, 12, 6, 0.62) 0%,
+      rgba(20, 12, 6, 0.32) 22%,
+      rgba(20, 12, 6, 0.10) 42%,
+      rgba(20, 12, 6, 0.10) 58%,
+      rgba(20, 12, 6, 0.38) 80%,
+      rgba(20, 12, 6, 0.62) 100%);
+}
+
+.retreat-banner .banner-title {
+  font-weight: 500;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.65), 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.retreat-banner .banner-subtitle {
+  opacity: 1;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .banner-eyebrow {
+  display: inline-block;
+  background: var(--terracotta);
+  color: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-size: clamp(13px, 1.1vw, 17px);
-  letter-spacing: 0.18em;
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(12px, 0.95vw, 14px);
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin: 0 0 18px;
-  opacity: 0.92;
+  padding: 9px 18px;
+  border-radius: 2px;
+  margin: 0 0 22px;
+  text-shadow: none;
+  box-shadow: 0 2px 18px rgba(20, 12, 6, 0.35);
 }
 
 .banner-cta-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: #fff;
+  background: var(--terracotta);
+  border: 1px solid var(--terracotta);
   text-decoration: none;
   font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-size: clamp(15px, 1.3vw, 18px);
-  letter-spacing: 0.06em;
-  padding: 12px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(14px, 1.1vw, 16px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 16px 32px;
   border-radius: 2px;
-  background: rgba(20, 12, 6, 0.18);
-  backdrop-filter: blur(2px);
-  transition: background 0.2s, border-color 0.2s;
+  text-shadow: none;
+  box-shadow: 0 6px 24px rgba(20, 12, 6, 0.35);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 .banner-cta-link:hover {
-  background: rgba(184, 90, 48, 0.85);
-  border-color: var(--terracotta);
+  background: var(--terracotta-hover);
+  border-color: var(--terracotta-hover);
+  transform: translateY(-1px);
 }
 
 /* What's included */
@@ -1888,6 +1925,79 @@ main > section + section {
   margin: 6px 0 0;
 }
 
+/* Accommodation (Where you'll stay) */
+.accommodation {
+  background: var(--cream-2);
+  padding: 90px 0 100px;
+}
+
+.accommodation-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 50px;
+}
+
+.accommodation-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 8px 0 18px;
+}
+
+.accommodation-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
+}
+
+.accommodation-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 18px;
+}
+
+.accommodation-card {
+  margin: 0;
+}
+
+.accommodation-card .acc-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 4 / 3;
+  background: var(--cream);
+}
+
+.accommodation-card.acc-feature .acc-img {
+  aspect-ratio: 4 / 5;
+}
+
+.accommodation-card .acc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.accommodation-card:hover .acc-img img {
+  transform: scale(1.04);
+}
+
+.accommodation-card figcaption {
+  margin-top: 14px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--terracotta);
+  letter-spacing: 0.02em;
+}
+
 /* Mobile for new retreat sections */
 @media (max-width: 900px) {
   .included {
@@ -1958,6 +2068,29 @@ main > section + section {
   .chef-food-row {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+  }
+
+  .accommodation {
+    padding: 60px 0 70px;
+  }
+  .accommodation-header {
+    margin-bottom: 30px;
+  }
+  .accommodation-header h2 {
+    font-size: 1.7rem;
+  }
+  .accommodation-header h2 br {
+    display: none;
+  }
+  .accommodation-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .accommodation-card .acc-img,
+  .accommodation-card.acc-feature .acc-img {
+    aspect-ratio: 4 / 3;
+    max-width: 540px;
+    margin: 0 auto;
   }
 
   .investment {
