@@ -1505,7 +1505,9 @@ main > section + section {
    right, so the dark overlay is removed and content sits on
    the left in deep espresso instead of white. */
 .retreat-banner {
-  height: clamp(440px, 56vw, 680px);
+  height: auto;
+  aspect-ratio: 21 / 9;
+  min-height: 380px;
   background: #F4ECDF;
 }
 
@@ -1611,7 +1613,8 @@ main > section + section {
 
 @media (max-width: 820px) {
   .retreat-banner {
-    height: clamp(380px, 90vw, 560px);
+    aspect-ratio: 4 / 3;
+    min-height: 0;
   }
   .retreat-banner img {
     object-position: 70% center;
