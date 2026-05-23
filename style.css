@@ -1508,7 +1508,7 @@ main > section + section {
   height: auto;
   aspect-ratio: 21 / 9;
   min-height: 380px;
-  background: #F4ECDF;
+  background: #F3E0CB;
 }
 
 .retreat-banner img {
