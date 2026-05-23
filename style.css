@@ -3172,14 +3172,16 @@ main > section + section {
   }
 }
 
-/* "Is this for you?" — compact 21:9 editorial backdrop with
-   two side-by-side cards. Everything tightened. */
+/* "Is this for you?" — compact CSS backdrop. Warm cream wash
+   with a sun-side terracotta glow on the left and a moon-side
+   cool taupe glow on the right, mirroring the card symbols.
+   Subtle paper grain on top for tactility. */
 .who-its-for {
   position: relative;
-  background-image: url("who-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-color: #F3ECE3;
+  background:
+    radial-gradient(ellipse 50% 55% at 25% 45%, rgba(214, 169, 134, 0.22) 0%, rgba(214, 169, 134, 0) 60%),
+    radial-gradient(ellipse 50% 55% at 75% 55%, rgba(170, 160, 148, 0.18) 0%, rgba(170, 160, 148, 0) 60%),
+    linear-gradient(180deg, #F6F1EA 0%, #F2EBDF 100%);
   padding: 52px 0 60px;
   overflow: hidden;
   isolation: isolate;
@@ -3189,10 +3191,9 @@ main > section + section {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg,
-    rgba(247, 240, 230, 0.45) 0%,
-    rgba(247, 240, 230, 0.32) 50%,
-    rgba(245, 236, 224, 0.42) 100%);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.11 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  opacity: 0.55;
   pointer-events: none;
   z-index: 0;
 }
@@ -3390,12 +3391,6 @@ main > section + section {
 @media (max-width: 820px) {
   .who-its-for {
     padding: 44px 0 50px;
-    background-position: center;
-  }
-  .who-its-for::before {
-    background: linear-gradient(180deg,
-      rgba(247, 240, 230, 0.6) 0%,
-      rgba(247, 240, 230, 0.5) 100%);
   }
   .who-header {
     margin-bottom: 22px;
