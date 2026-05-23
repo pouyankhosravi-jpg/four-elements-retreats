@@ -351,7 +351,7 @@ body {
 
 /* Consistent gap between every adjacent main section */
 main > section + section {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 /* Specific transitions that should be flush (no cream gap) */
@@ -1722,41 +1722,44 @@ main > section + section {
   background: var(--terracotta);
 }
 
-/* Facilitators */
+/* Facilitators — compact */
 .facilitators {
   background: var(--cream-2);
-  padding: 90px 0 100px;
+  padding: 52px 0 60px;
 }
 
 .facilitators-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 60px;
+  margin: 0 auto 28px;
 }
 
 .facilitators-header h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--text);
-  margin: 8px 0 18px;
+  margin: 6px 0 10px;
 }
 
 .facilitators-intro {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 0.94rem;
+  line-height: 1.55;
   color: var(--text);
   margin: 0;
 }
 
 .facilitator-row {
   display: grid;
-  grid-template-columns: minmax(260px, 360px) 1fr;
-  gap: 56px;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 32px;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 28px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .facilitator-row:last-child {
@@ -1764,7 +1767,7 @@ main > section + section {
 }
 
 .facilitator-row-reverse {
-  grid-template-columns: 1fr minmax(260px, 360px);
+  grid-template-columns: 1fr minmax(220px, 280px);
 }
 
 .facilitator-row-reverse .facilitator-photo {
@@ -1778,7 +1781,7 @@ main > section + section {
 .facilitator-photo {
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 6px;
   aspect-ratio: 4 / 5;
   background: var(--cream);
 }
@@ -1793,78 +1796,77 @@ main > section + section {
 .facilitator-eyebrow {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: 1.05rem;
-  letter-spacing: 0.16em;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--terracotta);
-  margin: 0 0 8px;
+  margin: 0 0 4px;
 }
 
 .facilitator-text h3 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.2;
   color: var(--text);
-  margin: 0 0 18px;
+  margin: 0 0 10px;
 }
 
 .facilitator-text p {
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 0.93rem;
+  line-height: 1.6;
   color: var(--text);
-  margin: 0 0 14px;
+  margin: 0 0 8px;
 }
 
 .facilitator-text p:last-child {
   margin-bottom: 0;
 }
 
-/* Nourishment & the Kitchen — combined section
-   matching the premium "Inside your four days" typography. */
+/* Nourishment & the Kitchen — compact */
 .nourishment {
   background-color: #F5F0E8;
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.11 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   background-size: 200px 200px;
-  padding: 120px 0 130px;
+  padding: 56px 0 64px;
 }
 
 .nourishment-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 70px;
+  margin: 0 auto 28px;
 }
 
 .nourishment-eyebrow,
 .nour-label {
   font-family: "Cinzel", Georgia, serif;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
   color: #B36238;
-  margin: 0 0 22px;
+  margin: 0 0 10px;
 }
 
 .nour-label {
-  margin-bottom: 18px;
+  margin-bottom: 8px;
 }
 
 .nourishment-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -0.005em;
   color: #2E241D;
-  margin: 0 0 26px;
+  margin: 0 0 12px;
 }
 
 .nourishment-intro {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.04rem;
-  line-height: 1.7;
+  font-size: 0.94rem;
+  line-height: 1.55;
   color: #5E554D;
   margin: 0 auto;
   max-width: 600px;
@@ -1874,9 +1876,9 @@ main > section + section {
 .nourishment-image-strip {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
   max-width: 1100px;
-  margin: 0 auto 80px;
+  margin: 0 auto 28px;
 }
 
 .nour-img {
@@ -1907,32 +1909,32 @@ main > section + section {
 .nourishment-body {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 72px;
+  gap: 40px;
   align-items: start;
   max-width: 1100px;
-  margin: 0 auto 80px;
+  margin: 0 auto;
 }
 
 .nour-subtitle {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.45rem, 2.1vw, 1.8rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.005em;
   color: #2E241D;
-  margin: 0 0 26px;
+  margin: 0 0 12px;
 }
 
 .nourishment-chef p {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 0.92rem;
+  line-height: 1.65;
   color: #5E554D;
-  margin: 0 0 18px;
+  margin: 0 0 10px;
 }
 
 .nour-style {
-  margin-top: 22px !important;
+  margin-top: 12px !important;
 }
 
 .nour-style em {
@@ -1958,10 +1960,10 @@ main > section + section {
 
 .nour-rhythm-list li {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 18px;
+  grid-template-columns: 90px 1fr;
+  gap: 14px;
   align-items: baseline;
-  padding: 18px 0;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(179, 98, 56, 0.14);
 }
 
@@ -1978,45 +1980,16 @@ main > section + section {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: #B36238;
   letter-spacing: 0.01em;
 }
 
 .rhythm-text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.98rem;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  line-height: 1.55;
   color: #5E554D;
-}
-
-/* Bottom food row: 2 wider images */
-.nourishment-food-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.nourishment-food-row figure {
-  margin: 0;
-  overflow: hidden;
-  border-radius: 14px;
-  aspect-ratio: 3 / 2;
-  background: rgba(231, 217, 196, 0.5);
-}
-
-.nourishment-food-row img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-
-.nourishment-food-row figure:hover img {
-  transform: scale(1.04);
 }
 
 @media (max-width: 900px) {
@@ -2051,53 +2024,53 @@ main > section + section {
   }
 }
 
-/* Investment / booking */
+/* Investment / booking — compact */
 .investment {
   background: var(--cream-2);
-  padding: 90px 0 100px;
+  padding: 52px 0 60px;
   text-align: center;
 }
 
 .investment h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--text);
-  margin: 8px 0 18px;
+  margin: 6px 0 8px;
 }
 
 .investment-intro {
-  font-size: 1.08rem;
+  font-size: 0.95rem;
   font-style: italic;
   color: var(--text);
-  margin: 0 0 40px;
+  margin: 0 0 22px;
 }
 
 .investment-card {
   background: #fff;
   border: 1px solid var(--cream);
-  border-radius: 6px;
-  padding: 48px 48px 44px;
-  max-width: 620px;
+  border-radius: 8px;
+  padding: 28px 32px 28px;
+  max-width: 600px;
   margin: 0 auto;
   text-align: left;
-  box-shadow: 0 4px 28px rgba(80, 50, 30, 0.06);
+  box-shadow: 0 4px 22px rgba(80, 50, 30, 0.05);
 }
 
 .investment-price-block {
   text-align: center;
-  padding-bottom: 28px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--cream-2);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .investment-price {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 3rem;
+  font-size: 2.4rem;
   color: var(--terracotta);
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   line-height: 1;
   font-weight: 500;
 }
@@ -2118,18 +2091,19 @@ main > section + section {
 .investment-meta {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px;
+  margin: 0 0 16px;
   display: grid;
-  gap: 12px;
+  gap: 0;
 }
 
 .investment-meta li {
   display: grid;
   grid-template-columns: 130px 1fr;
-  gap: 18px;
+  gap: 14px;
   align-items: baseline;
-  padding-bottom: 10px;
+  padding: 7px 0;
   border-bottom: 1px solid var(--cream-2);
+  font-size: 0.92rem;
 }
 
 .investment-meta li:last-child {
@@ -2494,28 +2468,28 @@ main > section + section {
 
 .timetable {
   background: var(--cream);
-  padding: 60px 0 100px;
+  padding: 44px 0 56px;
 }
 
 .timetable-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 24px;
 }
 
 .timetable-header h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(28px, 3.2vw, 44px);
+  font-size: clamp(22px, 2.6vw, 32px);
   font-weight: 500;
   color: var(--text);
-  margin: 12px 0 18px;
+  margin: 8px 0 8px;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
 .timetable-intro {
   color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: 0.94rem;
+  line-height: 1.55;
   max-width: 640px;
   margin: 0 auto;
   font-style: italic;
@@ -2523,9 +2497,9 @@ main > section + section {
 
 .day-detail {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 40px;
-  padding: 36px 0;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  padding: 20px 0;
   border-top: 1px solid var(--divider);
   align-items: start;
 }
@@ -2537,12 +2511,12 @@ main > section + section {
 .day-detail-marker {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .day-detail-num {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
   letter-spacing: 0.08em;
@@ -2551,7 +2525,7 @@ main > section + section {
 
 .day-detail-elem {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -2564,10 +2538,10 @@ main > section + section {
 
 .day-detail-body h3 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--text);
-  margin: 0 0 22px;
+  margin: 0 0 12px;
   line-height: 1.2;
 }
 
@@ -2579,12 +2553,12 @@ main > section + section {
 
 .schedule li {
   display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 24px;
-  padding: 12px 0;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  padding: 7px 0;
   border-bottom: 1px solid var(--divider);
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .schedule li:last-child {
@@ -2596,7 +2570,7 @@ main > section + section {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   padding-top: 3px;
 }
 
@@ -2607,29 +2581,29 @@ main > section + section {
 /* Gallery */
 .gallery {
   background: var(--cream-2);
-  padding: 80px 0 100px;
+  padding: 44px 0 56px;
 }
 
 .gallery-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 22px;
 }
 
 .gallery-header h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(28px, 3.2vw, 44px);
+  font-size: clamp(22px, 2.6vw, 32px);
   font-weight: 500;
   color: var(--text);
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   letter-spacing: -0.01em;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 220px;
+  grid-auto-rows: 170px;
   grid-auto-flow: dense;
-  gap: 12px;
+  gap: 8px;
 }
 
 .gallery-item {
@@ -2853,16 +2827,16 @@ main > section + section {
 /* Page CTA (shared by about + retreats) */
 .page-cta {
   background: var(--cream);
-  padding: 60px 0 100px;
+  padding: 44px 0 56px;
   text-align: center;
 }
 
 .page-cta .script {
   font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-style: italic;
   color: var(--terracotta);
-  margin: 0 0 22px;
+  margin: 0 0 14px;
   line-height: 1;
 }
 
@@ -3750,10 +3724,10 @@ main > section + section {
   text-decoration: underline;
 }
 
-/* Founders note — personal letter from Rosa & Pouyan */
+/* Founders note — compact */
 .founders-note {
   background: var(--cream-2);
-  padding: 90px 0 100px;
+  padding: 52px 0 60px;
 }
 
 .founders-note-inner {
@@ -3765,51 +3739,51 @@ main > section + section {
 .founders-note-eyebrow {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--terracotta);
-  margin: 0 0 18px;
+  margin: 0 0 10px;
 }
 
 .founders-note h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--text);
-  margin: 0 0 30px;
+  margin: 0 0 18px;
 }
 
 .founders-note-body p {
-  font-size: 1.08rem;
-  line-height: 1.8;
+  font-size: 0.98rem;
+  line-height: 1.7;
   color: var(--text);
   font-style: italic;
-  margin: 0 0 20px;
+  margin: 0 0 12px;
   text-align: left;
 }
 
 .founders-note-body p:first-letter {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-style: normal;
   color: var(--terracotta);
   float: left;
   line-height: 0.95;
-  margin: 4px 8px 0 0;
+  margin: 3px 6px 0 0;
 }
 
 .founders-signature {
-  margin-top: 32px;
+  margin-top: 18px;
   text-align: center;
 }
 
 .founders-signature-script {
   font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--terracotta);
   margin: 0;
   line-height: 1.1;
@@ -3817,46 +3791,46 @@ main > section + section {
 
 .founders-signature-line {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin: 10px 0 0;
+  margin: 6px 0 0;
 }
 
 @media (max-width: 720px) {
   .founders-note {
-    padding: 60px 0 70px;
+    padding: 40px 0 48px;
   }
   .founders-note h2 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
   .founders-note-body p {
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
 }
 
-/* FAQ — native details/summary, styled */
+/* FAQ — compact */
 .faq {
   background: var(--cream);
-  padding: 80px 0 100px;
+  padding: 44px 0 56px;
 }
 
 .faq-header {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 22px;
 }
 
 .faq-header h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--text);
-  margin: 8px 0 0;
+  margin: 6px 0 0;
 }
 
 .faq-list {
@@ -3879,9 +3853,9 @@ main > section + section {
 .faq-item summary {
   list-style: none;
   cursor: pointer;
-  padding: 22px 28px;
+  padding: 14px 22px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.08rem;
+  font-size: 0.98rem;
   font-weight: 500;
   color: var(--text);
   display: flex;
@@ -3924,9 +3898,9 @@ main > section + section {
 }
 
 .faq-item .faq-answer {
-  padding: 0 28px 24px;
-  font-size: 1rem;
-  line-height: 1.7;
+  padding: 0 22px 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
   color: var(--text);
   margin: 0;
 }
@@ -4264,31 +4238,31 @@ main > section + section {
   }
 }
 
-/* Welcome pack — value stack before pricing */
+/* Welcome pack — compact value stack before pricing */
 .welcome-pack {
   background: var(--cream);
-  padding: 80px 0 90px;
+  padding: 44px 0 52px;
 }
 
 .welcome-pack-header {
   text-align: center;
   max-width: 560px;
-  margin: 0 auto 36px;
+  margin: 0 auto 18px;
 }
 
 .welcome-pack-header h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.1rem;
+  font-size: clamp(1.45rem, 2.4vw, 1.8rem);
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--text);
-  margin: 8px 0 16px;
+  margin: 6px 0 8px;
 }
 
 .welcome-pack-intro {
-  font-size: 1.04rem;
-  line-height: 1.7;
+  font-size: 0.94rem;
+  line-height: 1.55;
   font-style: italic;
   color: var(--text);
   margin: 0;
@@ -4296,22 +4270,24 @@ main > section + section {
 
 .welcome-pack-list {
   list-style: none;
-  padding: 32px 36px;
-  margin: 0 auto 22px;
-  max-width: 560px;
+  padding: 18px 28px;
+  margin: 0 auto 14px;
+  max-width: 580px;
   background: #fff;
   border: 1px solid var(--cream-2);
-  border-top: 4px solid var(--terracotta);
+  border-top: 3px solid var(--terracotta);
   border-radius: 6px;
   display: grid;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  gap: 8px 24px;
 }
 
 .welcome-pack-list li {
   position: relative;
-  padding-left: 26px;
-  font-size: 1rem;
-  line-height: 1.55;
+  padding-left: 20px;
+  font-size: 0.88rem;
+  line-height: 1.5;
   color: var(--text);
 }
 
@@ -4326,10 +4302,10 @@ main > section + section {
 }
 
 .welcome-pack-extra {
-  max-width: 560px;
+  max-width: 580px;
   margin: 0 auto;
-  font-size: 0.98rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.55;
   color: var(--text);
   text-align: center;
   font-style: italic;
