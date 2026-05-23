@@ -2259,274 +2259,125 @@ main > section + section {
 }
 
 
-/* ============================================
-   "An invitation" — quiet-luxury editorial section
-   with depth, glow and breath. Pure CSS atmosphere
-   (no JS). Scroll fade-up enhances on browsers that
-   support animation-timeline: view().
-   ============================================ */
+/* "An invitation" — tight editorial opener.
+   Five typographic moments only: eyebrow, title, italic lead,
+   one sensory paragraph, script signature. The essentials box
+   and the four redundant prose paragraphs were removed — that
+   information already lives in the trust bar above and the
+   investment card below. */
 .retreat-intro {
   position: relative;
-  background: linear-gradient(180deg, #F6F1EA 0%, #F3ECE3 50%, #EFE6DB 100%);
-  padding: 120px 0 130px;
+  background: #FBF8F2;
+  padding: 110px 0 110px;
   text-align: center;
   overflow: hidden;
-  isolation: isolate;
 }
 
-/* Layer 1 — faded lifestyle wash (Andalusian valley scene),
-   blurred and blended into the warm gradient. */
-.retreat-intro-bg {
-  position: absolute;
-  inset: -8%;
-  background-image: url("gallery-14.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.08;
-  filter: blur(38px);
-  mix-blend-mode: soft-light;
-  pointer-events: none;
-  z-index: 0;
-  animation: introBgDrift 70s ease-in-out infinite alternate;
-}
-
-@keyframes introBgDrift {
-  0%   { transform: translate3d(0, 0, 0) scale(1.05); }
-  100% { transform: translate3d(-1.5%, 1%, 0) scale(1.1); }
-}
-
-/* Layer 2 — soft circular glow behind the headline */
-.retreat-intro-glow {
-  position: absolute;
-  top: 28%;
-  left: 50%;
-  width: 760px;
-  height: 760px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(214, 169, 134, 0.18) 0%,
-    rgba(214, 169, 134, 0.06) 38%,
-    rgba(214, 169, 134, 0) 70%
-  );
-  pointer-events: none;
-  z-index: 0;
-  animation: introGlowPulse 16s ease-in-out infinite alternate;
-}
-
-@keyframes introGlowPulse {
-  0%   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  100% { transform: translate(-50%, -47%) scale(1.08); opacity: 0.85; }
-}
-
-/* Layer 3 — paper grain texture */
 .retreat-intro::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.11 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-  background-size: 220px 220px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.11 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
   pointer-events: none;
-  z-index: 1;
-  opacity: 0.55;
+  z-index: 0;
 }
 
-/* Layer 4 — slowly floating dust particles */
-.retreat-intro-dust {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.retreat-intro-dust span {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: rgba(179, 98, 56, 0.45);
-  opacity: 0;
-  filter: blur(0.4px);
-  animation: introDustFloat 18s ease-in-out infinite;
-}
-
-.retreat-intro-dust span:nth-child(1) { left: 10%; top: 36%; animation-delay: 0s; }
-.retreat-intro-dust span:nth-child(2) { left: 22%; top: 70%; animation-delay: 2.5s; }
-.retreat-intro-dust span:nth-child(3) { left: 36%; top: 22%; animation-delay: 5s; }
-.retreat-intro-dust span:nth-child(4) { left: 52%; top: 78%; animation-delay: 1s; }
-.retreat-intro-dust span:nth-child(5) { left: 68%; top: 30%; animation-delay: 7.5s; }
-.retreat-intro-dust span:nth-child(6) { left: 82%; top: 58%; animation-delay: 3.5s; }
-.retreat-intro-dust span:nth-child(7) { left: 18%; top: 84%; animation-delay: 9s; }
-.retreat-intro-dust span:nth-child(8) { left: 88%; top: 24%; animation-delay: 11s; }
-.retreat-intro-dust span:nth-child(9) { left: 44%; top: 50%; animation-delay: 13s; width: 2px; height: 2px; }
-.retreat-intro-dust span:nth-child(10) { left: 60%; top: 12%; animation-delay: 15s; width: 2px; height: 2px; }
-
-@keyframes introDustFloat {
-  0%   { opacity: 0; transform: translateY(0); }
-  20%  { opacity: 0.6; }
-  80%  { opacity: 0.4; }
-  100% { opacity: 0; transform: translateY(-40px); }
-}
-
-/* Content sits above every decorative layer */
 .retreat-intro .container {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
-/* Minimal sun/moon symbol above the headline */
-.retreat-intro-symbol {
-  width: 28px;
-  height: 28px;
-  display: block;
-  margin: 0 auto 22px;
-  color: rgba(179, 98, 56, 0.55);
-}
-
-/* Eyebrow — Inter, 13 px, 6 px letter-spacing, weight 500 */
 .retreat-intro-eyebrow {
-  font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 13px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 6px;
+  letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: rgb(179, 98, 56);
-  margin: 0 0 40px;
+  color: #B36238;
+  margin: 0 0 28px;
 }
 
-/* Title — Cormorant Garamond, 76 px desktop, weight 400 */
 .retreat-intro-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: clamp(2.6rem, 6.8vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -1px;
-  color: #2F241D;
-  margin: 0 auto 36px;
-  max-width: 900px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #2A211B;
+  margin: 0 auto 40px;
+  max-width: 560px;
 }
 
-/* Italic lead — Cormorant italic, 32 px desktop */
 .retreat-intro-lead {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-size: clamp(1.18rem, 1.7vw, 1.4rem);
   line-height: 1.55;
-  color: #5A4A40;
-  margin: 0 auto 44px;
-  max-width: 780px;
+  color: #2A211B;
+  margin: 0 auto 28px;
+  max-width: 560px;
 }
 
-/* Body — Inter, 20 px, 1.9 line-height */
 .retreat-intro-body {
-  font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(1rem, 1.45vw, 1.25rem);
-  font-weight: 400;
-  line-height: 1.9;
-  color: #6D6259;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #5E554D;
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 520px;
   letter-spacing: 0.005em;
 }
 
-/* Hand-drawn organic separator line */
-.retreat-intro-rule {
+.retreat-intro-ornament {
   display: block;
-  width: 120px;
-  height: 10px;
-  margin: 90px auto 38px;
-  color: rgb(179, 98, 56);
-  opacity: 0.6;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(179, 98, 56, 0.55);
+  margin: 52px auto 22px;
+  border: 0;
 }
 
-/* Closing quote — Cormorant italic 44 px, terracotta, 85% */
 .retreat-intro-signature {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
   font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1.6rem, 3.4vw, 2.75rem);
-  line-height: 1.25;
-  color: rgb(179, 98, 56);
-  opacity: 0.85;
-  margin: 0 auto;
-  max-width: 820px;
-  letter-spacing: 0.005em;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  color: #B36238;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
 }
 
-/* Optional progressive enhancement: scroll-driven fade-up
-   on browsers that support animation-timeline. Static otherwise. */
-@supports (animation-timeline: view()) {
-  .retreat-intro-symbol,
-  .retreat-intro-eyebrow,
-  .retreat-intro-title,
-  .retreat-intro-lead,
-  .retreat-intro-body,
-  .retreat-intro-rule,
-  .retreat-intro-signature {
-    animation: introContentFadeUp linear both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 25%;
-  }
-}
-
-@keyframes introContentFadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .retreat-intro-bg,
-  .retreat-intro-glow,
-  .retreat-intro-dust span,
-  .retreat-intro-symbol,
-  .retreat-intro-eyebrow,
-  .retreat-intro-title,
-  .retreat-intro-lead,
-  .retreat-intro-body,
-  .retreat-intro-rule,
-  .retreat-intro-signature {
-    animation: none !important;
-  }
-}
-
-@media (max-width: 820px) {
+@media (max-width: 720px) {
   .retreat-intro {
-    padding: 80px 0 90px;
-  }
-  .retreat-intro-glow {
-    width: 520px;
-    height: 520px;
-    top: 24%;
-  }
-  .retreat-intro-symbol {
-    margin-bottom: 18px;
+    padding: 70px 0 70px;
   }
   .retreat-intro-eyebrow {
-    letter-spacing: 4px;
-    margin-bottom: 28px;
+    letter-spacing: 0.36em;
+    margin-bottom: 22px;
   }
   .retreat-intro-title {
-    font-size: 2.1rem;
-    letter-spacing: -0.5px;
+    font-size: 1.7rem;
     margin-bottom: 28px;
   }
   .retreat-intro-title br {
     display: none;
   }
   .retreat-intro-lead {
-    font-size: 1.25rem;
-    margin-bottom: 32px;
+    font-size: 1.08rem;
+    margin-bottom: 24px;
   }
   .retreat-intro-body {
-    font-size: 1rem;
+    font-size: 0.98rem;
     line-height: 1.8;
   }
-  .retreat-intro-rule {
-    margin: 60px auto 26px;
+  .retreat-intro-ornament {
+    margin: 40px auto 18px;
   }
   .retreat-intro-signature {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 }
 
