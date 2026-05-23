@@ -2259,120 +2259,125 @@ main > section + section {
 }
 
 
+/* "An invitation" — tight editorial opener.
+   Five typographic moments only: eyebrow, title, italic lead,
+   one sensory paragraph, script signature. The essentials box
+   and the four redundant prose paragraphs were removed — that
+   information already lives in the trust bar above and the
+   investment card below. */
 .retreat-intro {
-  background: var(--cream);
-  padding: 70px 0 80px;
+  position: relative;
+  background: #FBF8F2;
+  padding: 110px 0 110px;
   text-align: center;
+  overflow: hidden;
 }
 
-.retreat-intro h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.2rem;
+.retreat-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.11 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.retreat-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+.retreat-intro-eyebrow {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.72rem;
   font-weight: 500;
-  line-height: 1.2;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #B36238;
+  margin: 0 0 28px;
+}
+
+.retreat-intro-title {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
   letter-spacing: -0.01em;
-  color: var(--text);
-  margin: 8px 0 28px;
+  color: #2A211B;
+  margin: 0 auto 40px;
+  max-width: 560px;
 }
 
 .retreat-intro-lead {
-  font-size: 1.18rem;
-  line-height: 1.7;
-  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
-  margin: 0 auto 36px;
-  max-width: 600px;
+  font-weight: 400;
+  font-size: clamp(1.18rem, 1.7vw, 1.4rem);
+  line-height: 1.55;
+  color: #2A211B;
+  margin: 0 auto 28px;
+  max-width: 560px;
 }
 
-.retreat-intro p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text);
-  margin: 0 auto 18px;
-  max-width: 620px;
-}
-
-.retreat-essentials {
-  list-style: none;
-  padding: 32px 36px;
-  margin: 44px auto 36px;
+.retreat-intro-body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #5E554D;
+  margin: 0 auto;
   max-width: 520px;
-  background: #fff;
-  border: 1px solid var(--cream-2);
-  border-radius: 4px;
-  text-align: left;
-  display: grid;
-  gap: 14px;
+  letter-spacing: 0.005em;
 }
 
-.retreat-essentials li {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  align-items: baseline;
-  gap: 18px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--cream-2);
+.retreat-intro-ornament {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(179, 98, 56, 0.55);
+  margin: 52px auto 22px;
+  border: 0;
 }
 
-.retreat-essentials li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.re-label {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--terracotta);
-  letter-spacing: 0.02em;
-}
-
-.re-value {
-  font-size: 1rem;
-  color: var(--text);
-}
-
-.retreat-intro-outro {
+.retreat-intro-signature {
   font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
-  font-size: 1.9rem;
   font-style: italic;
-  color: var(--terracotta);
-  margin: 28px 0 0;
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  color: #B36238;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
 }
 
 @media (max-width: 720px) {
   .retreat-intro {
-    padding: 50px 0 60px;
+    padding: 70px 0 70px;
   }
-  .retreat-intro h2 {
-    font-size: 1.6rem;
+  .retreat-intro-eyebrow {
+    letter-spacing: 0.36em;
+    margin-bottom: 22px;
   }
-  .retreat-intro h2 br {
+  .retreat-intro-title {
+    font-size: 1.7rem;
+    margin-bottom: 28px;
+  }
+  .retreat-intro-title br {
     display: none;
   }
   .retreat-intro-lead {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
+    margin-bottom: 24px;
   }
-  .retreat-intro p {
-    font-size: 1rem;
-    line-height: 1.7;
+  .retreat-intro-body {
+    font-size: 0.98rem;
+    line-height: 1.8;
   }
-  .retreat-essentials {
-    padding: 24px 20px;
+  .retreat-intro-ornament {
+    margin: 40px auto 18px;
   }
-  .retreat-essentials li {
-    grid-template-columns: 1fr;
-    gap: 4px;
-    text-align: center;
-    border-bottom: 1px solid var(--cream-2);
-    padding-bottom: 14px;
-  }
-  .re-label {
-    font-size: 0.88rem;
-  }
-  .retreat-intro-outro {
-    font-size: 1.5rem;
+  .retreat-intro-signature {
+    font-size: 1.45rem;
   }
 }
 
