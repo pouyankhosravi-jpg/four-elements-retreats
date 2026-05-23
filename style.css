@@ -39,11 +39,12 @@ body {
   max-width: 720px;
 }
 
-/* Header */
+/* Header — refined gallery-label style above the cinematic hero */
 .site-header {
-  border-bottom: 1px solid var(--divider);
-  padding: 20px 0;
-  background: var(--cream);
+  background: #faf9f6;
+  border-bottom: 1px solid #e8e4dc;
+  height: 76px;
+  padding: 0;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -51,9 +52,10 @@ body {
 
 .nav {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 140px;
+  height: 100%;
+  gap: 32px;
 }
 
 .logo {
@@ -61,31 +63,38 @@ body {
   align-items: center;
   text-decoration: none;
   line-height: 0;
+  color: #111111;
 }
 
 .logo img {
-  height: 100px;
+  height: 52px;
   width: auto;
   display: block;
 }
 
 .site-header nav {
   display: flex;
-  gap: 56px;
+  align-items: center;
+  gap: 38px;
 }
 
 .site-header nav a {
   text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  color: #2f3540;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: color 0.15s;
+  transition: color 0.25s ease;
 }
 
-.site-header nav a:hover,
+.site-header nav a:hover {
+  color: #8b8b8b;
+}
+
 .site-header nav a.active {
-  color: var(--terracotta);
+  color: #111111;
 }
 
 /* Banner — full-bleed hero photo with overlay title (top) + CTA (bottom) */
@@ -3016,27 +3025,26 @@ main > section + section {
   }
 
   .site-header {
-    padding: 12px 0;
+    height: 64px;
+    padding: 0;
   }
 
   .nav {
     gap: 16px;
-    flex-wrap: wrap;
     justify-content: space-between;
   }
 
   .logo img {
-    height: 56px;
+    height: 40px;
   }
 
   .site-header nav {
-    gap: 14px;
-    flex-wrap: wrap;
+    gap: 18px;
   }
 
   .site-header nav a {
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
   }
 
   .container {
@@ -3059,15 +3067,16 @@ main > section + section {
 /* Catch-all very narrow viewports */
 @media (max-width: 380px) {
   .logo img {
-    height: 48px;
+    height: 36px;
   }
 
   .site-header nav {
-    gap: 10px;
+    gap: 12px;
   }
 
   .site-header nav a {
-    font-size: 0.66rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
   }
 }
 
