@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=119">
+<link rel="stylesheet" href="style.css?v=120">
 </head>
 <body>
 <header class="site-header">
@@ -73,27 +73,70 @@
 
   <section class="who-its-for">
     <div class="container">
+      <div class="who-ornament-top" aria-hidden="true">
+        <svg class="who-sun-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+          <circle cx="12" cy="12" r="3.5"/>
+          <line x1="12" y1="2" x2="12" y2="5"/>
+          <line x1="12" y1="19" x2="12" y2="22"/>
+          <line x1="2" y1="12" x2="5" y2="12"/>
+          <line x1="19" y1="12" x2="22" y2="12"/>
+          <line x1="4.9" y1="4.9" x2="7" y2="7"/>
+          <line x1="17" y1="17" x2="19.1" y2="19.1"/>
+          <line x1="4.9" y1="19.1" x2="7" y2="17"/>
+          <line x1="17" y1="7" x2="19.1" y2="4.9"/>
+        </svg>
+        <span class="who-hairline"></span>
+      </div>
+
       <header class="who-header">
-        <p class="eyebrow eyebrow-center">Is this for you?</p>
-        <h2>This retreat is a yes if&hellip;</h2>
+        <p class="who-eyebrow">Is this for you?</p>
+        <h2 class="who-title">This retreat is a <em>yes</em> if&hellip;</h2>
+        <svg class="who-ornament-bottom" viewBox="0 0 84 8" aria-hidden="true">
+          <line x1="0" y1="4" x2="34" y2="4" stroke="currentColor" stroke-width="0.8"/>
+          <circle cx="42" cy="4" r="2.4" fill="none" stroke="currentColor" stroke-width="0.8"/>
+          <line x1="50" y1="4" x2="84" y2="4" stroke="currentColor" stroke-width="0.8"/>
+        </svg>
       </header>
+
       <div class="who-grid">
         <div class="who-card who-yes">
-          <h3>This is for you if&hellip;</h3>
+          <div class="who-icon who-icon-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+              <circle cx="12" cy="12" r="3.6"/>
+              <line x1="12" y1="2.5" x2="12" y2="5"/>
+              <line x1="12" y1="19" x2="12" y2="21.5"/>
+              <line x1="2.5" y1="12" x2="5" y2="12"/>
+              <line x1="19" y1="12" x2="21.5" y2="12"/>
+              <line x1="5.2" y1="5.2" x2="7" y2="7"/>
+              <line x1="17" y1="17" x2="18.8" y2="18.8"/>
+              <line x1="5.2" y1="18.8" x2="7" y2="17"/>
+              <line x1="17" y1="7" x2="18.8" y2="5.2"/>
+            </svg>
+          </div>
+          <h3 class="who-card-title">This is for <em>you</em> if&hellip;</h3>
           <ul class="who-list">
             <li>You&rsquo;re craving space to slow down and reconnect with yourself</li>
-            <li>You&rsquo;d like to step away from your phone and into nature</li>
-            <li>You love the idea of yoga, breathwork, sound and movement</li>
-            <li>You&rsquo;d like to meet a small, intimate circle of like-minded souls</li>
-            <li>You&rsquo;re curious about ceremony, music and gathering around fire</li>
+            <li>You&rsquo;d love to reset your nervous system and find calm</li>
+            <li>You long for time in nature, movement, rest and real connection</li>
+            <li>You&rsquo;d like to retreat in small, intimate circles of like-minded souls</li>
+            <li>You&rsquo;re ready to be nourished &mdash; not just physically, but emotionally and spiritually</li>
             <li>You&rsquo;re open-hearted &mdash; even if you&rsquo;ve never been on a retreat before</li>
           </ul>
         </div>
+
         <div class="who-card who-no">
-          <h3>This may not be for you if&hellip;</h3>
+          <div class="who-icon who-icon-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19.5 14.5 A8 8 0 1 1 9.5 4.5 a6.5 6.5 0 0 0 10 10 z"/>
+              <circle cx="17" cy="8" r="0.45" fill="currentColor" stroke="none"/>
+              <circle cx="14.5" cy="6" r="0.4" fill="currentColor" stroke="none"/>
+              <circle cx="19" cy="11" r="0.4" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3 class="who-card-title">This may <em>not</em> be for you if&hellip;</h3>
           <ul class="who-list">
-            <li>You&rsquo;re looking for a strict fitness or detox bootcamp</li>
-            <li>You&rsquo;d prefer a polished hotel experience over glamping in nature</li>
+            <li>You&rsquo;re looking for a party-style wellness experience</li>
+            <li>You&rsquo;d prefer a fast-paced schedule or a non-plant-based menu</li>
             <li>You want to stay plugged into work the entire time</li>
           </ul>
         </div>

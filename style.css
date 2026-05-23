@@ -3172,73 +3172,187 @@ main > section + section {
   }
 }
 
-/* Who it's for — self-qualification section */
+/* "Is this for you?" — self-qualification, sunset-backdrop
+   editorial cards, sun/moon icon disks, italic-emphasis titles. */
 .who-its-for {
-  background: var(--cream);
-  padding: 80px 0 90px;
+  position: relative;
+  background-image: url("invitation-bg.jpg");
+  background-size: cover;
+  background-position: center 62%;
+  background-color: #F3ECE3;
+  padding: 120px 0 140px;
+  overflow: hidden;
+  isolation: isolate;
 }
 
+.who-its-for::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(247, 240, 230, 0.75) 0%,
+    rgba(247, 240, 230, 0.62) 40%,
+    rgba(245, 236, 224, 0.6) 75%,
+    rgba(239, 228, 214, 0.7) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.who-its-for > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Top ornament — small sun symbol + hairline */
+.who-ornament-top {
+  text-align: center;
+  margin: 0 auto 30px;
+  color: rgba(154, 79, 38, 0.7);
+}
+
+.who-sun-symbol {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+}
+
+.who-hairline {
+  display: block;
+  width: 1px;
+  height: 22px;
+  background: rgba(154, 79, 38, 0.45);
+  margin: 4px auto 0;
+}
+
+/* Header */
 .who-header {
   text-align: center;
-  max-width: 620px;
-  margin: 0 auto 40px;
+  max-width: 880px;
+  margin: 0 auto 70px;
 }
 
-.who-header h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
+.who-eyebrow {
+  font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  margin: 8px 0 0;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #9A4F26;
+  margin: 0 0 22px;
 }
 
+.who-title {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(2.3rem, 5.2vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  color: #2A211B;
+  margin: 0 auto 26px;
+}
+
+.who-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.who-ornament-bottom {
+  display: block;
+  width: 84px;
+  height: 8px;
+  margin: 0 auto;
+  color: rgba(154, 79, 38, 0.55);
+}
+
+/* Cards */
 .who-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 32px;
-  max-width: 1000px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 .who-card {
-  background: #fff;
-  border-radius: 6px;
-  padding: 36px 36px 32px;
-  border: 1px solid var(--cream-2);
+  position: relative;
+  background: rgba(252, 248, 240, 0.96);
+  border-radius: 10px;
+  padding: 64px 56px 64px;
+  border: 1px solid rgba(179, 98, 56, 0.08);
+  box-shadow: 0 10px 36px rgba(46, 36, 29, 0.07);
+  overflow: hidden;
 }
 
-.who-yes {
-  border-top: 4px solid var(--terracotta);
+/* YES card — terracotta accent line at the top */
+.who-yes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #B36238;
 }
 
-.who-no {
-  border-top: 4px solid #c9bfb1;
+/* Round icon disks (sun for yes, moon for no) */
+.who-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  color: #FBF7EE;
 }
 
-.who-card h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--text);
-  margin: 0 0 20px;
+.who-icon-sun {
+  background: #B36238;
 }
 
+.who-icon-moon {
+  background: #B3A99A;
+}
+
+.who-icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* Card titles */
+.who-card-title {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(1.55rem, 2.4vw, 1.95rem);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: #2A211B;
+  margin: 0 0 36px;
+}
+
+.who-card-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Lists */
 .who-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 14px;
+  gap: 22px;
 }
 
 .who-list li {
   position: relative;
   padding-left: 30px;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: var(--text);
+  font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #4C4138;
+  letter-spacing: 0.005em;
 }
 
 .who-yes .who-list li::before {
@@ -3246,14 +3360,14 @@ main > section + section {
   position: absolute;
   left: 0;
   top: -1px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 24px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  color: var(--terracotta);
+  justify-content: flex-start;
+  color: #B36238;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .who-no .who-list li::before {
@@ -3261,23 +3375,49 @@ main > section + section {
   position: absolute;
   left: 0;
   top: 0;
-  color: #b3a698;
-  font-weight: 600;
+  color: #9A8E80;
+  font-weight: 400;
+  font-size: 1em;
 }
 
 @media (max-width: 820px) {
   .who-its-for {
-    padding: 56px 0 60px;
+    padding: 80px 0 90px;
   }
-  .who-header h2 {
-    font-size: 1.6rem;
+  .who-its-for::before {
+    background: linear-gradient(180deg,
+      rgba(247, 240, 230, 0.85) 0%,
+      rgba(247, 240, 230, 0.75) 100%);
+  }
+  .who-header {
+    margin-bottom: 48px;
+  }
+  .who-title {
+    font-size: 1.95rem;
+    margin-bottom: 22px;
   }
   .who-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 22px;
   }
   .who-card {
-    padding: 26px 22px 24px;
+    padding: 40px 28px 40px;
+  }
+  .who-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 28px;
+  }
+  .who-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .who-card-title {
+    font-size: 1.45rem;
+    margin-bottom: 26px;
+  }
+  .who-list {
+    gap: 18px;
   }
 }
 
