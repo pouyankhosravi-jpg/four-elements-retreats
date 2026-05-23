@@ -1660,24 +1660,44 @@ main > section + section {
   padding: 90px 0 100px;
 }
 
-.location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+.location-heading {
+  text-align: center;
+  margin-bottom: 56px;
 }
 
-.location-text .eyebrow {
-  margin-bottom: 16px;
-}
-
-.location-text h2 {
+.location-heading h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(26px, 2.8vw, 38px);
+  font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 500;
   color: var(--text);
-  margin: 0 0 24px;
-  line-height: 1.2;
+  margin: 12px 0 18px;
+  letter-spacing: -0.01em;
+}
+
+.location-intro-text {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* Text + Map grid */
+.location-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.location-text h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 18px;
   letter-spacing: -0.01em;
 }
 
@@ -1685,21 +1705,25 @@ main > section + section {
   color: var(--text);
   font-size: 1.05rem;
   line-height: 1.75;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 }
 
 .location-facts {
-  margin: 28px 0 0;
+  margin: 26px 0 0;
   display: grid;
-  gap: 14px;
+  gap: 0;
 }
 
 .location-facts > div {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 18px;
-  padding: 10px 0;
+  padding: 12px 0;
   border-top: 1px solid var(--divider);
+}
+
+.location-facts > div:last-child {
+  border-bottom: 1px solid var(--divider);
 }
 
 .location-facts dt {
@@ -1718,28 +1742,107 @@ main > section + section {
   line-height: 1.5;
 }
 
-.location-facts a {
-  color: var(--terracotta);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-}
-
-.location-facts a:hover {
-  color: var(--terracotta-hover);
-}
-
-.location-image {
+.location-map {
+  position: relative;
+  aspect-ratio: 4 / 5;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: var(--cream-2);
 }
 
-.location-image img {
+.location-map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Facilities */
+.facilities {
+  margin: 0 0 80px;
+}
+
+.facilities-title,
+.loc-gallery-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+  margin: 0 0 36px;
+  letter-spacing: -0.01em;
+}
+
+.facility-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 48px;
+}
+
+.facility-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--divider);
+}
+
+.facility-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--terracotta);
+  margin-top: 4px;
+}
+
+.facility-name {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+}
+
+.facility-desc {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Location gallery (small grid of the space itself) */
+.loc-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.loc-gallery-grid figure {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--cream-2);
+}
+
+.loc-gallery-grid img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  aspect-ratio: 4 / 5;
+  transition: transform 0.4s ease;
+}
+
+.loc-gallery-grid figure:hover img {
+  transform: scale(1.05);
 }
 
 /* Page CTA (shared by about + retreats) */
@@ -1800,13 +1903,29 @@ main > section + section {
     padding: 56px 0 70px;
   }
 
-  .location-grid {
+  .location-top-grid {
     grid-template-columns: 1fr;
     gap: 36px;
+    margin-bottom: 56px;
   }
 
-  .location-image img {
+  .location-map {
     aspect-ratio: 5 / 4;
+  }
+
+  .facility-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .facilities,
+  .location-gallery {
+    margin-bottom: 48px;
+  }
+
+  .loc-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .about-story {
