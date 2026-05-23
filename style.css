@@ -4126,6 +4126,15 @@ main > section + section {
   transform: scale(1.04);
 }
 
+/* Per-card focus points so portrait shots don't crop heads */
+.elem-water .practice-img img {
+  object-position: center 22%;
+}
+
+.elem-earth .practice-img img {
+  object-position: center 30%;
+}
+
 /* A 3px element-coloured stripe between image and content */
 .practice-stripe {
   height: 3px;
