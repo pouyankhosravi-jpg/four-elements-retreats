@@ -1486,8 +1486,125 @@ main > section + section {
 }
 
 /* ============================================
-   RETREATS page — timetable, gallery, location
+   RETREATS page — intro, timetable, gallery, location
    ============================================ */
+.retreat-intro {
+  background: var(--cream);
+  padding: 70px 0 80px;
+  text-align: center;
+}
+
+.retreat-intro h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 8px 0 28px;
+}
+
+.retreat-intro-lead {
+  font-size: 1.18rem;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+  margin: 0 auto 36px;
+  max-width: 600px;
+}
+
+.retreat-intro p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin: 0 auto 18px;
+  max-width: 620px;
+}
+
+.retreat-essentials {
+  list-style: none;
+  padding: 32px 36px;
+  margin: 44px auto 36px;
+  max-width: 520px;
+  background: #fff;
+  border: 1px solid var(--cream-2);
+  border-radius: 4px;
+  text-align: left;
+  display: grid;
+  gap: 14px;
+}
+
+.retreat-essentials li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: baseline;
+  gap: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--cream-2);
+}
+
+.retreat-essentials li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.re-label {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--terracotta);
+  letter-spacing: 0.02em;
+}
+
+.re-value {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.retreat-intro-outro {
+  font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
+  font-size: 1.9rem;
+  font-style: italic;
+  color: var(--terracotta);
+  margin: 28px 0 0;
+  line-height: 1.2;
+}
+
+@media (max-width: 720px) {
+  .retreat-intro {
+    padding: 50px 0 60px;
+  }
+  .retreat-intro h2 {
+    font-size: 1.6rem;
+  }
+  .retreat-intro h2 br {
+    display: none;
+  }
+  .retreat-intro-lead {
+    font-size: 1.05rem;
+  }
+  .retreat-intro p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .retreat-essentials {
+    padding: 24px 20px;
+  }
+  .retreat-essentials li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: center;
+    border-bottom: 1px solid var(--cream-2);
+    padding-bottom: 14px;
+  }
+  .re-label {
+    font-size: 0.88rem;
+  }
+  .retreat-intro-outro {
+    font-size: 1.5rem;
+  }
+}
+
 .timetable {
   background: var(--cream);
   padding: 60px 0 100px;
