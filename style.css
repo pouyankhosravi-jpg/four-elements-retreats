@@ -2259,26 +2259,34 @@ main > section + section {
 }
 
 
-/* "An invitation" — tight editorial opener.
-   Five typographic moments only: eyebrow, title, italic lead,
-   one sensory paragraph, script signature. The essentials box
-   and the four redundant prose paragraphs were removed — that
-   information already lives in the trust bar above and the
-   investment card below. */
+/* "An invitation" — sunset Andalusian backdrop with quiet
+   editorial type laid over a warm cream wash for legibility. */
 .retreat-intro {
   position: relative;
-  background: #FBF8F2;
-  padding: 110px 0 110px;
+  background-image: url("invitation-bg.jpg");
+  background-size: cover;
+  background-position: center 38%;
+  background-color: #F3ECE3;
+  padding: 140px 0 150px;
   text-align: center;
   overflow: hidden;
+  isolation: isolate;
 }
 
+/* Warm cream overlay — stronger at the top and bottom so the
+   text reads cleanly, lighter through the middle to let the
+   sun, mountains and linen wash come through. */
 .retreat-intro::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.11 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  background-size: 240px 240px;
+  background:
+    linear-gradient(180deg,
+      rgba(247, 240, 230, 0.55) 0%,
+      rgba(247, 240, 230, 0.30) 22%,
+      rgba(247, 240, 230, 0.22) 50%,
+      rgba(243, 234, 222, 0.35) 78%,
+      rgba(239, 228, 214, 0.62) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -2294,40 +2302,44 @@ main > section + section {
   font-weight: 500;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: #B36238;
-  margin: 0 0 28px;
+  color: #9A4F26;
+  margin: 0 0 30px;
+  text-shadow: 0 1px 14px rgba(247, 240, 230, 0.6);
 }
 
 .retreat-intro-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.1rem, 4.6vw, 3.3rem);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.08;
   letter-spacing: -0.01em;
-  color: #2A211B;
-  margin: 0 auto 40px;
-  max-width: 560px;
+  color: #221A14;
+  margin: 0 auto 42px;
+  max-width: 640px;
+  text-shadow: 0 1px 22px rgba(247, 240, 230, 0.55);
 }
 
 .retreat-intro-lead {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.18rem, 1.7vw, 1.4rem);
+  font-size: clamp(1.22rem, 1.8vw, 1.45rem);
   line-height: 1.55;
-  color: #2A211B;
-  margin: 0 auto 28px;
-  max-width: 560px;
+  color: #2F241D;
+  margin: 0 auto 30px;
+  max-width: 580px;
+  text-shadow: 0 1px 14px rgba(247, 240, 230, 0.55);
 }
 
 .retreat-intro-body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1.02rem;
+  font-size: 1.04rem;
   line-height: 1.85;
-  color: #5E554D;
+  color: #4C4138;
   margin: 0 auto;
-  max-width: 520px;
+  max-width: 540px;
   letter-spacing: 0.005em;
+  text-shadow: 0 1px 10px rgba(247, 240, 230, 0.5);
 }
 
 .retreat-intro-ornament {
@@ -2335,49 +2347,60 @@ main > section + section {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(179, 98, 56, 0.55);
-  margin: 52px auto 22px;
+  background: rgba(154, 79, 38, 0.7);
+  margin: 56px auto 24px;
   border: 0;
+  box-shadow: 0 0 12px rgba(247, 240, 230, 0.6);
 }
 
 .retreat-intro-signature {
   font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
   font-style: italic;
   font-size: clamp(1.5rem, 2.2vw, 2rem);
-  color: #B36238;
+  color: #9A4F26;
   margin: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
+  text-shadow: 0 1px 16px rgba(247, 240, 230, 0.65);
 }
 
 @media (max-width: 720px) {
   .retreat-intro {
-    padding: 70px 0 70px;
+    padding: 90px 0 100px;
+    background-position: center 42%;
+  }
+  .retreat-intro::before {
+    background:
+      linear-gradient(180deg,
+        rgba(247, 240, 230, 0.7) 0%,
+        rgba(247, 240, 230, 0.4) 28%,
+        rgba(247, 240, 230, 0.35) 60%,
+        rgba(239, 228, 214, 0.7) 100%);
   }
   .retreat-intro-eyebrow {
     letter-spacing: 0.36em;
     margin-bottom: 22px;
   }
   .retreat-intro-title {
-    font-size: 1.7rem;
-    margin-bottom: 28px;
+    font-size: 1.85rem;
+    margin-bottom: 30px;
   }
   .retreat-intro-title br {
     display: none;
   }
   .retreat-intro-lead {
-    font-size: 1.08rem;
-    margin-bottom: 24px;
+    font-size: 1.12rem;
+    margin-bottom: 26px;
   }
   .retreat-intro-body {
-    font-size: 0.98rem;
+    font-size: 1rem;
     line-height: 1.8;
   }
   .retreat-intro-ornament {
-    margin: 40px auto 18px;
+    margin: 44px auto 20px;
   }
   .retreat-intro-signature {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 }
 
