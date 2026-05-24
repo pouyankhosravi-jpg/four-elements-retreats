@@ -3272,11 +3272,13 @@ main > section + section {
    extras, founders note, FAQ, sticky mobile CTA)
    ============================================ */
 
-/* Trust bar — deep espresso info strip under the banner.
-   Matches the page's title color so terracotta stays
-   reserved for primary CTAs. */
+/* Trust bar — dark olive info strip under the banner.
+   Colour sampled directly from the logo (the same olive
+   used on the Earth-element practice card), so the bar
+   feels native to the brand without competing with the
+   terracotta CTAs. */
 .trust-bar {
-  background: #2F241D;
+  background: #484830;
   color: #F4ECDF;
   padding: 14px 0;
   border-top: 1px solid rgba(244, 236, 223, 0.06);
