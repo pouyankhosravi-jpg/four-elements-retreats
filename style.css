@@ -3272,13 +3272,12 @@ main > section + section {
    extras, founders note, FAQ, sticky mobile CTA)
    ============================================ */
 
-/* Trust bar — pale wheat strip in the same gold family as
-   the logo, light enough that the dark espresso text reads
-   clearly. Flush against the banner above and the section
-   below — no section gap. */
+/* Trust bar — terracotta strip with white text. Flush
+   against the banner above and the section below — no
+   section gap. */
 .trust-bar {
-  background: #E2D2A8;
-  color: #2E241D;
+  background: var(--terracotta);
+  color: #fff;
   padding: 14px 0;
 }
 
@@ -3314,7 +3313,7 @@ main > .trust-bar + section {
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(46, 36, 29, 0.6);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .trust-value {
@@ -3323,7 +3322,7 @@ main > .trust-bar + section {
   font-weight: 500;
   margin-top: 4px;
   letter-spacing: 0.01em;
-  color: #2E241D;
+  color: #fff;
 }
 
 @media (max-width: 720px) {
