@@ -4158,7 +4158,7 @@ main > section + section {
 
 /* Per-card focus points so portrait shots don't crop heads */
 .elem-water .practice-img img {
-  object-position: center 22%;
+  object-position: center 8%;
 }
 
 .elem-earth .practice-img img {
