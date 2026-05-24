@@ -1466,6 +1466,164 @@ main > section + section {
   text-decoration: underline;
 }
 
+/* Contact page — channels & info */
+.contact-channels {
+  background: var(--cream);
+  padding: 60px 0 30px;
+}
+
+.contact-channel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.contact-channel {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 28px 30px;
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  box-shadow: 0 1px 0 rgba(72, 72, 48, 0.04);
+}
+
+.contact-channel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px -16px rgba(72, 72, 48, 0.35);
+  border-color: rgba(168, 96, 48, 0.25);
+}
+
+.contact-channel-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-channel-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-channel-whatsapp .contact-channel-icon {
+  background: #25D366;
+  color: #fff;
+}
+
+.contact-channel-instagram .contact-channel-icon {
+  background: linear-gradient(135deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%);
+  color: #fff;
+}
+
+.contact-channel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.contact-channel-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--terracotta);
+}
+
+.contact-channel-value {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.contact-channel-meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.contact-info {
+  background: var(--cream);
+  padding: 30px 0 90px;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 48px;
+  padding-top: 30px;
+  border-top: 1px solid var(--divider);
+}
+
+.contact-info-item h3 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--terracotta);
+  margin: 0 0 10px;
+}
+
+.contact-info-item p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.contact-info-soft {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+  .contact-channels {
+    padding: 40px 0 20px;
+  }
+
+  .contact-channel-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-channel {
+    padding: 22px 22px;
+    gap: 16px;
+  }
+
+  .contact-channel-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .contact-channel-value {
+    font-size: 1.1rem;
+  }
+
+  .contact-info {
+    padding: 20px 0 70px;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
 /* ============================================
    ABOUT page
    ============================================ */
