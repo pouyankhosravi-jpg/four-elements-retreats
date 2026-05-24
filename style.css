@@ -3172,11 +3172,14 @@ main > section + section {
    extras, founders note, FAQ, sticky mobile CTA)
    ============================================ */
 
-/* Trust bar — terracotta strip right under the banner */
+/* Trust bar — deep espresso info strip under the banner.
+   Matches the page's title color so terracotta stays
+   reserved for primary CTAs. */
 .trust-bar {
-  background: var(--terracotta);
-  color: #fff;
-  padding: 16px 0;
+  background: #2F241D;
+  color: #F4ECDF;
+  padding: 14px 0;
+  border-top: 1px solid rgba(244, 236, 223, 0.06);
 }
 
 .trust-list {
@@ -3195,23 +3198,26 @@ main > section + section {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   line-height: 1.15;
 }
 
 .trust-label {
-  font-size: 0.72rem;
-  font-style: italic;
-  letter-spacing: 0.18em;
+  font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  opacity: 0.88;
+  color: rgba(244, 236, 223, 0.55);
 }
 
 .trust-value {
-  font-size: 1.05rem;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 4px;
   letter-spacing: 0.01em;
+  color: #F4ECDF;
 }
 
 @media (max-width: 720px) {
