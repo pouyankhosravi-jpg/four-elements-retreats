@@ -3272,16 +3272,19 @@ main > section + section {
    extras, founders note, FAQ, sticky mobile CTA)
    ============================================ */
 
-/* Trust bar — dark olive info strip under the banner.
-   Colour sampled directly from the logo (the same olive
-   used on the Earth-element practice card), so the bar
-   feels native to the brand without competing with the
-   terracotta CTAs. */
+/* Trust bar — warm gold strip sampled directly from the
+   logo (the Air-element palette). Flush against the banner
+   above and the section below — no section gap. */
 .trust-bar {
-  background: #484830;
-  color: #F4ECDF;
+  background: #C0A878;
+  color: #2E241D;
   padding: 14px 0;
-  border-top: 1px solid rgba(244, 236, 223, 0.06);
+}
+
+/* Override the universal section gap so the bar sits flush */
+main > section + .trust-bar,
+main > .trust-bar + section {
+  margin-top: 0;
 }
 
 .trust-list {
@@ -3310,7 +3313,7 @@ main > section + section {
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(244, 236, 223, 0.55);
+  color: rgba(46, 36, 29, 0.6);
 }
 
 .trust-value {
@@ -3319,7 +3322,7 @@ main > section + section {
   font-weight: 500;
   margin-top: 4px;
   letter-spacing: 0.01em;
-  color: #F4ECDF;
+  color: #2E241D;
 }
 
 @media (max-width: 720px) {
