@@ -3272,11 +3272,12 @@ main > section + section {
    extras, founders note, FAQ, sticky mobile CTA)
    ============================================ */
 
-/* Trust bar — warm gold strip sampled directly from the
-   logo (the Air-element palette). Flush against the banner
-   above and the section below — no section gap. */
+/* Trust bar — pale wheat strip in the same gold family as
+   the logo, light enough that the dark espresso text reads
+   clearly. Flush against the banner above and the section
+   below — no section gap. */
 .trust-bar {
-  background: #C0A878;
+  background: #E2D2A8;
   color: #2E241D;
   padding: 14px 0;
 }
