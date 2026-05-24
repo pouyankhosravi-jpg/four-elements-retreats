@@ -4139,7 +4139,7 @@ main > section + section {
 /* Small image at the top inside the card */
 .practice-img {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--cream-2);
 }
@@ -4158,7 +4158,7 @@ main > section + section {
 
 /* Per-card focus points so portrait shots don't crop heads */
 .elem-water .practice-img img {
-  object-position: center 18%;
+  object-position: center 30%;
 }
 
 .elem-earth .practice-img img {
