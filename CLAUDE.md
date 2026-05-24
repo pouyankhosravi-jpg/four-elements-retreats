@@ -38,7 +38,7 @@ Nav order on every page: **Home / About us / Retreats / Contact**
 |---|---|
 | Standard price | **€899** per person |
 | Early bird | **€799** per person — save €100 until **30 June 2026** |
-| Deposit | **10%** (~€80) to hold a place |
+| Deposit | **15%** (~€120) to hold a place |
 | Free cancellation | until **31 July 2026** (full deposit refund) |
 | After 31 July | deposits non-refundable but transferable to a future retreat |
 | Single tent upgrade | **+€180** (limited availability) |
@@ -152,7 +152,7 @@ Adjacent sections separated by a 4 px gap (`main > section + section { margin-to
     - White card on cream-2 background
     - Top: scarcity pill "Limited spaces · only 12 guests"
     - **Price block**: terracotta pill "Early bird · save €100 until 30 June" + headline `~~€899~~ €799 per person` (struck-through anchor + new price on one line)
-    - Meta list: Dates, Arrival, Departure, Group size, **Deposit · Just 10% (≈ €80)**, **Cancellation · Free until 31 July 2026**, Airport transfer, Private tent
+    - Meta list: Dates, Arrival, Departure, Group size, **Deposit · Just 15% (≈ €120)**, **Cancellation · Free until 31 July 2026**, Airport transfer, Private tent
     - "How to reserve" 3-step process (terracotta numeric pills)
     - Primary CTA → `contact.html` + secondary WhatsApp link → `wa.me/34640124026`
     - Fine print: "Free cancellation until 31 July 2026 — full deposit refund."
@@ -383,7 +383,7 @@ Live in ~30–60 seconds on the GitHub Pages URL and custom domain.
 ## Recent design passes (most recent first)
 
 - **Practice card images** moved from 16:9 → 4:3 aspect so portrait photos fit head + pose + feet
-- **Pricing model** introduced: €899 standard / €799 early bird / 10% deposit / free cancellation until 31 July
+- **Pricing model** introduced: €899 standard / €799 early bird / 15% deposit / free cancellation until 31 July
 - **Trust bar** switched from saturated terracotta to deep espresso `#2F241D`, price removed
 - **Brand voice rewrite** across all pages: souls → guests, no fire wording, no spiritual jargon, vegetarian softened to "plant-rich Mediterranean", inclusivity line added, no "Guaro"
 - **Page-wide compaction**: every section's padding tightened, duplicate gallery images deduped
