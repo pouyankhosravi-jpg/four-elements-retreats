@@ -1676,30 +1676,11 @@ main > section + section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Bias the crop to the right + lower mid so the meditation
-     circle of guests holding hands sits in the visible band. */
-  object-position: 78% 62%;
-  transform: scale(1.15);
-  transform-origin: 78% 62%;
+  object-position: right center;
 }
 
-/* Left-to-right cream wash so the title/subtitle on the left
-   sit on a soft cream half while the photo on the right stays
-   crisp — replicates the original arched-photo look on top of
-   a real photograph. */
 .retreat-banner::before {
-  content: "";
-  display: block;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right,
-    rgba(243, 224, 203, 0.97) 0%,
-    rgba(243, 224, 203, 0.92) 28%,
-    rgba(243, 224, 203, 0.55) 48%,
-    rgba(243, 224, 203, 0.12) 62%,
-    rgba(243, 224, 203, 0) 75%);
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 /* Overlay flows in normal flow so its content pushes banner
@@ -1716,7 +1697,6 @@ main > section + section {
   color: #2F241D;
   text-shadow: none;
   min-height: 320px;
-  z-index: 2;
 }
 
 .retreat-banner .banner-top {
