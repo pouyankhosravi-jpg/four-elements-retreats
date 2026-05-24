@@ -2753,6 +2753,10 @@ main > section + section {
   grid-column: span 2;
 }
 
+/* Per-image crop overrides so faces and subjects stay in frame */
+.gallery-grid img[src="g2.jpg"]  { object-position: center 68%; }
+.gallery-grid img[src="g6.jpg"]  { object-position: center 22%; }
+
 /* Location */
 .location {
   background: var(--cream);
