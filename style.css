@@ -1791,7 +1791,13 @@ main > section + section {
   display: block;
 }
 
-/* Per-portrait focal points so faces stay centered in circle */
+/* Per-portrait focal points so heads/hands stay in the circle */
+.facilitators-grid .facilitator-card:nth-child(1) .facilitator-photo img {
+  object-position: center 12%;
+}
+.facilitators-grid .facilitator-card:nth-child(2) .facilitator-photo img {
+  object-position: center 18%;
+}
 .facilitators-grid .facilitator-card:nth-child(3) .facilitator-photo img {
   object-position: center 28%;
 }
