@@ -177,25 +177,149 @@ body {
   line-height: 1;
 }
 
-/* Elements section */
-.elements {
-  width: 100%;
-  line-height: 0;
+/* Elements section — text + icons, no image */
+.elements-text {
+  background: var(--cream);
+  padding: 60px 0 70px;
+  text-align: center;
 }
 
-.elements img {
-  width: 100%;
-  max-width: 1080px;
-  height: auto;
-  display: block;
+.elements-eyebrow {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 18px;
+}
+
+.elements-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.18;
+  color: var(--text);
+  margin: 0 0 18px;
+  letter-spacing: -0.005em;
+}
+
+.elements-ornament {
+  display: inline-block;
+  width: 70px;
+  height: 8px;
+  margin: 0 auto 18px;
+  position: relative;
+}
+
+.elements-ornament::before,
+.elements-ornament::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  height: 1px;
+  background: var(--terracotta);
+  opacity: 0.55;
+}
+
+.elements-ornament::before { left: 0; }
+.elements-ornament::after  { right: 0; }
+
+.elements-ornament span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+}
+
+.elements-subtitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 auto 44px;
+  max-width: 58ch;
+  line-height: 1.55;
+}
+
+.elements-grid {
+  list-style: none;
+  padding: 0;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 900px;
 }
 
-/* Flush against the banner above and the next section below —
-   no 4px cream gap on either side. */
-main > .banner + .elements,
-main > .elements + section {
-  margin-top: 0;
+.element-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.element-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.element-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.element-earth .element-icon { background: #C0A878; }
+.element-water .element-icon { background: #486078; }
+.element-air   .element-icon { background: #484830; }
+.element-fire  .element-icon { background: #A86030; }
+
+.element-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.element-rule {
+  width: 24px;
+  height: 1px;
+  background: var(--terracotta);
+  opacity: 0.45;
+  margin: 0 auto 10px;
+}
+
+.element-tag {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .elements-text { padding: 44px 0 50px; }
+  .elements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 20px;
+  }
+  .elements-subtitle { margin-bottom: 34px; }
 }
 
 @media (max-width: 700px) {
