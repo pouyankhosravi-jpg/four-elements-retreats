@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=165">
+<link rel="stylesheet" href="style.css?v=166">
 </head>
 <body>
 <header class="site-header">
@@ -500,7 +500,7 @@
     <div class="container narrow">
       <p class="eyebrow eyebrow-center">Book your place</p>
       <h2>Reserve your spot &amp; pay the deposit</h2>
-      <p class="investment-intro">Limited to 12 guests &middot; secure your place with a &euro;120 deposit &middot; free cancellation until 31 July.</p>
+      <p class="investment-intro">Limited to 12 guests &middot; secure your place with a &euro;160 deposit &middot; free cancellation until 31 July.</p>
 
       <div class="booking-card">
         <div class="booking-summary">
@@ -514,13 +514,21 @@
           </div>
           <div class="booking-summary-right">
             <p class="booking-summary-deposit-label">Today you pay</p>
-            <p class="booking-summary-deposit">&euro;120</p>
-            <p class="booking-summary-deposit-note">15% deposit &middot; refundable until 31 July</p>
+            <p class="booking-summary-deposit">&euro;160</p>
+            <p class="booking-summary-deposit-note">20% deposit &middot; refundable until 31 July</p>
           </div>
         </div>
 
-        <form class="booking-form" id="booking-form" novalidate>
-          <h3 class="booking-form-title">Your booking details</h3>
+        <div class="booking-trigger" id="booking-trigger">
+          <button type="button" class="btn booking-cta" id="booking-start">
+            Book my spot
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+          <p class="booking-pay-note">A few quick details, then pay your &euro;160 deposit via PayPal (or card). Takes about 2 minutes.</p>
+        </div>
+
+        <form class="booking-form" id="booking-form" novalidate hidden>
+          <h3 class="booking-form-title">A few details, then payment</h3>
 
           <div class="booking-field">
             <label for="bf-name">Full name <span class="req">*</span></label>
@@ -591,19 +599,19 @@
 
           <label class="booking-checkbox">
             <input type="checkbox" name="agree" required>
-            <span>I&rsquo;ve read the cancellation policy below and understand my &euro;120 deposit is fully refundable until 31 July 2026.</span>
+            <span>I&rsquo;ve read the cancellation policy below and understand my &euro;160 deposit is fully refundable until 31 July 2026.</span>
           </label>
 
           <div class="booking-actions">
             <button type="submit" class="btn booking-cta">
-              Book my spot &mdash; pay &euro;120 deposit
+              Pay &euro;160 deposit &amp; confirm
               <span aria-hidden="true">&rarr;</span>
             </button>
             <p class="booking-pay-note">When you click, your details are sent to us via WhatsApp and you&rsquo;re taken to PayPal to pay the deposit. Cards accepted &mdash; no PayPal account needed.</p>
           </div>
 
           <p class="booking-fine">
-            <strong>Cancellation policy:</strong> Free cancellation until 31 July 2026 &mdash; full deposit refund. After 31 July, deposits are non-refundable but transferable to a future retreat. The remaining balance (&euro;679 early bird / &euro;779 standard) is due by 15 August 2026 &mdash; we&rsquo;ll send you a payment link by email closer to the date.
+            <strong>Cancellation policy:</strong> Free cancellation until 31 July 2026 &mdash; full deposit refund. After 31 July, deposits are non-refundable but transferable to a future retreat. The remaining balance (&euro;639 early bird / &euro;739 standard) is due by 15 August 2026 &mdash; we&rsquo;ll send you a payment link by email closer to the date.
           </p>
         </form>
 
@@ -614,9 +622,9 @@
         <form id="paypal-deposit" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
           <input type="hidden" name="cmd" value="_xclick">
           <input type="hidden" name="business" value="Rosa.furoghi@gmail.com">
-          <input type="hidden" name="item_name" value="Four Elements Retreat 4-7 Sept 2026 - 15% deposit">
+          <input type="hidden" name="item_name" value="Four Elements Retreat 4-7 Sept 2026 - 20% deposit">
           <input type="hidden" name="item_number" value="FER-2026-09">
-          <input type="hidden" name="amount" value="120.00">
+          <input type="hidden" name="amount" value="160.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="hidden" name="no_shipping" value="1">
           <input type="hidden" name="no_note" value="0">
@@ -881,7 +889,7 @@
         </details>
         <details class="faq-item">
           <summary>What&rsquo;s the cancellation policy?</summary>
-          <p class="faq-answer">Free cancellation until 31 July 2026 &mdash; your 15% deposit is fully refundable up until that date. After 31 July, deposits are non-refundable but can be transferred to a future retreat.</p>
+          <p class="faq-answer">Free cancellation until 31 July 2026 &mdash; your 20% deposit is fully refundable up until that date. After 31 July, deposits are non-refundable but can be transferred to a future retreat.</p>
         </details>
         <details class="faq-item">
           <summary>How do I get there?</summary>
@@ -928,7 +936,27 @@
 (function () {
   var form = document.getElementById('booking-form');
   var paypalForm = document.getElementById('paypal-deposit');
+  var trigger = document.getElementById('booking-trigger');
+  var startBtn = document.getElementById('booking-start');
   var WHATSAPP_NUMBER = '34640124026';
+
+  function openForm() {
+    if (form) form.hidden = false;
+    if (trigger) trigger.hidden = true;
+    setTimeout(function () {
+      var firstField = document.getElementById('bf-name');
+      if (firstField) {
+        try { firstField.focus({ preventScroll: true }); } catch (e) { firstField.focus(); }
+      }
+      if (form && form.scrollIntoView) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 40);
+  }
+
+  if (startBtn) {
+    startBtn.addEventListener('click', openForm);
+  }
 
   // Show the success/cancelled banner if guest is returning from PayPal.
   var params = new URLSearchParams(window.location.search);
@@ -938,10 +966,13 @@
     if (afterPay) {
       afterPay.hidden = false;
       if (form) form.style.display = 'none';
+      if (trigger) trigger.style.display = 'none';
       var summary = document.querySelector('.booking-summary');
       if (summary) summary.style.display = 'none';
     }
   } else if (paymentStatus === 'cancelled' && form) {
+    // Auto-open the form so the guest can try again easily.
+    openForm();
     var bookingActions = form.querySelector('.booking-actions');
     if (bookingActions) {
       var note = document.createElement('p');
@@ -992,7 +1023,7 @@
     if (dietary) lines.push('Dietary needs: ' + dietary);
     if (notes) lines.push('Notes: ' + notes);
     lines.push('');
-    lines.push('Heading to PayPal now to pay the €120 deposit.');
+    lines.push('Heading to PayPal now to pay the €160 deposit.');
 
     var msg = lines.join('\n');
     var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);

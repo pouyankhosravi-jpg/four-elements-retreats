@@ -2530,8 +2530,23 @@ main > section + section {
   line-height: 1.4;
 }
 
+.booking-trigger {
+  padding: 28px 32px 32px;
+  text-align: center;
+}
+
+.booking-trigger .booking-pay-note {
+  margin-top: 14px;
+}
+
 .booking-form {
   padding: 30px 32px 32px;
+  animation: bookingFormReveal 0.32s ease-out both;
+}
+
+@keyframes bookingFormReveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
 }
 
 .booking-form-title {
@@ -2834,6 +2849,10 @@ main > section + section {
 
   .booking-form {
     padding: 24px 22px 28px;
+  }
+
+  .booking-trigger {
+    padding: 22px 22px 28px;
   }
 
   .booking-field-row {
