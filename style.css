@@ -1666,11 +1666,11 @@ main > section + section {
 .retreat-banner {
   position: relative;
   height: auto;
-  /* Shorter than the source image so the banner height matches
-     the body of text on the left. The crop slices into the
-     empty cream space above the leaves and the mountains below
-     the photo arch — the arch itself stays intact. */
-  aspect-ratio: 3 / 1;
+  /* Sized to roughly match the height of the text block on the
+     left (eyebrow + title + subtitle + CTA). The crop slices
+     the empty cream above and the mountains below — the arched
+     photo's people stay in the visible band. */
+  aspect-ratio: 4 / 1;
   min-height: 0;
   background: #F3E0CB;
   overflow: hidden;
