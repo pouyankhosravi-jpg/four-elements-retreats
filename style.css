@@ -1666,11 +1666,10 @@ main > section + section {
 .retreat-banner {
   position: relative;
   height: auto;
-  /* Sized to roughly match the height of the text block on the
-     left (eyebrow + title + subtitle + CTA). The crop slices
-     the empty cream above and the mountains below — the arched
-     photo's people stay in the visible band. */
-  aspect-ratio: 4 / 1;
+  /* Sized so the type on the left feels in proportion with the
+     arched photo on the right — taller than the previous 4/1
+     strip so the bigger title and subtitle have room to breathe. */
+  aspect-ratio: 3.2 / 1;
   min-height: 0;
   background: #F3E0CB;
   overflow: hidden;
@@ -1698,19 +1697,19 @@ main > section + section {
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  padding: clamp(28px, 4vw, 56px) clamp(24px, 6vw, 88px);
+  padding: clamp(36px, 5vw, 72px) clamp(28px, 6vw, 88px);
   color: #2F241D;
   text-shadow: none;
   min-height: 0;
 }
 
 .retreat-banner .banner-top {
-  max-width: 46%;
+  max-width: 50%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(14px, 1.6vw, 22px);
+  gap: clamp(16px, 1.9vw, 26px);
 }
 
 .retreat-banner .banner-bottom {
@@ -1719,7 +1718,7 @@ main > section + section {
 
 .retreat-banner .banner-eyebrow {
   font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(10px, 0.85vw, 12px);
+  font-size: clamp(11px, 0.95vw, 14px);
   font-weight: 500;
   letter-spacing: 0.42em;
   text-transform: uppercase;
@@ -1735,7 +1734,7 @@ main > section + section {
 .retreat-banner .banner-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-weight: 500;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2.4rem, 6vw, 5rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: #2F241D;
@@ -1747,12 +1746,12 @@ main > section + section {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(0.98rem, 1.3vw, 1.18rem);
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
   line-height: 1.55;
   color: #5A4A40;
   opacity: 1;
   margin: 0;
-  max-width: 36ch;
+  max-width: 34ch;
   text-shadow: none;
 }
 
@@ -1766,16 +1765,16 @@ main > section + section {
   text-decoration: none;
   font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
-  font-size: clamp(12px, 0.95vw, 14px);
+  font-size: clamp(13px, 1.05vw, 15px);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: 2px;
   text-shadow: none;
   box-shadow: 0 4px 16px rgba(46, 36, 29, 0.15);
   backdrop-filter: none;
   transition: background 0.2s, transform 0.2s;
-  margin-top: clamp(4px, 0.8vw, 10px);
+  margin-top: clamp(6px, 1vw, 12px);
 }
 
 .retreat-banner .banner-cta-link:hover {
