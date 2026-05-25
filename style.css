@@ -2721,7 +2721,12 @@ main > section + section {
 
 .booking-actions {
   text-align: center;
-  margin: 6px 0 14px;
+  margin: 6px auto 14px;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
 }
 
 .booking-cta {
@@ -2744,6 +2749,8 @@ main > section + section {
   width: 100%;
   max-width: 420px;
   box-shadow: 0 6px 16px -8px rgba(184, 90, 48, 0.5);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .booking-cta:hover {
@@ -2757,13 +2764,109 @@ main > section + section {
   transform: translateY(0);
 }
 
+.booking-pay-amount {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  color: var(--text);
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.booking-pay-amount strong {
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+/* PayPal-style buttons — mirror PayPal's Smart Button look. */
+.pp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 999px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s, box-shadow 0.15s;
+  padding: 0 22px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.pp-btn:hover {
+  filter: brightness(0.96);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pp-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.92);
+}
+
+.pp-btn:focus-visible {
+  outline: 3px solid rgba(23, 155, 215, 0.55);
+  outline-offset: 2px;
+}
+
+.pp-btn-paypal {
+  background: #ffc439;
+  color: #003087;
+}
+
+.pp-btn-paypal:hover {
+  background: #f2b22f;
+}
+
+.pp-btn-mark {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.pp-btn-card {
+  background: #2c2e2f;
+  color: #ffffff;
+}
+
+.pp-btn-card:hover {
+  background: #1f2123;
+}
+
+.pp-btn-card-icon {
+  width: 22px;
+  height: auto;
+  color: #ffffff;
+}
+
 .booking-pay-note {
   font-size: 0.82rem;
   color: var(--text-muted);
-  margin: 12px auto 0;
+  margin: 6px auto 0;
   max-width: 460px;
   line-height: 1.55;
   text-align: center;
+}
+
+.booking-pay-trust {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 4px auto 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.pp-trust-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--green-dark);
+  flex-shrink: 0;
 }
 
 .booking-fine {

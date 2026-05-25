@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=167">
+<link rel="stylesheet" href="style.css?v=168">
 </head>
 <body>
 <header class="site-header">
@@ -616,11 +616,30 @@
           </label>
 
           <div class="booking-actions">
-            <button type="submit" class="btn booking-cta">
-              Pay &euro;160 deposit &amp; confirm
-              <span aria-hidden="true">&rarr;</span>
+            <p class="booking-pay-amount">Pay your <strong>&euro;160 deposit</strong> &mdash; choose how:</p>
+            <button type="submit" class="pp-btn pp-btn-paypal" name="paymethod" value="paypal" aria-label="Pay 160 euros with PayPal">
+              <svg class="pp-btn-mark" viewBox="0 0 100 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="20" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="22" font-style="italic">
+                  <tspan fill="#253B80">Pay</tspan><tspan fill="#179BD7">Pal</tspan>
+                </text>
+              </svg>
             </button>
-            <p class="booking-pay-note">When you click, your details are sent to us via WhatsApp and you&rsquo;re taken to PayPal to pay the deposit. Cards accepted &mdash; no PayPal account needed.</p>
+            <button type="submit" class="pp-btn pp-btn-card" name="paymethod" value="card" aria-label="Pay 160 euros with debit or credit card">
+              <svg class="pp-btn-card-icon" viewBox="0 0 24 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+                <rect x="1.5" y="2" width="21" height="12" rx="2"/>
+                <line x1="1.5" y1="5.5" x2="22.5" y2="5.5"/>
+                <rect x="4" y="9" width="6" height="2.2" rx="0.4" fill="currentColor" stroke="none"/>
+              </svg>
+              <span>Debit or Credit Card</span>
+            </button>
+            <p class="booking-pay-note">Your form details are sent to us via WhatsApp and you&rsquo;re taken to PayPal&rsquo;s secure checkout to pay the deposit. Cards are accepted &mdash; no PayPal account needed.</p>
+            <p class="booking-pay-trust">
+              <svg class="pp-trust-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="11" width="16" height="9" rx="2"/>
+                <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
+              </svg>
+              <span>Payments processed securely by PayPal. We never see your card details.</span>
+            </p>
           </div>
 
           <p class="booking-fine">
@@ -629,9 +648,11 @@
         </form>
 
         <!-- Hidden PayPal "Buy Now" form. Posts directly to PayPal using the
-             Rosa.furoghi@gmail.com account. Cards accepted at checkout — guests
-             do not need a PayPal account. Submitted by JS after the visible
-             booking form is validated and the WhatsApp message is sent. -->
+             Rosa.furoghi@gmail.com account. solution_type=Sole + the
+             landing_page set at submit time (Billing for card, Login for
+             PayPal) means guests pay with cards without a PayPal account.
+             Submitted by JS after the visible form is validated and the
+             WhatsApp message is sent. -->
         <form id="paypal-deposit" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
           <input type="hidden" name="cmd" value="_xclick">
           <input type="hidden" name="business" value="Rosa.furoghi@gmail.com">
@@ -645,6 +666,8 @@
           <input type="hidden" name="return" value="https://fourelements-retreats.com/retreats.html?payment=success#book">
           <input type="hidden" name="cancel_return" value="https://fourelements-retreats.com/retreats.html?payment=cancelled#book">
           <input type="hidden" name="rm" value="1">
+          <input type="hidden" name="solution_type" value="Sole">
+          <input type="hidden" name="landing_page" value="Login">
           <input type="hidden" name="custom" value="">
         </form>
       </div>
@@ -1001,6 +1024,9 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    // Which button did the guest click — "paypal" or "card"?
+    var method = (e.submitter && e.submitter.value) || 'paypal';
+
     var data = new FormData(form);
     var name = (data.get('name') || '').trim();
     var email = (data.get('email') || '').trim();
@@ -1054,6 +1080,14 @@
       ];
       if (dietary) customLines.push('Diet: ' + dietary);
       customField.value = customLines.join(' | ').substring(0, 250);
+    }
+
+    // Steer PayPal's checkout based on which button the guest clicked.
+    // "Billing" lands directly on the card form; "Login" lands on the
+    // PayPal sign-in screen (with a "Pay with debit/credit card" option).
+    var landingField = paypalForm.querySelector('input[name="landing_page"]');
+    if (landingField) {
+      landingField.value = (method === 'card') ? 'Billing' : 'Login';
     }
 
     // Open the booking message in WhatsApp (new tab) and send the user
