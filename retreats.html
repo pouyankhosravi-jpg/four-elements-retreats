@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=164">
+<link rel="stylesheet" href="style.css?v=165">
 </head>
 <body>
 <header class="site-header">
@@ -498,47 +498,142 @@
 
   <section class="investment" id="book">
     <div class="container narrow">
-      <p class="eyebrow eyebrow-center">Investment</p>
-      <h2>Reserve your place</h2>
-      <p class="investment-intro">Four nourishing days, three deep nights, in a small intimate group.</p>
+      <p class="eyebrow eyebrow-center">Book your place</p>
+      <h2>Reserve your spot &amp; pay the deposit</h2>
+      <p class="investment-intro">Limited to 12 guests &middot; secure your place with a &euro;120 deposit &middot; free cancellation until 31 July.</p>
 
-      <div class="investment-card">
-        <p class="investment-badge">Limited spaces &middot; only 12 guests</p>
+      <div class="booking-card">
+        <div class="booking-summary">
+          <div class="booking-summary-left">
+            <p class="investment-early-tag">Early bird &middot; save &euro;100 until 30 June</p>
+            <p class="booking-summary-price">
+              <span class="booking-summary-old">&euro;899</span>
+              &euro;799 <span class="booking-summary-per">per person</span>
+            </p>
+            <p class="booking-summary-meta">4&ndash;7 Sept 2026 &middot; M&aacute;laga &middot; All meals &amp; airport transfers included</p>
+          </div>
+          <div class="booking-summary-right">
+            <p class="booking-summary-deposit-label">Today you pay</p>
+            <p class="booking-summary-deposit">&euro;120</p>
+            <p class="booking-summary-deposit-note">15% deposit &middot; refundable until 31 July</p>
+          </div>
+        </div>
 
-        <div class="investment-price-block">
-          <p class="investment-early-tag">Early bird &middot; save &euro;100 until 30 June</p>
-          <p class="investment-price">
-            <span class="investment-price-old">&euro;899</span>
-            &euro;799 <span class="investment-per">per person</span>
+        <form class="booking-form" id="booking-form" novalidate>
+          <h3 class="booking-form-title">Your booking details</h3>
+
+          <div class="booking-field">
+            <label for="bf-name">Full name <span class="req">*</span></label>
+            <input type="text" id="bf-name" name="name" required autocomplete="name">
+          </div>
+
+          <div class="booking-field-row">
+            <div class="booking-field">
+              <label for="bf-email">Email <span class="req">*</span></label>
+              <input type="email" id="bf-email" name="email" required autocomplete="email">
+            </div>
+            <div class="booking-field">
+              <label for="bf-phone">WhatsApp / phone <span class="req">*</span></label>
+              <input type="tel" id="bf-phone" name="phone" required autocomplete="tel" placeholder="+44&hellip;">
+            </div>
+          </div>
+
+          <div class="booking-field">
+            <label for="bf-country">Where you&rsquo;re flying from <span class="optional">(optional)</span></label>
+            <input type="text" id="bf-country" name="country" autocomplete="country-name" placeholder="e.g. London, UK">
+          </div>
+
+          <fieldset class="booking-field-group">
+            <legend>Accommodation</legend>
+            <label class="booking-radio">
+              <input type="radio" name="accommodation" value="shared-twin" checked>
+              <span class="booking-radio-text">
+                <strong>Shared twin bell tent</strong>
+                <em>Included in the price</em>
+              </span>
+            </label>
+            <label class="booking-radio">
+              <input type="radio" name="accommodation" value="single-private">
+              <span class="booking-radio-text">
+                <strong>Private single bell tent</strong>
+                <em>+&euro;180 (limited availability)</em>
+              </span>
+            </label>
+          </fieldset>
+
+          <fieldset class="booking-field-group">
+            <legend>M&aacute;laga airport pickup &amp; drop-off</legend>
+            <label class="booking-radio">
+              <input type="radio" name="pickup" value="yes" checked>
+              <span class="booking-radio-text">
+                <strong>Yes, please arrange it</strong>
+                <em>Included &mdash; we&rsquo;ll co-ordinate with your flight</em>
+              </span>
+            </label>
+            <label class="booking-radio">
+              <input type="radio" name="pickup" value="no">
+              <span class="booking-radio-text">
+                <strong>No, I&rsquo;ll make my own way</strong>
+                <em>Address shared with confirmed guests</em>
+              </span>
+            </label>
+          </fieldset>
+
+          <div class="booking-field">
+            <label for="bf-dietary">Dietary needs &amp; allergies <span class="optional">(optional)</span></label>
+            <textarea id="bf-dietary" name="dietary" rows="2" placeholder="e.g. vegan, gluten-free, nut allergy&hellip; our menu is already vegetarian"></textarea>
+          </div>
+
+          <div class="booking-field">
+            <label for="bf-notes">Anything else you&rsquo;d like us to know? <span class="optional">(optional)</span></label>
+            <textarea id="bf-notes" name="notes" rows="3" placeholder="Yoga experience, travel plans, who you&rsquo;re coming with&hellip;"></textarea>
+          </div>
+
+          <label class="booking-checkbox">
+            <input type="checkbox" name="agree" required>
+            <span>I&rsquo;ve read the cancellation policy below and understand my &euro;120 deposit is fully refundable until 31 July 2026.</span>
+          </label>
+
+          <div class="booking-actions">
+            <button type="submit" class="btn booking-cta">
+              Book my spot &mdash; pay &euro;120 deposit
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+            <p class="booking-pay-note">When you click, your details are sent to us via WhatsApp and you&rsquo;re taken to PayPal to pay the deposit. Cards accepted &mdash; no PayPal account needed.</p>
+          </div>
+
+          <p class="booking-fine">
+            <strong>Cancellation policy:</strong> Free cancellation until 31 July 2026 &mdash; full deposit refund. After 31 July, deposits are non-refundable but transferable to a future retreat. The remaining balance (&euro;679 early bird / &euro;779 standard) is due by 15 August 2026 &mdash; we&rsquo;ll send you a payment link by email closer to the date.
           </p>
-          <p class="investment-sub">Shared luxury glamping bell tent &middot; all meals &middot; every session included</p>
-        </div>
+        </form>
 
-        <ul class="investment-meta">
-          <li><span class="im-label">Dates</span><span class="im-value">4&ndash;7 September 2026</span></li>
-          <li><span class="im-label">Arrival</span><span class="im-value">3 PM Friday (CEST)</span></li>
-          <li><span class="im-label">Departure</span><span class="im-value">11 AM Monday (CEST)</span></li>
-          <li><span class="im-label">Group size</span><span class="im-value">Limited to 12 guests</span></li>
-          <li><span class="im-label">Deposit</span><span class="im-value">Just 15% (&asymp; &euro;120) holds your place</span></li>
-          <li><span class="im-label">Cancellation</span><span class="im-value">Free until 31 July 2026</span></li>
-          <li><span class="im-label">Airport transfer</span><span class="im-value">Pickup &amp; drop-off arranged from M&aacute;laga</span></li>
-          <li><span class="im-label">Private tent</span><span class="im-value">Optional upgrade &mdash; +&euro;180 (limited availability)</span></li>
-        </ul>
+        <!-- Hidden PayPal "Buy Now" form. Posts directly to PayPal using the
+             Rosa.furoghi@gmail.com account. Cards accepted at checkout — guests
+             do not need a PayPal account. Submitted by JS after the visible
+             booking form is validated and the WhatsApp message is sent. -->
+        <form id="paypal-deposit" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="Rosa.furoghi@gmail.com">
+          <input type="hidden" name="item_name" value="Four Elements Retreat 4-7 Sept 2026 - 15% deposit">
+          <input type="hidden" name="item_number" value="FER-2026-09">
+          <input type="hidden" name="amount" value="120.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="hidden" name="no_shipping" value="1">
+          <input type="hidden" name="no_note" value="0">
+          <input type="hidden" name="cn" value="Notes for Four Elements Retreats">
+          <input type="hidden" name="return" value="https://fourelements-retreats.com/retreats.html?payment=success#book">
+          <input type="hidden" name="cancel_return" value="https://fourelements-retreats.com/retreats.html?payment=cancelled#book">
+          <input type="hidden" name="rm" value="1">
+          <input type="hidden" name="custom" value="">
+        </form>
+      </div>
 
-        <div class="investment-steps">
-          <p class="investment-steps-title">How to reserve</p>
-          <ol class="steps-list">
-            <li><span class="step-num">1</span><span class="step-text">Send us a message &mdash; we&rsquo;ll happily answer anything before you commit.</span></li>
-            <li><span class="step-num">2</span><span class="step-text">Hold your place with a 15% deposit (around &euro;120).</span></li>
-            <li><span class="step-num">3</span><span class="step-text">Receive your welcome pack with what to bring and how to arrive.</span></li>
-          </ol>
-        </div>
-
-        <div class="investment-actions">
-          <a href="contact.html" class="btn investment-cta">Get in touch to book</a>
-          <br>
-          <a href="https://wa.me/34640124026" target="_blank" rel="noopener noreferrer" class="investment-whatsapp">or message us on WhatsApp &rarr;</a>
-          <p class="investment-fine">Free cancellation until 31 July 2026 &mdash; full deposit refund. Airport pickup &amp; drop-off arranged for you from M&aacute;laga.</p>
+      <div class="booking-after-pay" id="booking-after-pay" hidden>
+        <div class="booking-after-pay-inner">
+          <p class="booking-after-pay-eyebrow">Deposit received</p>
+          <h3>Welcome to the retreat &mdash; we can&rsquo;t wait to meet you.</h3>
+          <p>Thank you for booking. We&rsquo;ll be in touch within 24 hours on WhatsApp to confirm your spot, your accommodation choice and your travel details. In the meantime, you&rsquo;ll receive your welcome pack by email closer to the dates.</p>
+          <a href="https://wa.me/34640124026" target="_blank" rel="noopener noreferrer" class="btn booking-after-pay-cta">Open the WhatsApp chat with us &rarr;</a>
         </div>
       </div>
     </div>
@@ -826,8 +921,104 @@
     <span class="sticky-price">&euro;799</span>
     <span class="sticky-meta">4&ndash;7 Sept &middot; 12 spots</span>
   </div>
-  <a href="#book" class="sticky-cta-btn">Reserve</a>
+  <a href="#book" class="sticky-cta-btn">Book now</a>
 </div>
+
+<script>
+(function () {
+  var form = document.getElementById('booking-form');
+  var paypalForm = document.getElementById('paypal-deposit');
+  var WHATSAPP_NUMBER = '34640124026';
+
+  // Show the success/cancelled banner if guest is returning from PayPal.
+  var params = new URLSearchParams(window.location.search);
+  var paymentStatus = params.get('payment');
+  if (paymentStatus === 'success') {
+    var afterPay = document.getElementById('booking-after-pay');
+    if (afterPay) {
+      afterPay.hidden = false;
+      if (form) form.style.display = 'none';
+      var summary = document.querySelector('.booking-summary');
+      if (summary) summary.style.display = 'none';
+    }
+  } else if (paymentStatus === 'cancelled' && form) {
+    var bookingActions = form.querySelector('.booking-actions');
+    if (bookingActions) {
+      var note = document.createElement('p');
+      note.className = 'booking-pay-note';
+      note.style.color = '#A04020';
+      note.innerHTML = '<strong>Payment cancelled.</strong> Your details haven\'t been sent yet — click the button below when you\'re ready to try again.';
+      bookingActions.insertBefore(note, bookingActions.firstChild);
+    }
+  }
+
+  if (!form || !paypalForm) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var data = new FormData(form);
+    var name = (data.get('name') || '').trim();
+    var email = (data.get('email') || '').trim();
+    var phone = (data.get('phone') || '').trim();
+    var country = (data.get('country') || '').trim();
+    var accommodation = data.get('accommodation') === 'single-private'
+      ? 'Private single tent (+€180)'
+      : 'Shared twin tent (included)';
+    var pickup = data.get('pickup') === 'yes' ? 'Yes' : 'No';
+    var dietary = (data.get('dietary') || '').trim();
+    var notes = (data.get('notes') || '').trim();
+    var agree = data.get('agree');
+
+    if (!name || !email || !phone) {
+      alert('Please fill in your name, email and phone number so we can confirm your booking.');
+      return;
+    }
+    if (!agree) {
+      alert('Please tick the box to confirm you\'ve read the cancellation policy.');
+      return;
+    }
+
+    var lines = [
+      'NEW BOOKING — Four Elements Retreat (4–7 Sept 2026)',
+      '',
+      'Name: ' + name,
+      'Email: ' + email,
+      'Phone: ' + phone
+    ];
+    if (country) lines.push('Flying from: ' + country);
+    lines.push('Accommodation: ' + accommodation);
+    lines.push('Málaga airport pickup: ' + pickup);
+    if (dietary) lines.push('Dietary needs: ' + dietary);
+    if (notes) lines.push('Notes: ' + notes);
+    lines.push('');
+    lines.push('Heading to PayPal now to pay the €120 deposit.');
+
+    var msg = lines.join('\n');
+    var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+
+    // Pass the same details through PayPal's `custom` field so the team has
+    // them on the payment notification too (255 char limit — kept short).
+    var customField = paypalForm.querySelector('input[name="custom"]');
+    if (customField) {
+      var customLines = [
+        name,
+        email,
+        phone,
+        accommodation,
+        'Pickup: ' + pickup
+      ];
+      if (dietary) customLines.push('Diet: ' + dietary);
+      customField.value = customLines.join(' | ').substring(0, 250);
+    }
+
+    // Open the booking message in WhatsApp (new tab) and send the user
+    // to PayPal in the current tab.
+    window.open(whatsappUrl, '_blank', 'noopener');
+    paypalForm.submit();
+  });
+})();
+</script>
 
 <footer class="site-footer">
   <div class="container footer-inner">
