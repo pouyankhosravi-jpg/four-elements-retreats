@@ -177,15 +177,19 @@ body {
   line-height: 1;
 }
 
-/* Elements section — text + icons on decorative cream backdrop */
+/* Elements section — text + icons on decorative cream backdrop.
+   Composition for a wide thin banner: short header on top (eyebrow,
+   title, hairline ornament, single-line italic subtitle) sitting
+   above a 4-up horizontal row of element cards. Everything sized in
+   container-query units so it locks proportionally to the bg art. */
 .elements-text {
   position: relative;
   width: 100%;
-  background-image: url("elements-bg.jpg?v=1");
+  background-image: url("elements-bg.jpg?v=2");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: #F5EBD9;
-  aspect-ratio: 1916 / 821;
+  aspect-ratio: 2172 / 724;
   overflow: hidden;
   container-type: inline-size;
   color: var(--text);
@@ -198,36 +202,38 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5% 12%;
+  padding: 4% 13%;
   max-width: none;
   margin: 0;
+  gap: 0;
 }
 
 .elements-eyebrow {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(9px, 0.8cqw, 13px);
+  font-size: clamp(9px, 0.75cqw, 12px);
   font-weight: 500;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--terracotta);
-  margin: 0 0 1.2cqw;
+  margin: 0 0 0.9cqw;
 }
 
 .elements-title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.4rem, 2.7cqw, 2.6rem);
+  font-size: clamp(1.2rem, 2.4cqw, 2.2rem);
   font-weight: 500;
   line-height: 1.15;
   color: var(--text);
-  margin: 0 0 1.2cqw;
+  margin: 0 0 0.8cqw;
   letter-spacing: -0.005em;
+  white-space: nowrap;
 }
 
 .elements-ornament {
   display: inline-block;
-  width: clamp(56px, 5cqw, 80px);
+  width: clamp(50px, 4.5cqw, 72px);
   height: 8px;
-  margin: 0 auto 1.2cqw;
+  margin: 0 auto 0.7cqw;
   position: relative;
 }
 
@@ -260,11 +266,11 @@ body {
 .elements-subtitle {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: clamp(0.85rem, 1.05cqw, 1.1rem);
+  font-size: clamp(0.78rem, 0.95cqw, 1rem);
   color: var(--text-muted);
-  margin: 0 auto 2.6cqw;
-  max-width: 56cqw;
-  line-height: 1.5;
+  margin: 0 auto 2cqw;
+  max-width: 60cqw;
+  line-height: 1.45;
 }
 
 .elements-grid {
@@ -273,9 +279,9 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(20px, 2.6cqw, 44px);
+  gap: clamp(16px, 2.2cqw, 36px);
   width: 100%;
-  max-width: 70cqw;
+  max-width: 68cqw;
 }
 
 .element-card {
@@ -289,10 +295,10 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(36px, 4cqw, 64px);
-  height: clamp(36px, 4cqw, 64px);
+  width: clamp(30px, 3.2cqw, 50px);
+  height: clamp(30px, 3.2cqw, 50px);
   border-radius: 50%;
-  margin-bottom: 1cqw;
+  margin-bottom: 0.7cqw;
   color: #fff;
 }
 
@@ -308,29 +314,29 @@ body {
 
 .element-name {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(10px, 0.85cqw, 14px);
+  font-size: clamp(9px, 0.72cqw, 12px);
   font-weight: 500;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--text);
-  margin: 0 0 0.5cqw;
+  margin: 0 0 0.4cqw;
 }
 
 .element-rule {
-  width: 24px;
+  width: 20px;
   height: 1px;
   background: var(--terracotta);
   opacity: 0.45;
-  margin: 0 auto 0.6cqw;
+  margin: 0 auto 0.45cqw;
 }
 
 .element-tag {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: clamp(11px, 0.95cqw, 15px);
+  font-size: clamp(10px, 0.82cqw, 13px);
   color: var(--text-muted);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 @media (max-width: 800px) {
