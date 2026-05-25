@@ -2530,8 +2530,16 @@ main > section + section {
   line-height: 1.4;
 }
 
+.booking-details {
+  padding: 24px 32px 4px;
+}
+
+.booking-details .investment-meta {
+  margin: 0;
+}
+
 .booking-trigger {
-  padding: 28px 32px 32px;
+  padding: 22px 32px 32px;
   text-align: center;
 }
 
@@ -2852,7 +2860,17 @@ main > section + section {
   }
 
   .booking-trigger {
-    padding: 22px 22px 28px;
+    padding: 18px 22px 28px;
+  }
+
+  .booking-details {
+    padding: 20px 22px 4px;
+  }
+
+  .booking-details .investment-meta li {
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    font-size: 0.88rem;
   }
 
   .booking-field-row {
