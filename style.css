@@ -2777,68 +2777,57 @@ main > section + section {
   font-weight: 600;
 }
 
-/* PayPal-style buttons — mirror PayPal's Smart Button look. */
-.pp-btn {
-  display: flex;
+/* PayPal Smart Buttons — the SDK renders into this container. */
+.paypal-button-container {
+  min-height: 110px;
+  margin: 4px 0 2px;
+}
+
+.pp-loading {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 36px 0;
+  font-style: italic;
+  margin: 0;
+}
+
+.pp-fallback-link {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   width: 100%;
   height: 48px;
-  border: none;
+  background: #25D366;
+  color: #fff;
   border-radius: 999px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  cursor: pointer;
-  transition: filter 0.15s, transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+  transition: background 0.15s;
   padding: 0 22px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
-.pp-btn:hover {
-  filter: brightness(0.96);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+.pp-fallback-link:hover {
+  background: #1FAE52;
 }
 
-.pp-btn:active {
-  transform: translateY(1px);
-  filter: brightness(0.92);
+.pp-error-msg {
+  background: #FBEBE5;
+  color: #A04020;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  margin: 12px 0 0;
+  text-align: center;
+  line-height: 1.5;
 }
 
-.pp-btn:focus-visible {
-  outline: 3px solid rgba(23, 155, 215, 0.55);
-  outline-offset: 2px;
-}
-
-.pp-btn-paypal {
-  background: #ffc439;
-  color: #003087;
-}
-
-.pp-btn-paypal:hover {
-  background: #f2b22f;
-}
-
-.pp-btn-mark {
-  height: 22px;
-  width: auto;
-  display: block;
-}
-
-.pp-btn-card {
-  background: #2c2e2f;
-  color: #ffffff;
-}
-
-.pp-btn-card:hover {
-  background: #1f2123;
-}
-
-.pp-btn-card-icon {
-  width: 22px;
-  height: auto;
-  color: #ffffff;
+.pp-error-msg a {
+  color: #A04020;
+  text-decoration: underline;
 }
 
 .booking-pay-note {
