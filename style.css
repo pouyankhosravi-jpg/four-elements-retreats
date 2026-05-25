@@ -1666,9 +1666,11 @@ main > section + section {
 .retreat-banner {
   position: relative;
   height: auto;
-  /* Match the source image's aspect ratio so the whole composed
-     design (cream + arched photo + leaves) is always visible. */
-  aspect-ratio: 1912 / 823;
+  /* Shorter than the source image so the banner height matches
+     the body of text on the left. The crop slices into the
+     empty cream space above the leaves and the mountains below
+     the photo arch — the arch itself stays intact. */
+  aspect-ratio: 3 / 1;
   min-height: 0;
   background: #F3E0CB;
   overflow: hidden;
