@@ -599,7 +599,7 @@ main > section + section {
 /* Heart quote — photo pillars | text+body+CTA | photo pillars */
 .heart-quote {
   background: var(--cream);
-  padding: 56px 0 60px;
+  padding: 80px 0;
 }
 
 /* Heart-quote video clip: mobile-only, full-width, play-on-scroll-into-view */
@@ -749,23 +749,30 @@ main > section + section {
 }
 
 /* Four days — Earth / Water / Fire / Spirit */
-/* Four days — clean 4-column grid (Earth / Water / Fire / Spirit) */
 .four-days {
-  background: #F6F0E8;
-  padding: 64px 0 72px;
+  position: relative;
+  width: 100%;
+  background-image: url("four-days-bg.png?v=3");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: #F6F0E8;
+  aspect-ratio: 3168 / 1280;
+  overflow: hidden;
+  container-type: inline-size;
   color: #3F3A36;
 }
 
 .fd-grid {
+  position: absolute;
+  inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 36px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
+  padding: 18% 10% 0;
 }
 
 .fd-col {
+  padding: 0 1.8cqw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -775,30 +782,31 @@ main > section + section {
 .fd-title {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
-  font-size: 1.05rem;
-  letter-spacing: 0.2em;
+  font-size: clamp(13px, 1.5cqw, 24px);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 14px;
+  margin: 0 0 0.35cqw;
+  white-space: nowrap;
 }
 
 .fd-earth  { color: #8C5A32; }
-.fd-water  { color: #486078; }
+.fd-water  { color: #6B7B5D; }
 .fd-fire   { color: #B36238; }
-.fd-spirit { color: #6F775D; }
+.fd-spirit { color: #B36238; }
 
 .fd-sep {
   font-weight: 300;
-  margin: 0 0.4em;
-  opacity: 0.7;
+  margin: 0 0.3em;
+  opacity: 0.85;
 }
 
 .fd-rule {
   position: relative;
-  width: 56px;
+  width: clamp(60px, 8cqw, 140px);
   height: 1px;
   background: #D8C8B8;
-  margin: 0 0 18px;
+  margin: 0 0 0.35cqw;
 }
 
 .fd-rule::after {
@@ -814,16 +822,19 @@ main > section + section {
 
 .fd-body {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: #4A4039;
-  margin: 0 0 22px;
-  max-width: 26ch;
+  font-size: clamp(10px, 0.9cqw, 13px);
+  line-height: 1.2;
+  color: #3F3A36;
+  margin: 0 0 0.35cqw;
+  max-width: 100%;
+  min-height: 6.5cqw;
+  text-wrap: pretty;
 }
 
 .fd-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
+  margin-top: 0;
   overflow: hidden;
   border-radius: 8px;
   background: #F0E6D8;
@@ -837,11 +848,33 @@ main > section + section {
 }
 
 @media (max-width: 900px) {
-  .four-days { padding: 48px 0 56px; }
+  .four-days {
+    background-image: none;
+    background: #F6F0E8;
+    aspect-ratio: auto;
+    padding: 32px 20px;
+  }
+
   .fd-grid {
+    position: static;
     grid-template-columns: 1fr 1fr;
     gap: 36px 24px;
-    padding: 0 24px;
+    padding: 0;
+  }
+
+  .fd-title {
+    font-size: 1.1rem;
+  }
+
+  .fd-rule {
+    margin: 8px 0 14px;
+    width: 100px;
+  }
+
+  .fd-body {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0 0 18px;
   }
 }
 
@@ -850,43 +883,43 @@ main > section + section {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .fd-photo {
-    aspect-ratio: 4 / 3;
-    max-width: 360px;
-    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /* Special guest — Sebastián Serpell sound journey */
 .special-guest {
-  background: #F5EEE6;
-  padding: 64px 0 72px;
+  position: relative;
+  width: 100%;
+  background-image: url("special-guest-bg.png?v=1");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: #F5EEE6;
+  aspect-ratio: 1536 / 620;
+  overflow: hidden;
+  container-type: inline-size;
   color: #4A4039;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "header header"
-    "photo  text";
-  gap: 36px 56px;
-  max-width: 1100px;
-  margin: 0 auto;
-  align-items: center;
 }
 
 .sg-header {
-  grid-area: header;
+  position: absolute;
+  left: 50%;
+  top: 9%;
+  transform: translateX(-50%);
   text-align: center;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  width: 92%;
 }
 
 .sg-title {
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 300;
+  font-size: clamp(20px, 4.6cqw, 70px);
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: #B36238;
@@ -895,22 +928,21 @@ main > section + section {
 }
 
 .sg-subtitle {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 0.78rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(10px, 1.4cqw, 21px);
   letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: #7B6C63;
-  margin: 0;
+  color: #3F352F;
+  margin: 0.85cqw 0 0 0.42em;
 }
 
 .sg-photo {
-  grid-area: photo;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 10px;
-  overflow: hidden;
-  padding-left: 40px;
+  position: absolute;
+  left: 12%;
+  top: 31%;
+  width: 35%;
+  height: 67%;
 }
 
 .sg-photo img {
@@ -922,26 +954,27 @@ main > section + section {
 }
 
 .sg-text {
-  grid-area: text;
-  padding-right: 40px;
+  position: absolute;
+  right: 14%;
+  top: 31%;
+  width: 29%;
 }
 
 .sg-signature {
   font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-size: clamp(24px, 4cqw, 60px);
   color: #B36238;
   line-height: 1;
-  margin: 0 0 18px;
+  margin: 0 0 0.8cqw;
 }
 
 .sg-rule {
   position: relative;
   height: 1px;
-  width: 60px;
   background: #D8B39A;
-  margin: 16px 0 20px;
+  margin: 1cqw 0 1.6cqw;
 }
 
 .sg-rule::before {
@@ -949,8 +982,8 @@ main > section + section {
   position: absolute;
   top: -3px;
   left: 50%;
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   background: #F5EEE6;
   border: 1px solid #C9986F;
   transform: translateX(-50%) rotate(45deg);
@@ -958,43 +991,133 @@ main > section + section {
 
 .sg-body {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
+  font-size: clamp(10px, 1.1cqw, 17px);
   line-height: 1.65;
   color: #4A4039;
-  margin: 0 0 18px;
+  margin: 0 0 1.4cqw;
 }
 
 .sg-leaf-mid {
   display: block;
-  width: 38px;
+  width: clamp(28px, 3.4cqw, 54px);
   height: auto;
-  margin: 18px 0;
+  margin: 0.4cqw auto 1.4cqw;
   color: #B36238;
+}
+
+.sg-labels {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 0 2%;
+}
+
+.sg-label {
+  text-align: center;
+  padding: 0 1%;
+}
+
+.sg-label-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(9px, 1.05cqw, 16px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 0.3cqw;
+  line-height: 1.2;
+}
+
+.sg-label-terracotta { color: #B36238; }
+.sg-label-olive { color: #6F775D; }
+
+.sg-label-sub {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(9px, 0.95cqw, 14px);
+  color: #7B6C63;
+  margin: 0;
+  line-height: 1.3;
 }
 
 @media (max-width: 800px) {
   .special-guest {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "photo"
-      "text";
-    gap: 28px;
-    padding: 48px 24px 56px;
+    background-image: none;
+    background: #F5EEE6;
+    aspect-ratio: auto;
+    padding: 32px 24px 14px;
   }
-  .sg-header { padding: 0; }
-  .sg-photo  { padding: 0; aspect-ratio: 5 / 4; max-width: 480px; margin: 0 auto; }
-  .sg-text   { padding: 0; }
-  .sg-signature { font-size: 1.8rem; text-align: center; }
-  .sg-rule   { margin: 12px auto 18px; }
-  .sg-leaf-mid { margin-left: auto; margin-right: auto; }
-  .sg-body   { font-size: 0.96rem; }
+
+  .sg-header,
+  .sg-photo,
+  .sg-text,
+  .sg-labels {
+    position: static;
+    transform: none;
+    width: 100%;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+
+  .sg-header {
+    margin-bottom: 28px;
+  }
+
+  .sg-title {
+    font-size: 1.6rem;
+  }
+
+  .sg-subtitle {
+    font-size: 0.75rem;
+    margin-top: 12px;
+  }
+
+  .sg-photo {
+    margin: 0 0 28px;
+  }
+
+  .sg-text {
+    margin-bottom: 30px;
+  }
+
+  .sg-signature {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .sg-body {
+    font-size: 0.98rem;
+    margin-bottom: 14px;
+  }
+
+  .sg-leaf-mid {
+    width: 44px;
+  }
+
+  .sg-labels {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 12px;
+    padding: 20px 0 0;
+    border-top: 1px solid #D8B39A;
+  }
+
+  .sg-label-title {
+    font-size: 0.78rem;
+  }
+
+  .sg-label-sub {
+    font-size: 0.82rem;
+  }
 }
 
 /* Meet the team */
 .meet-the-team {
   background: var(--cream);
-  padding: 56px 0 64px;
+  padding: 40px 0 100px;
 }
 
 .team-container {
@@ -1114,51 +1237,67 @@ main > section + section {
 }
 
 /* What to expect — decorative background + live text */
-/* What to expect — two centered text blocks on cream */
 .what-to-expect-section {
-  background: var(--cream);
-  padding: 64px 0 70px;
+  position: relative;
+  width: 100%;
+  background-image: url("what-to-expect-bg.png?v=1");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  aspect-ratio: 1774 / 887;
   color: var(--text);
-  text-align: center;
 }
 
 .wte-title {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  transform: translateX(-50%);
+  margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   text-transform: uppercase;
   color: var(--terracotta);
-  letter-spacing: 0.32em;
+  letter-spacing: 0.35em;
   font-weight: 400;
-  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
-  margin: 0 auto 44px;
+  font-size: clamp(22px, 3.6vw, 64px);
+  white-space: nowrap;
   line-height: 1;
 }
 
 .wte-block {
-  max-width: 760px;
-  margin: 0 auto 32px;
-  padding: 0 24px;
+  position: absolute;
+  left: 23%;
+  right: 14%;
 }
 
-.wte-block:last-child { margin-bottom: 0; }
+.wte-block-1 {
+  top: 27%;
+}
+
+.wte-block-2 {
+  top: 67%;
+}
 
 .wte-headline {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
-  font-size: clamp(1.3rem, 2.1vw, 1.85rem);
-  line-height: 1.3;
+  font-size: clamp(16px, 2.2vw, 40px);
+  line-height: 1.25;
   color: var(--text);
-  margin: 0 0 14px;
+  margin: 0 0 clamp(10px, 1.4vw, 22px) 0;
+  max-width: 90%;
 }
 
-.wte-headline em { font-style: italic; }
+.wte-headline em {
+  font-style: italic;
+}
 
 .wte-text {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.02rem;
+  font-size: clamp(11px, 1.05vw, 19px);
   line-height: 1.65;
   color: var(--text);
-  margin: 0 auto;
-  max-width: 60ch;
+  margin: 0;
+  max-width: 62%;
 }
 
 /* Experience CTA — terracotta pill button */
@@ -1201,11 +1340,50 @@ main > section + section {
 }
 
 @media (max-width: 700px) {
-  .what-to-expect-section { padding: 48px 0; }
-  .wte-title { margin-bottom: 32px; font-size: 1.05rem; letter-spacing: 0.24em; }
-  .wte-block { margin-bottom: 28px; }
-  .wte-headline { font-size: 1.2rem; line-height: 1.3; }
-  .wte-text { font-size: 0.98rem; line-height: 1.65; }
+  /* Stop trying to overlay text on the decorative bg at small sizes —
+     drop the bg ornaments and use a clean centered text layout. */
+  .what-to-expect-section {
+    background: var(--cream);
+    aspect-ratio: auto;
+    padding: 32px 24px 32px;
+  }
+
+  .wte-title {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .wte-block {
+    position: static;
+    margin-bottom: 32px;
+    max-width: 100%;
+  }
+
+  .wte-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .wte-headline,
+  .wte-text {
+    max-width: 100%;
+  }
+
+  .wte-title {
+    font-size: 1.75rem;
+    letter-spacing: 0.22em;
+  }
+
+  .wte-headline {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .wte-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 }
 
 @media (max-width: 900px) {
