@@ -2450,84 +2450,141 @@ main > section + section {
 }
 
 .booking-summary {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
-  padding: 26px 32px;
-  background: linear-gradient(135deg, #FBF3EA 0%, #F6E7D5 100%);
-  border-bottom: 1px solid var(--cream-2);
+  display: flex;
   align-items: center;
-}
-
-.booking-summary-left .investment-early-tag {
-  margin: 0 0 10px;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 20px 30px;
+  background: #FBF6EE;
+  border-bottom: 1px solid var(--cream-2);
 }
 
 .booking-summary-price {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
-  color: var(--terracotta);
-  margin: 0 0 6px;
-  line-height: 1;
-  font-weight: 500;
   display: flex;
   align-items: baseline;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 4px 10px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .booking-summary-old {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   text-decoration: line-through;
   font-weight: 400;
 }
 
+.booking-summary-now {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1;
+}
+
 .booking-summary-per {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-style: italic;
   color: var(--text-muted);
 }
 
-.booking-summary-meta {
-  font-size: 0.86rem;
-  color: var(--text-muted);
-  margin: 0;
-  line-height: 1.5;
+.booking-summary-save {
+  flex-basis: 100%;
+  font-size: 0.78rem;
+  color: var(--terracotta);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-top: 4px;
 }
 
-.booking-summary-right {
-  text-align: right;
-  padding-left: 18px;
-  border-left: 1px solid rgba(184, 90, 48, 0.18);
+.booking-summary-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(72, 72, 48, 0.16);
+  flex-shrink: 0;
+}
+
+.booking-summary-deposit {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .booking-summary-deposit-label {
   font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--terracotta);
-  margin: 0 0 4px;
+  color: var(--text-muted);
 }
 
-.booking-summary-deposit {
+.booking-summary-deposit-amount {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.4rem;
+  font-size: 1.65rem;
   font-weight: 500;
-  color: var(--text);
-  margin: 0 0 4px;
+  color: var(--terracotta);
   line-height: 1;
 }
 
-.booking-summary-deposit-note {
-  font-size: 0.8rem;
-  font-style: italic;
+/* Trust + accepted-payments strip under the "Book my spot" trigger. */
+.booking-trust-strip {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--cream-2);
+  text-align: center;
+}
+
+.booking-trust-line {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
   color: var(--text-muted);
+  margin: 0 auto 12px;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 460px;
+}
+
+.trust-lock-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--green-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.booking-payment-logos {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.booking-payment-logos li {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.booking-payment-logos li:hover {
+  opacity: 1;
+}
+
+.booking-payment-logos svg {
+  height: 22px;
+  width: auto;
+  display: block;
 }
 
 .booking-details {
@@ -2930,21 +2987,32 @@ main > section + section {
 
 @media (max-width: 640px) {
   .booking-summary {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 22px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 18px 22px;
   }
 
-  .booking-summary-right {
-    text-align: left;
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px solid rgba(184, 90, 48, 0.18);
-    padding-top: 16px;
+  .booking-summary-divider {
+    width: 100%;
+    height: 1px;
   }
 
   .booking-summary-deposit {
-    font-size: 2rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .booking-summary-deposit-amount {
+    font-size: 1.5rem;
+  }
+
+  .booking-payment-logos {
+    gap: 14px;
+  }
+
+  .booking-payment-logos svg {
+    height: 18px;
   }
 
   .booking-form {

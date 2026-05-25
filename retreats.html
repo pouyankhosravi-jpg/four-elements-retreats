@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=169">
+<link rel="stylesheet" href="style.css?v=170">
 <script src="https://www.paypal.com/sdk/js?client-id=AbM6ME_zui2IMdZKl_ppxHC6_f43TZGqB0x1X9OBl2qwZ5TU7aeeJGa5wLxwM3pOa3jvF9fsNKDfdKs0&currency=EUR&intent=capture&disable-funding=paylater" async></script>
 </head>
 <body>
@@ -505,18 +505,16 @@
 
       <div class="booking-card">
         <div class="booking-summary">
-          <div class="booking-summary-left">
-            <p class="investment-early-tag">Early bird &middot; save &euro;100 until 30 June</p>
-            <p class="booking-summary-price">
-              <span class="booking-summary-old">&euro;899</span>
-              &euro;799 <span class="booking-summary-per">per person</span>
-            </p>
-            <p class="booking-summary-meta">4&ndash;7 Sept 2026 &middot; M&aacute;laga &middot; All meals &amp; airport transfers included</p>
+          <div class="booking-summary-price">
+            <span class="booking-summary-old">&euro;899</span>
+            <span class="booking-summary-now">&euro;799</span>
+            <span class="booking-summary-per">per person</span>
+            <span class="booking-summary-save">save &euro;100 &middot; early bird until 30 June</span>
           </div>
-          <div class="booking-summary-right">
-            <p class="booking-summary-deposit-label">Today you pay</p>
-            <p class="booking-summary-deposit">&euro;160</p>
-            <p class="booking-summary-deposit-note">20% deposit &middot; refundable until 31 July</p>
+          <span class="booking-summary-divider" aria-hidden="true"></span>
+          <div class="booking-summary-deposit">
+            <span class="booking-summary-deposit-label">Pay today</span>
+            <span class="booking-summary-deposit-amount">&euro;160</span>
           </div>
         </div>
 
@@ -538,7 +536,50 @@
             Book my spot
             <span aria-hidden="true">&rarr;</span>
           </button>
-          <p class="booking-pay-note">A few quick details, then pay your &euro;160 deposit via PayPal (or card). Takes about 2 minutes.</p>
+          <p class="booking-pay-note">A few quick details, then pay your &euro;160 deposit. Takes about 2 minutes.</p>
+
+          <div class="booking-trust-strip">
+            <p class="booking-trust-line">
+              <svg class="trust-lock-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="11" width="16" height="9" rx="2"/>
+                <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
+              </svg>
+              <span>Secure checkout &mdash; payments processed by PayPal. We never see or store your card details.</span>
+            </p>
+            <ul class="booking-payment-logos" aria-label="Accepted payment methods">
+              <li aria-label="PayPal">
+                <svg viewBox="0 0 70 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <text x="0" y="17" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="18" font-style="italic">
+                    <tspan fill="#253B80">Pay</tspan><tspan fill="#179BD7">Pal</tspan>
+                  </text>
+                </svg>
+              </li>
+              <li aria-label="Visa">
+                <svg viewBox="0 0 52 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <text x="0" y="17" font-family="Helvetica, Arial, sans-serif" font-weight="900" font-size="19" font-style="italic" fill="#1A1F71">VISA</text>
+                </svg>
+              </li>
+              <li aria-label="Mastercard">
+                <svg viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="13" cy="11" r="9" fill="#EB001B"/>
+                  <circle cx="23" cy="11" r="9" fill="#F79E1B" fill-opacity="0.85"/>
+                </svg>
+              </li>
+              <li aria-label="American Express">
+                <svg viewBox="0 0 80 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="0" y="2" width="80" height="18" rx="2" fill="#016FD0"/>
+                  <text x="40" y="14.5" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#fff" text-anchor="middle">AMERICAN EXPRESS</text>
+                </svg>
+              </li>
+              <li aria-label="Bank transfer">
+                <svg viewBox="0 0 28 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="#566066" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 8 L14 3 L26 8"/>
+                  <path d="M3 8 L3 18 M9 8 L9 18 M19 8 L19 18 M25 8 L25 18"/>
+                  <path d="M2 19 L26 19"/>
+                </svg>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <form class="booking-form" id="booking-form" novalidate hidden>
