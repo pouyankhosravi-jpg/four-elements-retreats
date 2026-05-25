@@ -178,10 +178,11 @@ body {
 }
 
 /* Elements section — text + icons on decorative cream backdrop.
-   Composition for a wide thin banner: short header on top (eyebrow,
-   title, hairline ornament, single-line italic subtitle) sitting
-   above a 4-up horizontal row of element cards. Everything sized in
-   container-query units so it locks proportionally to the bg art. */
+   Padding-based height (no aspect-ratio lock) so the bg stretches
+   to fit the richer content. The bg art (leaves top corners, sun
+   top-right, flame mid-right, mountains bottom-left) sits behind
+   a centered content stack: eyebrow → title → ornament → subtitle
+   → 4 element cards in a row → CTA at the bottom. */
 .elements-text {
   position: relative;
   width: 100%;
@@ -189,51 +190,45 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: #F5EBD9;
-  aspect-ratio: 2172 / 724;
-  overflow: hidden;
-  container-type: inline-size;
+  padding: 64px 0 72px;
   color: var(--text);
 }
 
 .elements-text .container {
-  position: absolute;
-  inset: 0;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 13%;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 4% 13%;
-  max-width: none;
-  margin: 0;
-  gap: 0;
 }
 
 .elements-eyebrow {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(9px, 0.75cqw, 12px);
+  font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--terracotta);
-  margin: 0 0 0.9cqw;
+  margin: 0 0 16px;
 }
 
 .elements-title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.2rem, 2.4cqw, 2.2rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
   font-weight: 500;
   line-height: 1.15;
   color: var(--text);
-  margin: 0 0 0.8cqw;
+  margin: 0 0 16px;
   letter-spacing: -0.005em;
-  white-space: nowrap;
 }
 
 .elements-ornament {
   display: inline-block;
-  width: clamp(50px, 4.5cqw, 72px);
+  width: 70px;
   height: 8px;
-  margin: 0 auto 0.7cqw;
+  margin: 0 auto 16px;
   position: relative;
 }
 
@@ -266,11 +261,11 @@ body {
 .elements-subtitle {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: clamp(0.78rem, 0.95cqw, 1rem);
+  font-size: 1.02rem;
   color: var(--text-muted);
-  margin: 0 auto 2cqw;
-  max-width: 60cqw;
-  line-height: 1.45;
+  margin: 0 auto 40px;
+  max-width: 62ch;
+  line-height: 1.5;
 }
 
 .elements-grid {
@@ -279,9 +274,9 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(16px, 2.2cqw, 36px);
+  gap: 30px;
   width: 100%;
-  max-width: 68cqw;
+  max-width: 900px;
 }
 
 .element-card {
@@ -295,16 +290,16 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(30px, 3.2cqw, 50px);
-  height: clamp(30px, 3.2cqw, 50px);
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  margin-bottom: 0.7cqw;
+  margin-bottom: 14px;
   color: #fff;
 }
 
 .element-icon svg {
-  width: 50%;
-  height: 50%;
+  width: 26px;
+  height: 26px;
 }
 
 .element-earth .element-icon { background: #C0A878; }
@@ -314,60 +309,86 @@ body {
 
 .element-name {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(9px, 0.72cqw, 12px);
+  font-size: 0.84rem;
   font-weight: 500;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--text);
-  margin: 0 0 0.4cqw;
+  margin: 0 0 8px;
 }
 
 .element-rule {
-  width: 20px;
+  width: 22px;
   height: 1px;
   background: var(--terracotta);
   opacity: 0.45;
-  margin: 0 auto 0.45cqw;
+  margin: 0 auto 10px;
 }
 
 .element-tag {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: clamp(10px, 0.82cqw, 13px);
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.element-body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.86rem;
   color: var(--text-muted);
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.5;
+  max-width: 22ch;
+}
+
+.elements-cta-wrap {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.elements-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(184, 90, 48, 0.4);
+  transition: color 0.15s, border-color 0.15s, gap 0.15s;
+}
+
+.elements-cta:hover {
+  color: #9A4F26;
+  border-color: #9A4F26;
+  gap: 14px;
 }
 
 @media (max-width: 800px) {
   /* Drop the bg image on small screens — the corner art doesn't read
-     well when cropped/squashed. Flow layout on a plain cream bg. */
+     well when squashed onto narrow widths. */
   .elements-text {
     background-image: none;
     background: #F5EBD9;
-    aspect-ratio: auto;
-    padding: 44px 0 50px;
+    padding: 48px 0 54px;
   }
   .elements-text .container {
-    position: static;
     padding: 0 22px;
     max-width: 720px;
-    margin: 0 auto;
   }
-  .elements-eyebrow { font-size: 0.78rem; margin: 0 0 14px; }
-  .elements-title   { font-size: 1.55rem; margin: 0 0 14px; }
-  .elements-ornament { width: 64px; margin: 0 auto 14px; }
-  .elements-subtitle { font-size: 1rem; margin: 0 auto 32px; max-width: 56ch; }
+  .elements-title  { font-size: 1.55rem; }
   .elements-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 20px;
-    max-width: 100%;
+    gap: 36px 22px;
   }
-  .element-icon { width: 56px; height: 56px; margin-bottom: 14px; }
-  .element-icon svg { width: 26px; height: 26px; }
-  .element-name { font-size: 0.84rem; margin: 0 0 8px; }
-  .element-rule { margin: 0 auto 10px; }
-  .element-tag  { font-size: 0.92rem; }
+  .element-body { max-width: none; }
+  .elements-cta-wrap { margin-top: 30px; }
 }
 
 @media (max-width: 700px) {
