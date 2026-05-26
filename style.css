@@ -2248,7 +2248,9 @@ main > section + section {
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  padding: clamp(28px, 4vw, 56px) clamp(24px, 6vw, 88px);
+  /* asymmetric vertical padding pulls the centered content block up
+     so the Reserve CTA isn't kissing the espresso trust-bar below */
+  padding: clamp(20px, 3vw, 36px) clamp(24px, 6vw, 88px) clamp(56px, 8vw, 104px);
   color: #2F241D;
   text-shadow: none;
   min-height: 0;
