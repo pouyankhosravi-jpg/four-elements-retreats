@@ -5817,3 +5817,91 @@ main > .trust-bar + section {
 }
 
 
+
+/* ============================================
+   Mobile polish — tighten vertical rhythm across
+   the homepage so sections sit closer together
+   and scrolling feels effortless.
+   ============================================ */
+@media (max-width: 720px) {
+  /* Elements strip */
+  .elements { padding: 28px 0 30px; }
+  .elements-bar { gap: 26px 0; }
+  .elem-icon-wrap { width: 56px; height: 56px; margin-bottom: 10px; }
+  .elem-name { margin: 0 0 8px; font-size: 1.4rem; }
+  .elem-body { font-size: 0.88rem; line-height: 1.5; }
+
+  /* Retreat feature */
+  .retreat-feature-text { padding: 32px 22px 36px; }
+  .retreat-feature-text h2 { font-size: 1.55rem; margin: 18px 0 16px; }
+  .retreat-lead { font-size: 0.95rem; margin-bottom: 20px; }
+  .retreat-list { margin: 0 0 22px; }
+  .retreat-list li { font-size: 0.9rem; padding: 5px 0; }
+
+  /* Heart-quote */
+  .heart-quote { padding: 24px 0 28px; }
+  .heart-quote-text { padding: 14px 4px 0; }
+  .heart-quote-text h2 { font-size: 1.45rem; margin: 0 0 8px; }
+  .heart-quote-text .script { font-size: 1.7rem; margin: 0 0 18px; }
+  .heart-quote-body { margin: 0 0 22px; }
+  .heart-quote-body p { font-size: 1rem; line-height: 1.65; margin: 0 0 12px; }
+  .heart-photo { height: 240px; }
+
+  /* What to Expect */
+  .what-to-expect-section { padding: 32px 20px 36px; }
+  .wte-eyebrow { margin-bottom: 8px; }
+  .wte-ornament { margin: 12px auto 22px; }
+  .wte-row + .wte-row { margin-top: 24px; }
+  .wte-row, .wte-row-image-left, .wte-row-image-right { row-gap: 16px; }
+
+  /* Four Days */
+  .four-days { padding: 32px 20px 36px; }
+  .fd-eyebrow { margin-bottom: 8px; }
+  .fd-ornament { margin: 12px auto 22px; }
+  .fd-grid { gap: 18px; }
+  .fd-card-body { padding: 16px 18px 18px; }
+
+  /* Page CTA blocks */
+  .page-cta { padding: 22px 0 26px; }
+  .page-cta .script { font-size: 1.5rem; margin: 0 0 12px; }
+
+  /* Special Guest */
+  .special-guest { padding: 30px 20px 34px; }
+
+  /* Meet the Team */
+  .meet-the-team { padding: 30px 0 34px; }
+  .team-container { padding: 0 20px; }
+  .team-header { margin-bottom: 22px; }
+  .team-eyebrow { margin-bottom: 8px; }
+  .team-ornament { margin: 14px auto 14px; }
+  .team-subtitle { font-size: 0.95rem; line-height: 1.55; }
+
+  /* Buttons sized for thumbs */
+  .cta-experience { padding: 13px 26px; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+  /* Banner CTA already mobile-tuned */
+  .elements { padding: 24px 0 26px; }
+  .elem-name { font-size: 1.3rem; }
+
+  .retreat-feature-text { padding: 28px 18px 32px; }
+  .retreat-feature-text h2 { font-size: 1.4rem; }
+
+  .heart-quote { padding: 20px 0 24px; }
+  .heart-quote-text h2 { font-size: 1.35rem; }
+  .heart-quote-text .script { font-size: 1.55rem; margin: 0 0 14px; }
+  .heart-photo { height: 210px; }
+
+  .what-to-expect-section { padding: 28px 18px 32px; }
+  .four-days { padding: 28px 18px 32px; }
+  .special-guest { padding: 26px 18px 30px; }
+  .meet-the-team { padding: 26px 0 30px; }
+  .team-container { padding: 0 18px; }
+
+  .page-cta { padding: 20px 0 24px; }
+  .page-cta .script { font-size: 1.4rem; }
+
+  /* Section titles a touch smaller */
+  .wte-title, .fd-section-title, .sg-section-title, .team-title { font-size: 1.55rem; }
+}
