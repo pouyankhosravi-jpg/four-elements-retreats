@@ -918,7 +918,7 @@ main > section + section {
 .special-guest {
   position: relative;
   background: var(--cream);
-  padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 56px);
+  padding: clamp(36px, 4.5vw, 60px) clamp(20px, 4vw, 56px);
   color: var(--text);
   overflow: hidden;
 }
@@ -956,9 +956,16 @@ main > section + section {
 .sg-inner {
   position: relative;
   z-index: 1;
-  max-width: 1180px;
+  max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
+}
+
+.sg-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  column-gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  text-align: left;
 }
 
 .sg-eyebrow {
@@ -966,69 +973,46 @@ main > section + section {
   font-family: Georgia, "Times New Roman", serif;
   text-transform: uppercase;
   letter-spacing: 0.42em;
-  font-size: clamp(11px, 0.78vw, 13px);
+  font-size: clamp(10px, 0.72vw, 12px);
   color: var(--terracotta);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .sg-section-title {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
-  font-size: clamp(28px, 3.2vw, 46px);
+  font-size: clamp(22px, 2.4vw, 34px);
   letter-spacing: 0.04em;
   color: var(--text);
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .sg-ornament {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin: 22px auto clamp(40px, 5vw, 60px);
+  gap: 10px;
+  margin: 12px 0 18px;
 }
 
 .sg-ornament .sg-line {
-  width: 56px;
+  width: 40px;
   height: 1px;
   background: var(--terracotta);
   opacity: 0.55;
 }
 
 .sg-wave-icon {
-  width: 60px;
-  height: 14px;
+  width: 48px;
+  height: 12px;
   color: var(--terracotta);
-}
-
-.sg-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) 1px minmax(0, 1.15fr);
-  column-gap: clamp(36px, 5vw, 72px);
-  align-items: center;
-  text-align: left;
-}
-
-.sg-grid::before {
-  content: "";
-  grid-column: 2;
-  align-self: stretch;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(184, 90, 48, 0.30) 18%,
-    rgba(184, 90, 48, 0.30) 82%,
-    transparent 100%
-  );
 }
 
 .sg-photo {
   position: relative;
   aspect-ratio: 4 / 5;
-  max-width: 420px;
-  margin: 0 auto;
+  max-width: 340px;
+  margin: 0;
 }
 
 .sg-photo img {
@@ -1061,36 +1045,36 @@ main > section + section {
   font-family: "Snell Roundhand", "Brush Script MT", "Apple Chancery", "Lucida Handwriting", cursive;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(34px, 3.6vw, 52px);
+  font-size: clamp(28px, 2.8vw, 42px);
   color: var(--terracotta);
   line-height: 1;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
 .sg-role {
   font-family: Georgia, "Times New Roman", serif;
   text-transform: uppercase;
   letter-spacing: 0.32em;
-  font-size: 11px;
+  font-size: 10px;
   color: var(--text-muted);
-  margin: 0 0 26px;
+  margin: 0 0 16px;
 }
 
 .sg-quote {
   position: relative;
-  margin: 0 0 22px;
-  padding: 4px 0 4px 28px;
+  margin: 0 0 14px;
+  padding: 2px 0 2px 22px;
   border-left: 2px solid var(--terracotta);
 }
 
 .sg-quote::before {
   content: "\201C";
   position: absolute;
-  left: 4px;
-  top: -28px;
+  left: 2px;
+  top: -22px;
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: 84px;
+  font-size: 64px;
   color: var(--terracotta);
   opacity: 0.18;
   line-height: 1;
@@ -1100,56 +1084,39 @@ main > section + section {
 .sg-quote p {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: clamp(15px, 1.15vw, 19px);
-  line-height: 1.6;
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 1.55;
   color: var(--text);
   margin: 0;
 }
 
 .sg-body {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(13px, 0.95vw, 15px);
-  line-height: 1.65;
+  font-size: clamp(13px, 0.9vw, 14px);
+  line-height: 1.6;
   color: var(--text-muted);
   margin: 0;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 760px) {
   .special-guest {
-    padding: 48px 22px 56px;
+    padding: 36px 22px 40px;
   }
 
-  .sg-rings { width: 360px; height: 360px; left: -160px; top: 30%; }
-  .sg-rings-2 { width: 280px; height: 280px; right: -120px; bottom: -120px; }
+  .sg-rings { width: 320px; height: 320px; left: -150px; top: 30%; }
+  .sg-rings-2 { width: 240px; height: 240px; right: -100px; bottom: -100px; }
 
   .sg-grid {
     grid-template-columns: 1fr;
-    row-gap: 36px;
+    row-gap: 24px;
   }
-
-  .sg-grid::before { display: none; }
 
   .sg-photo {
-    max-width: 320px;
+    max-width: 280px;
   }
 
-  .sg-content { text-align: center; }
-
-  .sg-signature { font-size: 2.4rem; }
-
-  .sg-quote {
-    border-left: none;
-    padding: 8px 14px 0;
-    text-align: left;
-  }
-
-  .sg-quote::before {
-    left: -2px;
-    top: -22px;
-    font-size: 68px;
-  }
-
-  .sg-section-title { font-size: 1.9rem; }
+  .sg-section-title { font-size: 1.6rem; }
+  .sg-signature { font-size: 2rem; }
 }
 
 /* Meet the team */
