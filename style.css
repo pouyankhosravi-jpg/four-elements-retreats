@@ -484,7 +484,6 @@ main > section + section {
 }
 
 /* Specific transitions that should be flush (no cream gap) */
-.what-to-expect-section + .four-days,
 .four-days + .special-guest {
   margin-top: 0;
 }
@@ -747,92 +746,94 @@ main > section + section {
 /* Four days — Earth / Water / Fire / Spirit */
 .four-days {
   position: relative;
-  width: 100%;
-  background-image: url("four-days-bg.png?v=3");
-  background-size: 100% auto;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-color: #F6F0E8;
-  aspect-ratio: 3168 / 1280;
-  overflow: hidden;
-  container-type: inline-size;
-  color: #3F3A36;
+  background: #F5F0E8;
+  padding: clamp(56px, 7vw, 92px) clamp(20px, 4vw, 56px);
+  color: var(--text);
 }
 
-.fd-grid {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 18% 10% 0;
-}
-
-.fd-col {
-  padding: 0 1.8cqw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.fd-inner {
+  max-width: 1280px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.fd-title {
+.fd-eyebrow {
+  display: inline-block;
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  font-size: clamp(13px, 1.5cqw, 24px);
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  line-height: 1.2;
-  margin: 0 0 0.35cqw;
-  white-space: nowrap;
+  letter-spacing: 0.42em;
+  font-size: clamp(11px, 0.78vw, 13px);
+  color: var(--terracotta);
+  margin-bottom: 14px;
 }
 
-.fd-earth  { color: #8C5A32; }
-.fd-water  { color: #6B7B5D; }
-.fd-fire   { color: #B36238; }
-.fd-spirit { color: #B36238; }
-
-.fd-sep {
-  font-weight: 300;
-  margin: 0 0.3em;
-  opacity: 0.85;
+.fd-section-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.2vw, 46px);
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1.1;
 }
 
-.fd-rule {
-  position: relative;
-  width: clamp(60px, 8cqw, 140px);
+.fd-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px auto clamp(36px, 4.5vw, 56px);
+}
+
+.fd-ornament .fd-line {
+  width: 56px;
   height: 1px;
-  background: #D8C8B8;
-  margin: 0 0 0.35cqw;
+  background: var(--terracotta);
+  opacity: 0.55;
 }
 
-.fd-rule::after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: 50%;
+.fd-ornament .fd-dot {
   width: 6px;
   height: 6px;
-  background: #B36238;
-  transform: translateX(-50%) rotate(45deg);
+  border-radius: 50%;
+  background: var(--terracotta);
 }
 
-.fd-body {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(10px, 0.9cqw, 13px);
-  line-height: 1.2;
-  color: #3F3A36;
-  margin: 0 0 0.35cqw;
-  max-width: 100%;
-  min-height: 6.5cqw;
-  text-wrap: pretty;
+.fd-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 2.4vw, 32px);
+  text-align: left;
 }
+
+.fd-card {
+  --elem: #B36238;
+  background: var(--cream);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 32px -22px rgba(46, 36, 24, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.fd-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px -22px rgba(46, 36, 24, 0.5);
+}
+
+.fd-card.fd-earth  { --elem: #8C5A32; }
+.fd-card.fd-water  { --elem: #6B7B5D; }
+.fd-card.fd-fire   { --elem: #B36238; }
+.fd-card.fd-spirit { --elem: #8A6A38; }
 
 .fd-photo {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
-  margin-top: 0;
   overflow: hidden;
-  border-radius: 8px;
+  margin: 0;
+  border-radius: 0;
   background: #F0E6D8;
 }
 
@@ -841,50 +842,74 @@ main > section + section {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
 }
 
-@media (max-width: 900px) {
-  .four-days {
-    background-image: none;
-    background: #F6F0E8;
-    aspect-ratio: auto;
-    padding: 32px 20px;
-  }
+.fd-card:hover .fd-photo img {
+  transform: scale(1.04);
+}
 
+.fd-card-body {
+  position: relative;
+  padding: 22px 22px 24px;
+  border-top: 3px solid var(--elem);
+}
+
+.fd-day-label {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 11px;
+  color: var(--elem);
+  margin-bottom: 8px;
+}
+
+.fd-title {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(20px, 1.7vw, 26px);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--text);
+  text-transform: none;
+  white-space: normal;
+}
+
+.fd-body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(13px, 0.95vw, 15px);
+  line-height: 1.6;
+  color: var(--text-muted);
+  min-height: 0;
+  text-wrap: pretty;
+}
+
+@media (max-width: 1000px) {
   .fd-grid {
-    position: static;
-    grid-template-columns: 1fr 1fr;
-    gap: 36px 24px;
-    padding: 0;
-  }
-
-  .fd-title {
-    font-size: 1.1rem;
-  }
-
-  .fd-rule {
-    margin: 8px 0 14px;
-    width: 100px;
-  }
-
-  .fd-body {
-    font-size: 0.95rem;
-    line-height: 1.65;
-    margin: 0 0 18px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
+  .four-days {
+    padding: 48px 22px 56px;
+  }
+  .fd-card-body {
+    padding: 20px 20px 22px;
+  }
+}
+
+@media (max-width: 520px) {
   .fd-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 24px;
   }
-
   .fd-photo {
-    aspect-ratio: 4 / 5;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
+    aspect-ratio: 16 / 10;
   }
 }
 
