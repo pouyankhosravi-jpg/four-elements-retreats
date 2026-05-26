@@ -607,7 +607,7 @@ main > section + section {
 @media (max-width: 900px) {
   .heart-clip-wrap {
     display: block;
-    margin: 0 0 16px;
+    margin: 0;
     line-height: 0;
   }
 }
@@ -700,13 +700,14 @@ main > section + section {
   }
 
   .heart-quote {
-    padding: 32px 0 32px;
+    padding: 0 0 32px;
   }
 
   .heart-quote-grid {
     grid-template-columns: 1fr;
     padding: 0 16px;
     gap: 24px;
+    margin-top: 24px;
   }
 
   .heart-photo {
@@ -5838,8 +5839,11 @@ main > .trust-bar + section {
   .retreat-list { margin: 0 0 22px; }
   .retreat-list li { font-size: 0.9rem; padding: 5px 0; }
 
-  /* Heart-quote */
-  .heart-quote { padding: 24px 0 28px; }
+  /* Heart-quote — video sits flush like a section connector */
+  .heart-quote { padding: 0 0 28px; }
+  .heart-clip-wrap { margin: 0; }
+  .heart-clip { display: block; vertical-align: top; }
+  .heart-quote-grid { margin-top: 24px; }
   .heart-quote-text { padding: 14px 4px 0; }
   .heart-quote-text h2 { font-size: 1.45rem; margin: 0 0 8px; }
   .heart-quote-text .script { font-size: 1.7rem; margin: 0 0 18px; }
