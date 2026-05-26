@@ -177,218 +177,24 @@ body {
   line-height: 1;
 }
 
-/* Elements section — text + icons on decorative cream backdrop.
-   Padding-based height (no aspect-ratio lock) so the bg stretches
-   to fit the richer content. The bg art (leaves top corners, sun
-   top-right, flame mid-right, mountains bottom-left) sits behind
-   a centered content stack: eyebrow → title → ornament → subtitle
-   → 4 element cards in a row → CTA at the bottom. */
-.elements-text {
-  position: relative;
+/* Elements section — single illustrated banner (Ground · Flow ·
+   Breathe · Glow) on a cream backdrop. Whole strip is a link to
+   the retreats page. */
+.elements {
   width: 100%;
-  background-image: url("elements-bg.jpg?v=2");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-color: #F5EBD9;
-  padding: 64px 0 72px;
-  color: var(--text);
+  background: #F5EBD9;
+  line-height: 0;
 }
 
-.elements-text .container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 13%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.elements-eyebrow {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--terracotta);
-  margin: 0 0 16px;
-}
-
-.elements-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-  font-weight: 500;
-  line-height: 1.15;
-  color: var(--text);
-  margin: 0 0 16px;
-  letter-spacing: -0.005em;
-}
-
-.elements-ornament {
-  display: inline-block;
-  width: 70px;
-  height: 8px;
-  margin: 0 auto 16px;
-  position: relative;
-}
-
-.elements-ornament::before,
-.elements-ornament::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 40%;
-  height: 1px;
-  background: var(--terracotta);
-  opacity: 0.55;
-}
-
-.elements-ornament::before { left: 0; }
-.elements-ornament::after  { right: 0; }
-
-.elements-ornament span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  background: var(--terracotta);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.85;
-}
-
-.elements-subtitle {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-size: 1.02rem;
-  color: var(--text-muted);
-  margin: 0 auto 40px;
-  max-width: 62ch;
-  line-height: 1.5;
-}
-
-.elements-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  width: 100%;
-  max-width: 900px;
-}
-
-.element-card {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.element-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  margin-bottom: 14px;
-  color: #fff;
-}
-
-.element-icon svg {
-  width: 26px;
-  height: 26px;
-}
-
-.element-earth .element-icon { background: #C0A878; }
-.element-water .element-icon { background: #486078; }
-.element-air   .element-icon { background: #484830; }
-.element-fire  .element-icon { background: #A86030; }
-
-.element-name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.84rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--text);
-  margin: 0 0 8px;
-}
-
-.element-rule {
-  width: 22px;
-  height: 1px;
-  background: var(--terracotta);
-  opacity: 0.45;
-  margin: 0 auto 10px;
-}
-
-.element-tag {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--text);
-  margin: 0 0 8px;
-  line-height: 1.4;
-}
-
-.element-body {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.86rem;
-  color: var(--text-muted);
-  margin: 0;
-  line-height: 1.5;
-  max-width: 22ch;
-}
-
-.elements-cta-wrap {
-  margin-top: 36px;
-  text-align: center;
-}
-
-.elements-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--terracotta);
+.elements-link {
+  display: block;
   text-decoration: none;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(184, 90, 48, 0.4);
-  transition: color 0.15s, border-color 0.15s, gap 0.15s;
 }
 
-.elements-cta:hover {
-  color: #9A4F26;
-  border-color: #9A4F26;
-  gap: 14px;
-}
-
-@media (max-width: 800px) {
-  /* Drop the bg image on small screens — the corner art doesn't read
-     well when squashed onto narrow widths. */
-  .elements-text {
-    background-image: none;
-    background: #F5EBD9;
-    padding: 48px 0 54px;
-  }
-  .elements-text .container {
-    padding: 0 22px;
-    max-width: 720px;
-  }
-  .elements-title  { font-size: 1.55rem; }
-  .elements-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px 22px;
-  }
-  .element-body { max-width: none; }
-  .elements-cta-wrap { margin-top: 30px; }
+.elements img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 700px) {
