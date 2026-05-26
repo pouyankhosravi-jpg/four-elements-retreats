@@ -178,12 +178,20 @@ body {
 }
 
 /* Elements section — compact full-width 4-column bar with the
-   element icons + names + body copy. Built entirely in HTML/CSS
-   (no image). Hairline vertical dividers between columns. */
+   element icons + names + body copy. Painted cream backdrop
+   sits behind the bar (leaves top-left, sun top-right, mountains
+   bottom-left, leaves bottom-right). Image is anchored to the
+   top of the section and only as much of it shows as the bar
+   content needs — bottom of the image crops naturally. */
 .elements {
   width: 100%;
-  background: #F5EBD9;
-  padding: 52px 0 56px;
+  background-color: #F5EBD9;
+  background-image: url("elements-bg.jpg?v=3");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 56px 0 60px;
+  overflow: hidden;
 }
 
 .elements-bar {
