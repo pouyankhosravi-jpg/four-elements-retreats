@@ -289,7 +289,12 @@ body {
 }
 
 @media (max-width: 800px) {
-  .elements { padding: 36px 0 40px; }
+  .elements {
+    padding: 36px 0 40px;
+    background-image: url("elements-bg-mobile.png?v=1");
+    background-size: cover;
+    background-position: center;
+  }
   .elements-bar {
     grid-template-columns: 1fr 1fr;
     gap: 32px 0;
