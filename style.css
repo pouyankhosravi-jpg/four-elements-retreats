@@ -1232,68 +1232,120 @@ main > section + section {
   }
 }
 
-/* What to expect — decorative background + live text */
+/* What to expect — clean editorial layout on cream-2 */
 .what-to-expect-section {
   position: relative;
-  width: 100%;
-  background-image: url("what-to-expect-bg.png?v=1");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  aspect-ratio: 1774 / 887;
+  background: var(--cream-2);
+  padding: clamp(56px, 7vw, 92px) clamp(20px, 4vw, 56px);
   color: var(--text);
 }
 
-.wte-title {
-  position: absolute;
-  left: 50%;
-  top: 8%;
-  transform: translateX(-50%);
-  margin: 0;
+.wte-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wte-eyebrow {
+  display: inline-block;
   font-family: Georgia, "Times New Roman", serif;
   text-transform: uppercase;
+  letter-spacing: 0.42em;
+  font-size: clamp(11px, 0.78vw, 13px);
   color: var(--terracotta);
-  letter-spacing: 0.35em;
+  margin-bottom: 14px;
+}
+
+.wte-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
-  font-size: clamp(22px, 3.6vw, 64px);
-  white-space: nowrap;
-  line-height: 1;
+  font-size: clamp(28px, 3.2vw, 46px);
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.wte-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px auto clamp(36px, 4.5vw, 56px);
+}
+
+.wte-ornament .wte-line {
+  width: 56px;
+  height: 1px;
+  background: var(--terracotta);
+  opacity: 0.55;
+}
+
+.wte-ornament .wte-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
+
+.wte-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  column-gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  text-align: left;
+}
+
+.wte-grid::before {
+  content: "";
+  grid-column: 2;
+  align-self: stretch;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(184, 90, 48, 0.35) 18%,
+    rgba(184, 90, 48, 0.35) 82%,
+    transparent 100%
+  );
 }
 
 .wte-block {
-  position: absolute;
-  left: 23%;
-  right: 14%;
+  position: relative;
+  padding-top: 6px;
 }
 
-.wte-block-1 {
-  top: 27%;
-}
-
-.wte-block-2 {
-  top: 67%;
+.wte-num {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(34px, 3.8vw, 54px);
+  color: var(--terracotta);
+  opacity: 0.32;
+  line-height: 1;
+  margin-bottom: 12px;
 }
 
 .wte-headline {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
-  font-size: clamp(16px, 2.2vw, 40px);
-  line-height: 1.25;
+  font-size: clamp(18px, 1.7vw, 26px);
+  line-height: 1.3;
   color: var(--text);
-  margin: 0 0 clamp(10px, 1.4vw, 22px) 0;
-  max-width: 90%;
+  margin: 0 0 14px 0;
 }
 
 .wte-headline em {
   font-style: italic;
+  color: var(--terracotta);
 }
 
 .wte-text {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(11px, 1.05vw, 19px);
-  line-height: 1.65;
-  color: var(--text);
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.7;
+  color: var(--text-muted);
   margin: 0;
-  max-width: 62%;
 }
 
 /* Experience CTA — terracotta pill button */
@@ -1335,50 +1387,30 @@ main > section + section {
   transform: translateX(4px);
 }
 
-@media (max-width: 700px) {
-  /* Stop trying to overlay text on the decorative bg at small sizes —
-     drop the bg ornaments and use a clean centered text layout. */
+@media (max-width: 820px) {
   .what-to-expect-section {
-    background: var(--cream);
-    aspect-ratio: auto;
-    padding: 32px 24px 32px;
+    padding: 52px 22px 56px;
+  }
+
+  .wte-grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .wte-grid::before {
+    display: none;
   }
 
   .wte-title {
-    position: static;
-    transform: none;
-    text-align: center;
-    margin-bottom: 36px;
-  }
-
-  .wte-block {
-    position: static;
-    margin-bottom: 32px;
-    max-width: 100%;
-  }
-
-  .wte-block:last-child {
-    margin-bottom: 0;
-  }
-
-  .wte-headline,
-  .wte-text {
-    max-width: 100%;
-  }
-
-  .wte-title {
-    font-size: 1.75rem;
-    letter-spacing: 0.22em;
+    font-size: 1.9rem;
   }
 
   .wte-headline {
-    font-size: 1.2rem;
-    line-height: 1.3;
+    font-size: 1.15rem;
   }
 
   .wte-text {
     font-size: 1rem;
-    line-height: 1.7;
   }
 }
 
