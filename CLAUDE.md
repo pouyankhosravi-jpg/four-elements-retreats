@@ -277,7 +277,7 @@ Structured data (JSON-LD):
 - **index.html** — `Organization` + `WebSite` + `<meta name="google-site-verification" content="3fqiCA7Zl3Xa-BYWrBqPE8rDV26ZKTjeqiwrCTG3McM" />`
 - **about.html** — `AboutPage` linking to `Organization`
 - **retreats.html** — `Event` (startDate, endDate, location, performer Rosa/Pouyan/Sebastián Serpell, offer €799 Early bird until 2026-06-30)
-- **contact.html** — `ContactPage` with `ContactPoint` (`+34-640-12-40-26`, languages en/es/fa) and `sameAs` Instagram link
+- **contact.html** — `ContactPage` with `ContactPoint` (`+34-640-12-40-26`, languages en/es/fa/pl) and `sameAs` Instagram link. Visible Languages section reads "English, Spanish, Persian, Polish".
 
 Other SEO files:
 - `sitemap.xml` — lists all 4 URLs with `lastmod` 2026-05-26
