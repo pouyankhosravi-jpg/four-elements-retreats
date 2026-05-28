@@ -37,7 +37,7 @@
     {"@type":"Question","name":"Do I need to be experienced in yoga or meditation?","acceptedAnswer":{"@type":"Answer","text":"Not at all. Our sessions are gentle, grounded and open to all bodies and levels of experience."}},
     {"@type":"Question","name":"Can I come on my own?","acceptedAnswer":{"@type":"Answer","text":"Yes — most of our guests arrive solo. The intimate group of just 12 means new friendships happen quickly and naturally."}},
     {"@type":"Question","name":"What about dietary needs?","acceptedAnswer":{"@type":"Answer","text":"Our menu is vegetarian Mediterranean cooking. We're happy to accommodate allergies, intolerances and other dietary needs."}},
-    {"@type":"Question","name":"What is the cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"Free cancellation until 31 July 2026 — your 20% deposit is fully refundable up to that date."}},
+    {"@type":"Question","name":"What is the cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"Free cancellation until 31 July 2026 — your 30% deposit is fully refundable up to that date."}},
     {"@type":"Question","name":"How do I get there?","acceptedAnswer":{"@type":"Answer","text":"Airport pickup and drop-off from Málaga is included. We arrange transport for confirmed guests."}}
   ]}
 ]}
@@ -534,7 +534,7 @@
     <div class="container narrow">
       <p class="eyebrow eyebrow-center">Book your place</p>
       <h2>Reserve your spot &amp; pay the deposit</h2>
-      <p class="investment-intro">Limited to 12 guests &middot; secure your place with a &euro;160 deposit &middot; free cancellation until 31 July.</p>
+      <p class="investment-intro">Limited to 12 guests &middot; secure your place with a &euro;240 deposit &middot; free cancellation until 31 July.</p>
 
       <div class="booking-card">
         <div class="booking-summary">
@@ -547,7 +547,7 @@
           <span class="booking-summary-divider" aria-hidden="true"></span>
           <div class="booking-summary-deposit">
             <span class="booking-summary-deposit-label">Pay today</span>
-            <span class="booking-summary-deposit-amount">&euro;160</span>
+            <span class="booking-summary-deposit-amount">&euro;240</span>
           </div>
         </div>
 
@@ -557,7 +557,7 @@
             <li><span class="im-label">Arrival</span><span class="im-value">3 PM Friday (CEST)</span></li>
             <li><span class="im-label">Departure</span><span class="im-value">11 AM Monday (CEST)</span></li>
             <li><span class="im-label">Group size</span><span class="im-value">Limited to 12 guests</span></li>
-            <li><span class="im-label">Deposit</span><span class="im-value">Just 20% (&asymp; &euro;160) holds your place</span></li>
+            <li><span class="im-label">Deposit</span><span class="im-value">Just 30% (&asymp; &euro;240) holds your place</span></li>
             <li><span class="im-label">Cancellation</span><span class="im-value">Free until 31 July 2026</span></li>
             <li><span class="im-label">Airport transfer</span><span class="im-value">Pickup &amp; drop-off arranged from M&aacute;laga</span></li>
             <li><span class="im-label">Private tent</span><span class="im-value">Optional upgrade &mdash; +&euro;180 (limited availability)</span></li>
@@ -569,7 +569,7 @@
             Book my spot
             <span aria-hidden="true">&rarr;</span>
           </button>
-          <p class="booking-pay-note">A few quick details, then pay your &euro;160 deposit. Takes about 2 minutes.</p>
+          <p class="booking-pay-note">A few quick details, then pay your &euro;240 deposit. Takes about 2 minutes.</p>
 
           <div class="booking-trust-strip">
             <p class="booking-trust-line">
@@ -687,11 +687,11 @@
 
           <label class="booking-checkbox">
             <input type="checkbox" name="agree" required>
-            <span>I&rsquo;ve read the cancellation policy below and understand my &euro;160 deposit is fully refundable until 31 July 2026.</span>
+            <span>I&rsquo;ve read the cancellation policy below and understand my &euro;240 deposit is fully refundable until 31 July 2026.</span>
           </label>
 
           <div class="booking-actions">
-            <p class="booking-pay-amount">Pay your <strong>&euro;160 deposit</strong> &mdash; choose how:</p>
+            <p class="booking-pay-amount">Pay your <strong>&euro;240 deposit</strong> &mdash; choose how:</p>
             <div id="paypal-button-container" class="paypal-button-container">
               <p class="pp-loading">Loading payment options&hellip;</p>
             </div>
@@ -706,7 +706,7 @@
           </div>
 
           <p class="booking-fine">
-            <strong>Cancellation policy:</strong> Free cancellation until 31 July 2026 &mdash; full deposit refund. After 31 July, deposits are non-refundable but transferable to a future retreat. The remaining balance (&euro;639 early bird / &euro;739 standard) is due by 15 August 2026 &mdash; we&rsquo;ll send you a payment link by email closer to the date.
+            <strong>Cancellation policy:</strong> Free cancellation until 31 July 2026 &mdash; full deposit refund. After 31 July, deposits are non-refundable but transferable to a future retreat. The remaining balance (&euro;559 early bird / &euro;659 standard) is due by 15 August 2026 &mdash; we&rsquo;ll send you a payment link by email closer to the date.
           </p>
         </form>
 
@@ -965,7 +965,7 @@
         </details>
         <details class="faq-item">
           <summary>What&rsquo;s the cancellation policy?</summary>
-          <p class="faq-answer">Free cancellation until 31 July 2026 &mdash; your 20% deposit is fully refundable up until that date. After 31 July, deposits are non-refundable but can be transferred to a future retreat.</p>
+          <p class="faq-answer">Free cancellation until 31 July 2026 &mdash; your 30% deposit is fully refundable up until that date. After 31 July, deposits are non-refundable but can be transferred to a future retreat.</p>
         </details>
         <details class="faq-item">
           <summary>How do I get there?</summary>
@@ -1066,7 +1066,7 @@
     var lines = [
       'NEW BOOKING — Four Elements Retreat (4–7 Sept 2026)',
       '',
-      '€160 deposit PAID ✓',
+      '€240 deposit PAID ✓',
       'PayPal order: ' + orderId,
       '',
       'Name: ' + d.name,
@@ -1166,8 +1166,8 @@
         var d = pendingBooking || getFormData();
         return actions.order.create({
           purchase_units: [{
-            description: 'Four Elements Retreat 4-7 Sept 2026 - 20% deposit',
-            amount: { currency_code: 'EUR', value: '160.00' },
+            description: 'Four Elements Retreat 4-7 Sept 2026 - 30% deposit',
+            amount: { currency_code: 'EUR', value: '240.00' },
             custom_id: buildCustomId(d)
           }],
           application_context: {
