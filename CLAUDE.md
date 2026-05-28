@@ -54,7 +54,7 @@ If the user reports a change didn't take effect, check cache version first.
 |---|---|
 | Standard price | **€899** per person |
 | Early bird | **€799** per person — save €100 until **30 June 2026** |
-| Deposit | **15%** (~€120) to hold a place |
+| Deposit | **30%** (~€240) to hold a place |
 | Free cancellation | until **31 July 2026** (full deposit refund) |
 | After 31 July | deposits non-refundable but transferable to a future retreat |
 | Single tent upgrade | **+€180** (limited availability) |
