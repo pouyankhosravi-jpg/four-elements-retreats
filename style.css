@@ -2216,12 +2216,10 @@ main > section + section {
 .retreat-banner {
   position: relative;
   height: auto;
-  /* Sized to roughly match the height of the text block on the
-     left (eyebrow + title + subtitle + CTA). The crop slices
-     the empty cream above and the mountains below — the arched
-     photo's people stay in the visible band. */
-  aspect-ratio: 4 / 1;
-  min-height: 0;
+  /* min-height grows with viewport but always fits the full text block
+     (eyebrow + 2-line title + subtitle + CTA). Earlier aspect-ratio 4/1
+     was too short on desktop and clipped the eyebrow + CTA. */
+  min-height: clamp(420px, 36vw, 580px);
   background: #F3E0CB;
   overflow: hidden;
 }
@@ -2304,7 +2302,7 @@ main > section + section {
   color: #5A4A40;
   opacity: 1;
   margin: 0;
-  max-width: 36ch;
+  max-width: 52ch;
   text-shadow: none;
 }
 
