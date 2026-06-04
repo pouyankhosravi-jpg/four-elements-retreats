@@ -5953,3 +5953,113 @@ main > .trust-bar + section {
   /* Section titles a touch smaller */
   .wte-title, .fd-section-title, .sg-section-title, .team-title { font-size: 1.55rem; }
 }
+
+/* ============================================================
+   Homepage banner — date eyebrow (added 2026-06-04)
+   Sits above the banner-title to surface the dates prominently
+   without changing the existing hero layout.
+   ============================================================ */
+.banner .banner-date-eyebrow {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(11px, 0.95vw, 13.5px);
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 18px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.18); /* legibility on the hero photo */
+}
+@media (max-width: 720px) {
+  .banner .banner-date-eyebrow {
+    font-size: 10.5px;
+    letter-spacing: 0.36em;
+    margin-bottom: 12px;
+  }
+}
+
+/* ============================================================
+   Retreats countdown band — between banner and trust bar.
+   Editorial style: italic Cormorant numbers + Georgia eyebrow.
+   No urgency/pressure styling.
+   ============================================================ */
+.retreat-countdown {
+  background: #FBF8F2;
+  padding: clamp(36px, 4.5vw, 64px) clamp(20px, 4vw, 56px);
+  text-align: center;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+}
+.retreat-countdown .container.narrow {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.retreat-countdown .countdown-eyebrow {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 22px;
+}
+.retreat-countdown .countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3.5vw, 40px);
+  margin: 0 0 22px;
+}
+.retreat-countdown .cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+.retreat-countdown .cd-num {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5.6vw, 4.2rem);
+  line-height: 1;
+  color: #2A211B;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.retreat-countdown .cd-label {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(9.5px, 0.78vw, 11px);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+.retreat-countdown .cd-divider {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--terracotta);
+  opacity: 0.45;
+  align-self: flex-start;
+  line-height: 1;
+  margin-top: clamp(8px, 1.2vw, 14px);
+}
+.retreat-countdown .countdown-target {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  color: var(--text-muted);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 560px) {
+  .retreat-countdown .countdown-grid {
+    gap: 14px;
+  }
+  .retreat-countdown .cd-unit {
+    min-width: 56px;
+  }
+  .retreat-countdown .cd-divider {
+    display: none; /* tight on phones — drop the bullets, keep the cells */
+  }
+}

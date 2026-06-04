@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://www.paypal.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="retreat-hero.jpg?v=2" fetchpriority="high">
-<link rel="stylesheet" href="style.css?v=203">
+<link rel="stylesheet" href="style.css?v=204">
 <script src="https://www.paypal.com/sdk/js?client-id=AbM6ME_zui2IMdZKl_ppxHC6_f43TZGqB0x1X9OBl2qwZ5TU7aeeJGa5wLxwM3pOa3jvF9fsNKDfdKs0&currency=EUR&intent=capture&disable-funding=paylater" async></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -66,6 +66,20 @@
         <p class="banner-subtitle">Four days in the heart of Andaluc&iacute;a &mdash; a journey through Earth, Fire, Water and Air, guided by Rosa, Pouyan and a small team of facilitators.</p>
         <a href="#book" class="banner-cta-link">Reserve your place &rarr;</a>
       </div>
+    </div>
+  </section>
+
+  <section class="retreat-countdown" aria-label="Time until the retreat begins">
+    <div class="container narrow">
+      <p class="countdown-eyebrow">We gather in</p>
+      <div class="countdown-grid" id="retreatCountdown" role="timer" aria-live="off">
+        <div class="cd-unit"><span class="cd-num" data-cd="days">&mdash;</span><span class="cd-label">days</span></div>
+        <span class="cd-divider" aria-hidden="true">&middot;</span>
+        <div class="cd-unit"><span class="cd-num" data-cd="hours">&mdash;</span><span class="cd-label">hours</span></div>
+        <span class="cd-divider" aria-hidden="true">&middot;</span>
+        <div class="cd-unit"><span class="cd-num" data-cd="mins">&mdash;</span><span class="cd-label">minutes</span></div>
+      </div>
+      <p class="countdown-target">4 September 2026 &middot; 3 PM CEST &middot; M&aacute;laga, Andaluc&iacute;a</p>
     </div>
   </section>
 
@@ -1007,6 +1021,38 @@
   </div>
   <a href="#book" class="sticky-cta-btn">Book now</a>
 </div>
+
+<script>
+// Retreat countdown — counts down to 4 September 2026, 15:00 CEST.
+(function () {
+  var target = new Date('2026-09-04T15:00:00+02:00').getTime();
+  var root = document.getElementById('retreatCountdown');
+  if (!root) return;
+  var nums = {
+    days: root.querySelector('[data-cd="days"]'),
+    hours: root.querySelector('[data-cd="hours"]'),
+    mins: root.querySelector('[data-cd="mins"]')
+  };
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      nums.days.textContent = '0';
+      nums.hours.textContent = '0';
+      nums.mins.textContent = '0';
+      return;
+    }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    nums.days.textContent = days;
+    nums.hours.textContent = pad(hours);
+    nums.mins.textContent = pad(mins);
+  }
+  tick();
+  setInterval(tick, 60000);
+})();
+</script>
 
 <script>
 (function () {
