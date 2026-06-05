@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://www.paypal.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="retreat-hero.jpg?v=2" fetchpriority="high">
-<link rel="stylesheet" href="style.css?v=206">
+<link rel="stylesheet" href="style.css?v=207">
 <script src="https://www.paypal.com/sdk/js?client-id=AbM6ME_zui2IMdZKl_ppxHC6_f43TZGqB0x1X9OBl2qwZ5TU7aeeJGa5wLxwM3pOa3jvF9fsNKDfdKs0&currency=EUR&intent=capture&disable-funding=paylater" async></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1228,7 +1228,13 @@
         return actions.order.capture().then(function (details) {
           var d = pendingBooking || getFormData();
           if (d) sendBookingToWhatsApp(details.id, d);
+          // Show the in-page success panel as an immediate fallback
+          // in case the navigation below is blocked by the browser.
           showSuccessPanel();
+          // Redirect to the dedicated thank-you page so conversion
+          // trackers (Google Ads, GA4, Meta Pixel) have a unique URL
+          // to fire on. PayPal order ID is passed for display + event payload.
+          window.location.href = 'thank-you.html?order=' + encodeURIComponent(details.id);
         });
       },
       onCancel: function () {

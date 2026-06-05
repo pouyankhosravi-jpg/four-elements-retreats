@@ -5983,6 +5983,50 @@ main > .trust-bar + section {
 }
 
 /* ============================================================
+   Thank-you page (dedicated /thank-you.html) — wraps the existing
+   .booking-after-pay component as a standalone landing for conversion
+   tracking. Robots: noindex.
+   ============================================================ */
+.thank-you-section {
+  background: var(--cream);
+  padding: clamp(64px, 10vw, 120px) 0 clamp(56px, 8vw, 96px);
+}
+.thank-you-section .container.narrow {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+.thank-you-section .booking-after-pay {
+  margin: 0 auto;
+}
+.thank-you-section .thank-you-order {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 20px 0 0;
+  opacity: 0.7;
+  word-break: break-all;
+}
+.thank-you-section .thank-you-back {
+  margin: 32px 0 0;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+}
+.thank-you-section .thank-you-back a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.thank-you-section .thank-you-back a:hover {
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+/* ============================================================
    Homepage banner — date eyebrow (added 2026-06-04)
    Sits above the banner-title to surface the dates prominently
    without changing the existing hero layout.
